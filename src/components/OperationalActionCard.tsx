@@ -10,7 +10,9 @@ import {
   Lock, 
   Copy, 
   Check, 
-  ListChecks 
+  ListChecks,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react';
 import { TooltipHelp, AGRO_TERMS_GLOSSARY } from './TooltipHelp';
 
@@ -24,6 +26,7 @@ export const OperationalActionCard: React.FC<OperationalActionCardProps> = ({
   borrowerExposureBrl,
 }) => {
   const [copied, setCopied] = useState(false);
+  const [showLegalDetails, setShowLegalDetails] = useState(false);
 
   const isBlock = recommendation.rating === 'D';
   const isCprMandatory = recommendation.rating === 'C';
@@ -37,31 +40,31 @@ export const OperationalActionCard: React.FC<OperationalActionCardProps> = ({
     setTimeout(() => setCopied(false), 2500);
   };
 
-  // Checklist de providências operacionais
+  // Checklist de providências operacionais enxuto
   const checklistItems = isBlock
     ? [
-        'Suspender imediatamente aprovação de novos pedidos comerciais no ERP',
-        'Notificar departamento jurídico para apurar preferência de garantias',
-        'Iniciar negociação de confissão de dívida com garantia hipotecária ou alienação fiduciária',
-        'Acompanhar distribuição no DataJud com alerta diário 24h',
+        'Travar imediatamente pedidos comerciais no ERP (webhook watsonx)',
+        'Notificar jurídico para apuração e preferência de garantias reais',
+        'Formalizar confissão de dívida com alienação fiduciária de grãos',
+        'Acionar alerta diário 24h no DataJud para distribuição de RJ',
       ]
     : isCprMandatory
     ? [
-        'Exigir formalização e registro de CPR Física (com colheita vinculada) em registradora B3/Cerc',
-        'Limitar o prazo da fatura à data de colheita da safra',
-        'Verificar disponibilidade de apólice de seguro rural privada ou barter com trava',
+        'Exigir CPR Física com registro imediato (B3/Cerc)',
+        'Limitar o vencimento da fatura à data de colheita',
+        'Verificar apólice de seguro rural privada ou barter com trava',
         'Inserir cliente no radar intensivo mensal do EWS',
       ]
     : isReduced
     ? [
         'Ajustar prazo de pagamento para o teto de 120 dias',
         'Exigir aval dos sócios e penhor de safra',
-        'Agendar monitoramento trimestral automático no DataJud e PGFN',
+        'Agendar monitoramento trimestral no DataJud e PGFN',
       ]
     : [
-        'Liberar faturamento em prazo padrão comercial (180 dias)',
-        'Cadastrar no monitoramento anual de safra do EWS',
-        'Incentivar contratação de seguro PSR parceiro para desconto em taxa',
+        'Liberar faturamento em prazo comercial padrão (180 dias)',
+        'Cadastrar no monitoramento anual preventivo de safra',
+        'Incentivar seguro parceiro para bonificação de taxa',
       ];
 
   return (
@@ -150,7 +153,7 @@ export const OperationalActionCard: React.FC<OperationalActionCardProps> = ({
               </div>
             </div>
             <span className="text-[10px] text-slate-500 mt-2 block font-sans">
-              Penaliza o score, sem agir como veto bloqueante (2,3% PSR em 2025).
+              Penaliza o score sem agir como veto (2,3% PSR em 2025).
             </span>
           </div>
         </div>
@@ -159,34 +162,47 @@ export const OperationalActionCard: React.FC<OperationalActionCardProps> = ({
         <div className="bg-[#0e0e17] p-4 rounded-xl border border-[#231c3a] mt-4 text-xs">
           <span className="text-slate-300 font-bold text-xs flex items-center gap-2 mb-2 font-display">
             <ListChecks className="h-4 w-4 text-[#8b4dff]" />
-            <span>Checklist de Providências para a Equipe de Crédito:</span>
+            <span>Checklist Operacional para a Equipe de Crédito:</span>
           </span>
           <div className="space-y-1.5 text-[11px] text-slate-300 font-sans">
             {checklistItems.map((item, idx) => (
-              <div key={idx} className="flex items-start gap-2">
-                <span className="h-4 w-4 rounded bg-[#141422] border border-[#231c3a] flex items-center justify-center text-[#8b4dff] text-[9px] font-bold shrink-0 mt-0.5 font-display">
+              <div key={idx} className="flex items-center gap-2">
+                <span className="h-4 w-4 rounded bg-[#141422] border border-[#231c3a] flex items-center justify-center text-[#8b4dff] text-[9px] font-bold shrink-0 font-display">
                   {idx + 1}
                 </span>
-                <span>{item}</span>
+                <span className="truncate">{item}</span>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Stay Period Caveat */}
-      <div className="bg-amber-950/20 border border-amber-500/30 rounded-xl p-3.5 text-xs mt-2">
-        <div className="flex items-start gap-2.5">
-          <Scale className="h-4 w-4 text-amber-400 shrink-0 mt-0.5" />
-          <div className="space-y-0.5">
-            <span className="font-bold text-amber-300 block text-[11px]">
-              Ressalva Jurídica Estratégica: Stay Period e Bens de Capital Essenciais (STJ)
-            </span>
-            <p className="text-slate-300 text-[11px] leading-relaxed">
-              {recommendation.legalCaveatStayPeriod}
-            </p>
+      {/* Stay Period Caveat Collapsible */}
+      <div className="bg-amber-950/20 border border-amber-500/30 rounded-xl p-3 text-xs mt-2 transition-all">
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
+            <Scale className="h-4 w-4 text-amber-400 shrink-0" />
+            <div>
+              <span className="font-display font-bold text-amber-300 text-[11px]">
+                Ressalva STJ: Stay Period & Bens Essenciais (Art. 49, §3º)
+              </span>
+            </div>
           </div>
+          <button
+            type="button"
+            onClick={() => setShowLegalDetails(!showLegalDetails)}
+            className="text-[10px] font-display font-semibold text-amber-300 hover:text-amber-100 px-2 py-1 rounded bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/20 shrink-0 flex items-center gap-1 transition-all cursor-pointer"
+          >
+            <span>{showLegalDetails ? 'Ocultar' : 'Ver Parecer'}</span>
+            {showLegalDetails ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
+          </button>
         </div>
+
+        {showLegalDetails && (
+          <div className="mt-2.5 pt-2.5 border-t border-amber-500/20 text-slate-300 text-[11px] leading-relaxed font-sans">
+            {recommendation.legalCaveatStayPeriod}
+          </div>
+        )}
       </div>
     </div>
   );

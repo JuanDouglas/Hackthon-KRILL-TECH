@@ -35,13 +35,13 @@ export const RedFlagsCard: React.FC<RedFlagsCardProps> = ({
               </span>
             </div>
             <p className="text-xs text-slate-400 font-sans mt-0.5">
-              Sinais objetivos e diretos sustentados pelas fontes oficiais (sem indicadores fictícios)
+              6 gatilhos oficiais de risco vinculados a bases regulatórias e judiciais
             </p>
           </div>
         </div>
 
         <div className="text-xs text-slate-400 bg-[#0e0e17] px-3 py-1.5 rounded-lg border border-[#231c3a] font-display">
-          Gatilho de Reclassificação para <strong className="text-rose-400">Rating C/D</strong>
+          Gatilho de Reclassificação: <strong className="text-rose-400">Rating C/D</strong>
         </div>
       </div>
 

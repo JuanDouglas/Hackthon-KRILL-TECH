@@ -82,8 +82,8 @@ export const ExecutiveDashboardView: React.FC<ExecutiveDashboardViewProps> = ({
               Painel de Inteligência de Risco & Alerta Precoce
             </h1>
 
-            <p className="text-sm text-slate-300 max-w-3xl font-sans leading-relaxed">
-              Monitoramento analítico contínuo para <strong>R$ {(totalExposure / 1000000).toFixed(1)}M em recebíveis agrícolas</strong> da Krill Tech, antecipando quebras de safra, restrições cadastrais e pedidos de recuperação judicial no agronegócio.
+            <p className="text-xs sm:text-sm text-slate-400 font-sans">
+              Monitoramento analítico contínuo para <strong className="text-white">R$ {(totalExposure / 1000000).toFixed(1)}M em recebíveis agrícolas</strong> Krill Tech.
             </p>
           </div>
 
@@ -94,13 +94,13 @@ export const ExecutiveDashboardView: React.FC<ExecutiveDashboardViewProps> = ({
               className="px-4 py-2.5 rounded-xl bg-[#6618F7] hover:bg-[#7b2cff] text-white font-sans font-bold text-xs shadow-lg shadow-[#6618F7]/30 flex items-center gap-2 transition-all active:scale-95 cursor-pointer"
             >
               <UserCheck className="h-4 w-4" />
-              <span>Nova Triagem (CNPJ/CPF)</span>
+              <span>Nova Triagem</span>
             </button>
 
             <button
               onClick={onOpenTestBench}
               className="px-4 py-2.5 rounded-xl bg-[#141422] hover:bg-[#1f1a3a] text-[#a78bfa] border border-[#231c3a] hover:border-[#6618F7]/60 font-sans font-bold text-xs flex items-center gap-2 transition-all active:scale-95 cursor-pointer"
-              title="Abrir menu lateral para testes de injeção de eventos"
+              title="Abrir bancada lateral para testes de injeção de eventos"
             >
               <Zap className="h-4 w-4 text-[#8b4dff]" />
               <span>Bancada de Testes</span>
@@ -115,7 +115,7 @@ export const ExecutiveDashboardView: React.FC<ExecutiveDashboardViewProps> = ({
         <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-5 shadow-xl hover:border-[#6618F7]/40 transition-all">
           <div className="flex items-center justify-between text-slate-400 mb-2">
             <span className="text-xs font-display font-medium uppercase tracking-wider">
-              Exposição Total da Carteira
+              Exposição Total
             </span>
             <span className="text-xs text-slate-500 font-display">8 tomadores</span>
           </div>
@@ -137,7 +137,7 @@ export const ExecutiveDashboardView: React.FC<ExecutiveDashboardViewProps> = ({
         <div className="bg-[#09090e] border border-rose-500/30 rounded-2xl p-5 shadow-xl hover:border-rose-500/60 transition-all">
           <div className="flex items-center justify-between text-slate-400 mb-2">
             <span className="text-xs font-display font-medium uppercase tracking-wider text-rose-400">
-              Exposição em Risco Severo (C & D)
+              Exposição em Risco (C & D)
             </span>
             <span className="text-xs text-rose-400 font-display font-bold">
               {((exposureAtRisk / totalExposure) * 100).toFixed(1)}%
@@ -161,7 +161,7 @@ export const ExecutiveDashboardView: React.FC<ExecutiveDashboardViewProps> = ({
         <div className="bg-[#09090e] border border-amber-500/30 rounded-2xl p-5 shadow-xl hover:border-amber-500/40 transition-all">
           <div className="flex items-center justify-between text-slate-400 mb-2">
             <span className="text-xs font-display font-medium uppercase tracking-wider text-amber-400">
-              Inadimplência Técnica Preventiva
+              Inadimplência Preventiva
             </span>
             <span className="text-xs text-amber-400 font-display font-bold">Antecipada</span>
           </div>
@@ -170,7 +170,7 @@ export const ExecutiveDashboardView: React.FC<ExecutiveDashboardViewProps> = ({
               14,2%
             </span>
             <span className="text-[11px] font-sans text-amber-300">
-              Quebra de covenants
+              Covenants
             </span>
           </div>
           <div className="mt-2.5 pt-2.5 border-t border-[#231c3a] text-[11px] text-slate-400 font-sans">
@@ -182,7 +182,7 @@ export const ExecutiveDashboardView: React.FC<ExecutiveDashboardViewProps> = ({
         <div className="bg-[#09090e] border border-emerald-500/30 rounded-2xl p-5 shadow-xl hover:border-emerald-500/40 transition-all">
           <div className="flex items-center justify-between text-slate-400 mb-2">
             <span className="text-xs font-display font-medium uppercase tracking-wider text-emerald-400">
-              Cobertura de Garantias Reais
+              Garantias Reais
             </span>
             <span className="text-xs text-emerald-400 font-display font-bold">Colateral</span>
           </div>
@@ -191,7 +191,7 @@ export const ExecutiveDashboardView: React.FC<ExecutiveDashboardViewProps> = ({
               84,6%
             </span>
             <span className="text-[11px] font-sans text-emerald-300">
-              CPR Física & Barter
+              CPR & Barter
             </span>
           </div>
           <div className="mt-2.5 pt-2.5 border-t border-[#231c3a] text-[11px] text-slate-400 font-sans">
@@ -204,150 +204,152 @@ export const ExecutiveDashboardView: React.FC<ExecutiveDashboardViewProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Col 1 & 2: Radar de Riscos do Cenário Atual da Safra */}
         <div className="lg:col-span-2 space-y-6">
-          <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-6 shadow-2xl space-y-4">
+          <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-5 sm:p-6 shadow-2xl space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-[#231c3a]">
               <div className="flex items-center gap-2.5">
                 <BarChart3 className="h-4 w-4 text-[#8b4dff]" />
                 <h2 className="text-base font-display font-bold text-white">
-                  Radar Macroeconômico & Climático — Safra 2025/2026
+                  Radar Macroeconômico & Climático da Safra
                 </h2>
               </div>
-              <span className="text-xs font-display text-slate-400">Diagnóstico Setorial</span>
+              <span className="text-xs font-display text-slate-400">Safra 2025/2026</span>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Visual Scannable Grid: Concise Chips Instead of Long Paragraphs */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {/* Driver 1 */}
-              <div className="p-3.5 rounded-xl bg-[#0e0e17] border border-[#231c3a] space-y-1">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-display font-bold text-[#8b4dff] uppercase">Marco Regulatório</span>
-                  <span className="text-[10px] text-rose-400 font-display font-bold">Risco Alto</span>
+              <div className="p-3 rounded-xl bg-[#0e0e17] border border-[#231c3a] flex items-center justify-between gap-3">
+                <div className="space-y-0.5">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-display font-bold text-white">Marco Legal (Lei 14.112)</span>
+                    <span className="text-[10px] font-display font-bold text-rose-400 bg-rose-500/10 px-1.5 py-0.5 rounded">Risco Alto</span>
+                  </div>
+                  <p className="text-[11px] text-slate-400 font-sans">
+                    Carência de apenas 2 anos via LCDPR para pedido de RJ de PF.
+                  </p>
                 </div>
-                <h4 className="text-xs font-display font-bold text-white">
-                  Lei 14.112/2020: 2 Anos de LCDPR
-                </h4>
-                <p className="text-[11px] text-slate-300 font-sans leading-relaxed">
-                  Baixa barreira para RJ de produtor rural pessoa física, elevando a frequência de pedidos judiciais sem auditoria prévia.
-                </p>
               </div>
 
               {/* Driver 2 */}
-              <div className="p-3.5 rounded-xl bg-[#0e0e17] border border-[#231c3a] space-y-1">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-display font-bold text-[#8b4dff] uppercase">Mitigação Pública</span>
-                  <span className="text-[10px] text-rose-400 font-display font-bold">Colapso PSR</span>
+              <div className="p-3 rounded-xl bg-[#0e0e17] border border-[#231c3a] flex items-center justify-between gap-3">
+                <div className="space-y-0.5">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-display font-bold text-white">Seguro Rural (PSR)</span>
+                    <span className="text-[10px] font-display font-bold text-rose-400 bg-rose-500/10 px-1.5 py-0.5 rounded">2,3% - 3,3%</span>
+                  </div>
+                  <p className="text-[11px] text-slate-400 font-sans">
+                    Pior cobertura histórica. Risco climático recai no credor de insumos.
+                  </p>
                 </div>
-                <h4 className="text-xs font-display font-bold text-white">
-                  Seguro Rural: Cobertura de 2,3% a 3,3%
-                </h4>
-                <p className="text-[11px] text-slate-300 font-sans leading-relaxed">
-                  Pior índice desde 2006. Sem colchão público, secas ou frustrações recaem diretamente sobre os fornecedores de insumos.
-                </p>
               </div>
 
               {/* Driver 3 */}
-              <div className="p-3.5 rounded-xl bg-[#0e0e17] border border-[#231c3a] space-y-1">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-display font-bold text-[#8b4dff] uppercase">Mercado & Margens</span>
-                  <span className="text-[10px] text-amber-400 font-display font-bold">Margem Comprimida</span>
+              <div className="p-3 rounded-xl bg-[#0e0e17] border border-[#231c3a] flex items-center justify-between gap-3">
+                <div className="space-y-0.5">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-display font-bold text-white">Margens & Commodities</span>
+                    <span className="text-[10px] font-display font-bold text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded">Comprimidas</span>
+                  </div>
+                  <p className="text-[11px] text-slate-400 font-sans">
+                    Preços em Chicago reduzem a rentabilidade e elevam dependência de crédito.
+                  </p>
                 </div>
-                <h4 className="text-xs font-display font-bold text-white">
-                  Commodities em Baixa & Custos Elevados
-                </h4>
-                <p className="text-[11px] text-slate-300 font-sans leading-relaxed">
-                  Cotações em Chicago comprimiram a rentabilidade do agricultor, aumentando a dependência de crédito comercial a prazo.
-                </p>
               </div>
 
               {/* Driver 4 */}
-              <div className="p-3.5 rounded-xl bg-[#0e0e17] border border-[#231c3a] space-y-1">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-display font-bold text-[#8b4dff] uppercase">Efeito Cascata</span>
-                  <span className="text-[10px] text-rose-400 font-display font-bold">Contágio</span>
+              <div className="p-3 rounded-xl bg-[#0e0e17] border border-[#231c3a] flex items-center justify-between gap-3">
+                <div className="space-y-0.5">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-display font-bold text-white">Contágio de Revendas</span>
+                    <span className="text-[10px] font-display font-bold text-rose-400 bg-rose-500/10 px-1.5 py-0.5 rounded">AgroGalaxy</span>
+                  </div>
+                  <p className="text-[11px] text-slate-400 font-sans">
+                    Quebras de distribuidores exigem colateralização antecipada via barter.
+                  </p>
                 </div>
-                <h4 className="text-xs font-display font-bold text-white">
-                  Crise de Revendas (Caso AgroGalaxy)
-                </h4>
-                <p className="text-[11px] text-slate-300 font-sans leading-relaxed">
-                  A quebra de distribuidoras trava dezenas de milhões em créditos concursais. O alerta precoce protege a colateralização a tempo.
-                </p>
               </div>
             </div>
           </div>
 
           {/* Fila Operacional do Operador (O que fazer hoje) */}
-          <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-6 shadow-2xl space-y-4">
+          <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-5 sm:p-6 shadow-2xl space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-[#231c3a]">
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-[#8b4dff]" />
                 <h3 className="text-base font-display font-bold text-white">
-                  Fila Operacional da Mesa de Crédito (Ações do Dia)
+                  Fila de Ações do Operador
                 </h3>
               </div>
               <span className="text-xs text-slate-400 font-display">Tarefas Prioritárias</span>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2.5">
               {/* Task 1 */}
-              <div className="p-3.5 rounded-xl bg-[#0e0e17] border border-[#231c3a] flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-[#6618F7]/50 transition-all">
-                <div className="flex items-start gap-3">
-                  <div className="h-8 w-8 rounded-lg bg-[#6618F7]/10 text-[#8b4dff] flex items-center justify-center shrink-0 mt-0.5">
+              <div className="p-3 rounded-xl bg-[#0e0e17] border border-[#231c3a] flex items-center justify-between gap-3 hover:border-[#6618F7]/50 transition-all">
+                <div className="flex items-center gap-3">
+                  <div className="h-8 w-8 rounded-lg bg-[#6618F7]/10 text-[#8b4dff] flex items-center justify-center shrink-0">
                     <UserCheck className="h-4 w-4" />
                   </div>
                   <div>
                     <h4 className="text-xs font-display font-bold text-white">
-                      Novos Tomadores Aguardando Triagem Cadastral
+                      Triagem de Novos Clientes
                     </h4>
-                    <p className="text-[11px] text-slate-400 font-sans">
-                      Validação prévia de 2 anos da Lei 14.112 via LCDPR e regularidade fundiária no SICAR.
-                    </p>
+                    <span className="text-[11px] text-slate-400 font-sans">
+                      Conferência de 2 anos LCDPR (Lei 14.112) e SICAR
+                    </span>
                   </div>
                 </div>
                 <button
                   onClick={() => onNavigateTab('triagem')}
                   className="px-3 py-1.5 rounded-lg bg-[#141422] hover:bg-[#6618F7] text-slate-300 hover:text-white border border-[#231c3a] text-xs font-display font-bold flex items-center gap-1.5 shrink-0 transition-all cursor-pointer"
                 >
-                  <span>Acessar Triagem</span>
+                  <span>Acessar</span>
                   <ArrowRight className="h-3.5 w-3.5" />
                 </button>
               </div>
 
               {/* Task 2 */}
-              <div className="p-3.5 rounded-xl bg-[#0e0e17] border border-[#231c3a] flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-[#6618F7]/50 transition-all">
-                <div className="flex items-start gap-3">
-                  <div className="h-8 w-8 rounded-lg bg-rose-500/10 text-rose-400 flex items-center justify-center shrink-0 mt-0.5">
+              <div className="p-3 rounded-xl bg-[#0e0e17] border border-[#231c3a] flex items-center justify-between gap-3 hover:border-rose-500/50 transition-all">
+                <div className="flex items-center gap-3">
+                  <div className="h-8 w-8 rounded-lg bg-rose-500/10 text-rose-400 flex items-center justify-center shrink-0">
                     <ShieldAlert className="h-4 w-4" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-display font-bold text-white">
-                      Alertas de Risco no DataJud Requerendo Contenção ({unreadAlerts.length} pendentes)
-                    </h4>
-                    <p className="text-[11px] text-slate-400 font-sans">
-                      Execuções distribuídas contra devedores com saldo devedor aberto na Krill Tech.
-                    </p>
+                    <div className="flex items-center gap-2">
+                      <h4 className="text-xs font-display font-bold text-white">
+                        Alertas DataJud com Risco de RJ
+                      </h4>
+                      <span className="text-[10px] font-display font-bold bg-rose-500/20 text-rose-300 px-1.5 py-0.2 rounded">
+                        {unreadAlerts.length} pendentes
+                      </span>
+                    </div>
+                    <span className="text-[11px] text-slate-400 font-sans">
+                      Execuções distribuídas contra devedores com saldo aberto
+                    </span>
                   </div>
                 </div>
                 <button
                   onClick={() => onNavigateTab('alerta_rj')}
                   className="px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-white text-xs font-display font-bold flex items-center gap-1.5 shrink-0 transition-all shadow-md shadow-rose-600/30 cursor-pointer"
                 >
-                  <span>Ver Alertas RJ</span>
+                  <span>Ver Alertas</span>
                   <ArrowRight className="h-3.5 w-3.5" />
                 </button>
               </div>
 
               {/* Task 3 */}
-              <div className="p-3.5 rounded-xl bg-[#0e0e17] border border-[#231c3a] flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-[#6618F7]/50 transition-all">
-                <div className="flex items-start gap-3">
-                  <div className="h-8 w-8 rounded-lg bg-[#6618F7]/10 text-[#8b4dff] flex items-center justify-center shrink-0 mt-0.5">
+              <div className="p-3 rounded-xl bg-[#0e0e17] border border-[#231c3a] flex items-center justify-between gap-3 hover:border-[#6618F7]/50 transition-all">
+                <div className="flex items-center gap-3">
+                  <div className="h-8 w-8 rounded-lg bg-[#6618F7]/10 text-[#8b4dff] flex items-center justify-center shrink-0">
                     <Activity className="h-4 w-4" />
                   </div>
                   <div>
                     <h4 className="text-xs font-display font-bold text-white">
-                      Due Diligence Pré-Crédito dos 4 Agentes Autônomos
+                      Due Diligence dos 4 Agentes Autônomos
                     </h4>
-                    <p className="text-[11px] text-slate-400 font-sans">
-                      Dossiês padronizados prontos para deliberação do Comitê de Risco com parecer do STJ.
-                    </p>
+                    <span className="text-[11px] text-slate-400 font-sans">
+                      Dossiês padronizados prontos para deliberação do comitê
+                    </span>
                   </div>
                 </div>
                 <button
