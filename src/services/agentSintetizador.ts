@@ -4,6 +4,8 @@ import { AgroClimaticAnalysisResult } from './agentAgroClima';
 import { FullScoreResult } from '../types/score';
 import { AgentStepLog } from '../types/agents';
 
+import { TemporalPdPrediction, OrchestrateAction } from '../types/score';
+
 export interface SynthesizedReport {
   dossierId: string;
   generatedAt: string;
@@ -18,6 +20,8 @@ export interface SynthesizedReport {
   creditPolicyActionSection: string;
   fiduciaryAlienationCaveatSection: string;
   psrCollapseContextSection: string;
+  temporalPd?: TemporalPdPrediction;
+  orchestrateAction?: OrchestrateAction;
   fullMarkdownContent: string;
 }
 
@@ -64,7 +68,7 @@ export function executeAgentSintetizador(
   let agroDiagnostic = '';
   if (isPF) {
     agroDiagnostic = `A cultura declarada é **${pf.crop}** em área de **${pf.plantedAreaHa.toLocaleString('pt-BR')} hectares** no município de ${borrower.city}/${borrower.state}. 
-Conforme diretriz do edital e calibração agronômica da Embrapa/MAPA, o ZARC opera como filtro categórico de conformidade: o plantio em ${pf.plantingDate} ${
+Conforme calibração agronômica oficial da Embrapa/MAPA, o ZARC opera como filtro categórico de conformidade: o plantio em ${pf.plantingDate} ${
       agroAnalysis.zarcCompliance.isInWindow
         ? 'enquadrou-se na janela técnica oficial de menor risco.'
         : `**VIOLOU a janela ZARC** da ${agroAnalysis.zarcCompliance.portariaMapa}, com desvio de +${agroAnalysis.zarcCompliance.deviationDays} dias após a data limite.`
@@ -164,7 +168,26 @@ ${fiduciaryCaveat}
 
 ---
 
-## 8. DIRETRIZ OPERACIONAL PARA O COMITÊ DE CRÉDITO KRILL TECH
+---
+
+## 8. HORIZONTES PREDITIVOS TEMPORAIS DE DEFAULT (6M, 12M, 24M)
+- **Probabilidade de Default em 6 Meses:** **${scoreResult.temporalPd?.pd6MonthsPercent ?? 'N/A'}%**
+- **Probabilidade de Default em 12 Meses:** **${scoreResult.temporalPd?.pd12MonthsPercent ?? 'N/A'}%**
+- **Probabilidade de Default em 24 Meses:** **${scoreResult.temporalPd?.pd24MonthsPercent ?? 'N/A'}%**
+- **Horizonte de Risco de Recuperação Judicial (24m):** **${scoreResult.temporalPd?.rjRiskHorizon ?? 'N/A'}** (Intervalo Confiança: ${scoreResult.temporalPd?.confidenceIntervalPercent ?? 95}%)
+
+---
+
+## 9. AÇÃO AUTOMATIZADA WATSONX ORCHESTRATE (TRAVA ERP T+0h)
+- **Status do Gatilho:** ${scoreResult.orchestrateAction?.actionTriggered ? '⚠️ GATILHO ACIONADO' : '✅ STANDBY (SEM BLOQUEIO)'}
+- **Ação:** ${scoreResult.orchestrateAction?.actionType || 'STANDARD_APPROVAL'} (${scoreResult.orchestrateAction?.status || 'CONCLUIDO'})
+- **ERP Integrado:** ${scoreResult.orchestrateAction?.targetSystem || 'SAP_S4HANA'}
+- **Timestamp de Resposta:** ${scoreResult.orchestrateAction?.timestamp || nowStr}
+- **Hash Criptográfico de Auditoria:** \`${scoreResult.orchestrateAction?.auditHash || 'N/A'}\`
+
+---
+
+## 10. DIRETRIZ OPERACIONAL PARA O COMITÊ DE CRÉDITO KRILL TECH
 - **Decisão:** ${scoreResult.recommendation.label}
 - **Prazo Máximo de Pagamento:** ${scoreResult.recommendation.paymentTermsDays === 0 ? 'SUSPENSO / PAGAMENTO À VISTA' : `${scoreResult.recommendation.paymentTermsDays} dias`}
 - **Exigência de Garantias:** ${scoreResult.recommendation.mandatoryCollateral}
@@ -172,7 +195,7 @@ ${fiduciaryCaveat}
 - **Resumo Executivo:** ${summary}
 
 ---
-*Relatório gerado automaticamente pela esteira de 4 agentes Krill Tech (Coletor & Parser, Risco Agro & Climático, Motor de Decisão WoE, Sintetizador watsonx.ai).*
+*Relatório gerado automaticamente pela esteira de 4 agentes Krill Tech (Coletor & Parser, Risco Agro & Climático, Motor de Decisão WoE, Sintetizador watsonx.ai & Orchestrate).*
 `;
 
   addLog('success', 'Agente Sintetizador (watsonx.ai)', `Dossiê padronizado gerado com sucesso. Código: ${dossierId}`);
@@ -191,6 +214,8 @@ ${fiduciaryCaveat}
     creditPolicyActionSection: scoreResult.recommendation.label,
     fiduciaryAlienationCaveatSection: fiduciaryCaveat,
     psrCollapseContextSection: psrContext,
+    temporalPd: scoreResult.temporalPd,
+    orchestrateAction: scoreResult.orchestrateAction,
     fullMarkdownContent: fullMarkdown,
   };
 

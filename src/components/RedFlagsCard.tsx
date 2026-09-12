@@ -12,20 +12,20 @@ export const RedFlagsCard: React.FC<RedFlagsCardProps> = ({
   activeRedFlags,
 }) => {
   return (
-    <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 shadow-xl">
+    <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-6 shadow-2xl">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#231c3a]">
         <div className="flex items-center gap-2.5">
           <div className="h-9 w-9 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400">
             <ShieldAlert className="h-5 w-5" />
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h3 className="text-base font-bold text-white tracking-tight">
+              <h3 className="text-base font-display font-black text-white tracking-tight">
                 Matriz de Red Flags Operacionais
               </h3>
               <span
-                className={`text-xs px-2.5 py-0.5 rounded-full font-bold uppercase ${
+                className={`text-xs px-2.5 py-0.5 rounded font-display font-bold uppercase ${
                   activeRedFlags.length > 0
                     ? 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
                     : 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
@@ -34,13 +34,13 @@ export const RedFlagsCard: React.FC<RedFlagsCardProps> = ({
                 {activeRedFlags.length > 0 ? `${activeRedFlags.length} Ativas` : '0 Ativas (Conforme)'}
               </span>
             </div>
-            <p className="text-xs text-slate-400 mt-0.5">
+            <p className="text-xs text-slate-400 font-sans mt-0.5">
               Sinais objetivos e diretos sustentados pelas fontes oficiais (sem indicadores fictícios)
             </p>
           </div>
         </div>
 
-        <div className="text-xs text-slate-400 bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">
+        <div className="text-xs text-slate-400 bg-[#0e0e17] px-3 py-1.5 rounded-lg border border-[#231c3a] font-display">
           Gatilho de Reclassificação para <strong className="text-rose-400">Rating C/D</strong>
         </div>
       </div>
@@ -56,7 +56,7 @@ export const RedFlagsCard: React.FC<RedFlagsCardProps> = ({
               className={`rounded-xl p-4 border transition-all flex flex-col justify-between ${
                 isActive
                   ? 'bg-rose-950/20 border-rose-500/40 ring-1 ring-rose-500/20 shadow-md'
-                  : 'bg-slate-950/50 border-slate-800/80 opacity-70'
+                  : 'bg-[#0e0e17] border-[#231c3a] opacity-70'
               }`}
             >
               <div>

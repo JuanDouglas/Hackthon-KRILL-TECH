@@ -19,6 +19,8 @@ export interface EwsAlert {
   timestamp: string;
   isRead: boolean;
   actionRequired: string;
+  isSimulated?: boolean;
+  simulationScenario?: string;
 }
 
 export type SimulationTriggerType = 
@@ -43,4 +45,9 @@ export interface PortfolioEntity {
   alertCount: number;
   lastMonitoredAt: string;
   nextScheduledCheck: string;
+  // Campos de Simulação de Crise e Estresse Setorial
+  crisisSimulatedScore?: number;
+  crisisSimulatedRating?: RatingBand;
+  crisisTechnicalDefault?: boolean;
+  crisisStressTrigger?: string;
 }

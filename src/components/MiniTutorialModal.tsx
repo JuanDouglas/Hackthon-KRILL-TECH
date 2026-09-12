@@ -178,7 +178,7 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
       stepNumber: 4,
       badge: 'Metodologia de Risco',
       title: 'Scorecard Explicável (0–1000) vs PD Caixa-Preta',
-      subtitle: 'Por que o método Weight of Evidence (WoE) é o único defensável perante a banca',
+      subtitle: 'Por que o método Weight of Evidence (WoE) é o modelo estatístico recomendável e auditável',
       icon: Cpu,
       color: 'amber',
       content: (
@@ -187,33 +187,33 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
             Uma Probabilidade de Inadimplência (PD) estatística exige base histórica massiva de eventos de default que produtos novos não possuem. Como bureaus reais (<strong>Serasa e Boa Vista</strong>) fazem, adotamos um <strong>scorecard ponderado transparente</strong>:
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-[11px]">
-            <div className="bg-slate-950 p-2.5 rounded-lg border border-slate-800">
-              <span className="text-slate-400 block text-[10px]">Processual</span>
-              <span className="text-emerald-400 font-bold text-sm">30%</span>
+            <div className="bg-[#0e0e17] p-2.5 rounded-lg border border-[#231c3a]">
+              <span className="text-slate-400 block text-[10px] font-display">Processual</span>
+              <span className="text-[#8b4dff] font-bold text-sm font-display">30%</span>
               <span className="text-[9px] text-slate-500 block">DataJud / DJEs</span>
             </div>
-            <div className="bg-slate-950 p-2.5 rounded-lg border border-slate-800">
-              <span className="text-slate-400 block text-[10px]">Agroclimático</span>
-              <span className="text-sky-400 font-bold text-sm">25%</span>
+            <div className="bg-[#0e0e17] p-2.5 rounded-lg border border-[#231c3a]">
+              <span className="text-slate-400 block text-[10px] font-display">Agroclimático</span>
+              <span className="text-sky-400 font-bold text-sm font-display">25%</span>
               <span className="text-[9px] text-slate-500 block">ZARC / INMET</span>
             </div>
-            <div className="bg-slate-950 p-2.5 rounded-lg border border-slate-800">
-              <span className="text-slate-400 block text-[10px]">Fiscal / Trab.</span>
-              <span className="text-amber-400 font-bold text-sm">20%</span>
+            <div className="bg-[#0e0e17] p-2.5 rounded-lg border border-[#231c3a]">
+              <span className="text-slate-400 block text-[10px] font-display">Fiscal / Trab.</span>
+              <span className="text-amber-400 font-bold text-sm font-display">20%</span>
               <span className="text-[9px] text-slate-500 block">PGFN / TST / Caixa</span>
             </div>
-            <div className="bg-slate-950 p-2.5 rounded-lg border border-slate-800">
-              <span className="text-slate-400 block text-[10px]">Cadastral</span>
-              <span className="text-teal-400 font-bold text-sm">15%</span>
+            <div className="bg-[#0e0e17] p-2.5 rounded-lg border border-[#231c3a]">
+              <span className="text-slate-400 block text-[10px] font-display">Cadastral</span>
+              <span className="text-teal-400 font-bold text-sm font-display">15%</span>
               <span className="text-[9px] text-slate-500 block">Receita / QSA</span>
             </div>
-            <div className="bg-slate-950 p-2.5 rounded-lg border border-slate-800 col-span-2 sm:col-span-1">
-              <span className="text-slate-400 block text-[10px]">Ambiental</span>
-              <span className="text-rose-400 font-bold text-sm">10%</span>
+            <div className="bg-[#0e0e17] p-2.5 rounded-lg border border-[#231c3a] col-span-2 sm:col-span-1">
+              <span className="text-slate-400 block text-[10px] font-display">Ambiental</span>
+              <span className="text-rose-400 font-bold text-sm font-display">10%</span>
               <span className="text-[9px] text-slate-500 block">SICAR / IBAMA</span>
             </div>
           </div>
-          <div className="bg-slate-950/70 p-3 rounded-xl border border-slate-800 text-[11px] flex items-center justify-between">
+          <div className="bg-[#0e0e17] p-3 rounded-xl border border-[#231c3a] text-[11px] flex items-center justify-between">
             <span className="text-slate-300">
               <strong>Decisão: </strong>
               Rating A (padrão) • B (120d) • C (CPR Física obrigatória) • D (Bloqueio / Alerta RJ).
@@ -224,9 +224,9 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
     },
     {
       stepNumber: 5,
-      badge: 'Cockpit & Simulador',
-      title: 'Cockpit EWS: Monitoramento Contínuo & Simulação ao Vivo',
-      subtitle: 'O entregável central do edital demonstrado em tempo real para a banca',
+      badge: 'Monitoramento & Alerta',
+      title: 'Sistema de Alerta Precoce (EWS): Monitoramento & Simulação',
+      subtitle: 'Gatilhos de alta precisão em tempo real e rotinas programadas',
       icon: ShieldAlert,
       color: 'rose',
       content: (
@@ -255,9 +255,9 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
             </div>
           </div>
 
-          <div className="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-[11px] text-emerald-300 flex items-center justify-between">
+          <div className="p-3 bg-[#141422] border border-[#6618F7]/40 rounded-xl text-[11px] text-[#a78bfa] flex items-center justify-between">
             <span>
-              💡 <strong>Dica para o Pitch:</strong> Na aba <em>"Cockpit EWS"</em>, use os botões do simulador para injetar uma execução judicial ao vivo na frente dos avaliadores!
+              💡 <strong>Dica Operacional:</strong> Na aba <em>"Alerta RJ"</em>, use os botões do simulador de cenários para testar o impacto de um novo evento de estresse sobre o rating do tomador.
             </span>
           </div>
         </div>
@@ -283,42 +283,42 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md overflow-y-auto animate-fade-in">
-      <div className="bg-slate-900 border border-slate-700 w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#000000]/90 backdrop-blur-md overflow-y-auto animate-fade-in">
+      <div className="bg-[#09090e] border border-[#231c3a] w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden flex flex-col">
         {/* Header with Step Progress */}
-        <div className="px-6 py-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/90">
+        <div className="px-6 py-4 border-b border-[#231c3a] flex items-center justify-between bg-[#000000]">
           <div className="flex items-center gap-2.5">
-            <div className="h-8 w-8 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+            <div className="h-8 w-8 rounded-xl bg-[#141422] border border-[#231c3a] flex items-center justify-center text-[#8b4dff]">
               <Sparkles className="h-4 w-4" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 className="text-sm font-bold text-white">
-                  Mini Tutorial Interativo Krill Tech
+                <h3 className="text-sm font-display font-bold text-white">
+                  Manual Operacional do Sistema
                 </h3>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-slate-800 text-emerald-400 border border-slate-700">
+                <span className="text-[10px] font-display px-2 py-0.5 rounded bg-[#141422] text-[#8b4dff] border border-[#231c3a]">
                   Etapa {currentStep + 1} de {steps.length}
                 </span>
               </div>
-              <p className="text-[11px] text-slate-400">
-                Guia prático de conceitos de risco agro e operação dos 4 agentes
+              <p className="text-[11px] text-slate-400 font-sans">
+                Guia prático de conceitos de risco agro e esteira de decisão • BRO-CODE SOFTWARES
               </p>
             </div>
           </div>
 
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
-            title="Fechar Tutorial (Esc)"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-[#141422] transition-colors"
+            title="Fechar Manual (Esc)"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
         {/* Progress Bar */}
-        <div className="w-full bg-slate-800 h-1">
+        <div className="w-full bg-[#141422] h-1">
           <div
-            className="bg-emerald-500 h-1 transition-all duration-500 ease-out"
+            className="bg-[#6618F7] h-1 transition-all duration-500 ease-out"
             style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
           />
         </div>
@@ -326,17 +326,17 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
         {/* Body Content */}
         <div className="p-6 space-y-4">
           <div className="flex items-start gap-3">
-            <div className="h-10 w-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5">
+            <div className="h-10 w-10 rounded-xl bg-[#141422] border border-[#231c3a] flex items-center justify-center text-[#8b4dff] shrink-0 mt-0.5">
               <Icon className="h-5 w-5" />
             </div>
             <div>
-              <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider block mb-0.5">
+              <span className="text-[10px] font-display font-bold text-[#8b4dff] uppercase tracking-wider block mb-0.5">
                 {current.badge}
               </span>
-              <h4 className="text-base font-bold text-white leading-snug">
+              <h4 className="text-base font-display font-black text-white leading-snug">
                 {current.title}
               </h4>
-              <p className="text-xs text-slate-400 mt-0.5">
+              <p className="text-xs text-slate-400 font-sans mt-0.5">
                 {current.subtitle}
               </p>
             </div>
@@ -348,7 +348,7 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
         </div>
 
         {/* Footer Navigation */}
-        <div className="px-6 py-4 border-t border-slate-800 bg-slate-950/80 flex items-center justify-between">
+        <div className="px-6 py-4 border-t border-[#231c3a] bg-[#000000] flex items-center justify-between">
           <div className="flex items-center gap-1.5">
             {steps.map((_, idx) => (
               <button
@@ -356,8 +356,8 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
                 onClick={() => setCurrentStep(idx)}
                 className={`h-2 rounded-full transition-all ${
                   idx === currentStep
-                    ? 'w-6 bg-emerald-400'
-                    : 'w-2 bg-slate-700 hover:bg-slate-600'
+                    ? 'w-6 bg-[#6618F7]'
+                    : 'w-2 bg-[#231c3a] hover:bg-[#6618F7]/50'
                 }`}
                 title={`Ir para etapa ${idx + 1}`}
               />
@@ -368,7 +368,7 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
             {currentStep > 0 && (
               <button
                 onClick={handlePrev}
-                className="px-3.5 py-1.5 rounded-xl text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 flex items-center gap-1.5 transition-all"
+                className="px-3.5 py-1.5 rounded-lg text-xs font-sans font-medium bg-[#141422] hover:bg-[#1c182c] text-slate-300 border border-[#231c3a] flex items-center gap-1.5 transition-all"
               >
                 <ArrowLeft className="h-3.5 w-3.5" />
                 <span>Anterior</span>
@@ -377,9 +377,9 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
 
             <button
               onClick={handleNext}
-              className="px-4 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 hover:brightness-110 shadow-md shadow-emerald-500/20 flex items-center gap-1.5 transition-all"
+              className="px-4 py-1.5 rounded-lg text-xs font-sans font-bold bg-[#6618F7] hover:bg-[#7b2cfa] text-white shadow-md shadow-[#6618F7]/30 flex items-center gap-1.5 transition-all"
             >
-              <span>{currentStep === steps.length - 1 ? 'Concluir e Explorar' : 'Próximo'}</span>
+              <span>{currentStep === steps.length - 1 ? 'Concluir' : 'Próximo'}</span>
               <ArrowRight className="h-3.5 w-3.5" />
             </button>
           </div>

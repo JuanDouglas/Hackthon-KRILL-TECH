@@ -65,15 +65,15 @@ export const OperationalActionCard: React.FC<OperationalActionCardProps> = ({
       ];
 
   return (
-    <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-5 h-full flex flex-col justify-between">
+    <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-6 shadow-2xl space-y-5 h-full flex flex-col justify-between">
       <div>
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-800">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#231c3a]">
           <div>
-            <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">
+            <span className="text-xs font-display font-bold text-[#8b4dff] uppercase tracking-wider">
               Diretriz Operacional Concreta
             </span>
-            <h3 className="text-base font-extrabold text-white mt-0.5">
+            <h3 className="text-base font-display font-black text-white mt-0.5">
               Recomendação para Comitê de Crédito
             </h3>
           </div>
@@ -81,7 +81,7 @@ export const OperationalActionCard: React.FC<OperationalActionCardProps> = ({
           <div className="flex items-center gap-2">
             <button
               onClick={handleCopySummary}
-              className="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center gap-1.5 transition-all active:scale-95"
+              className="px-3 py-1.5 rounded-lg text-xs font-sans font-semibold bg-[#141422] hover:bg-[#1c182c] text-slate-200 border border-[#231c3a] hover:border-[#6618F7]/40 flex items-center gap-1.5 transition-all active:scale-95"
               title="Copiar parecer formatado para colar em e-mail ou WhatsApp"
             >
               {copied ? <Check className="h-3.5 w-3.5 text-emerald-400" /> : <Copy className="h-3.5 w-3.5" />}
@@ -89,7 +89,7 @@ export const OperationalActionCard: React.FC<OperationalActionCardProps> = ({
             </button>
 
             <div
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold border flex items-center gap-1.5 ${
+              className={`px-3 py-1.5 rounded-lg text-xs font-display font-bold border flex items-center gap-1.5 ${
                 isBlock
                   ? 'bg-rose-500/20 text-rose-300 border-rose-500/30'
                   : isCprMandatory
@@ -107,64 +107,64 @@ export const OperationalActionCard: React.FC<OperationalActionCardProps> = ({
 
         {/* 3 Core Operational Pillars */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs pt-4">
-          <div className="bg-slate-950/70 p-3.5 rounded-xl border border-slate-800 flex flex-col justify-between">
+          <div className="bg-[#0e0e17] p-3.5 rounded-xl border border-[#231c3a] flex flex-col justify-between">
             <div>
-              <span className="text-slate-400 block mb-1 flex items-center gap-1.5 text-[11px]">
+              <span className="text-slate-400 block mb-1 flex items-center gap-1.5 text-[11px] font-display">
                 <Clock className="h-3.5 w-3.5 text-slate-400" />
                 <span>Prazo de Pagamento</span>
               </span>
-              <div className="text-base font-black font-mono text-white">
+              <div className="text-base font-black font-display text-white">
                 {recommendation.paymentTermsDays === 0
                   ? '0 dias (À Vista / Bloqueado)'
                   : `${recommendation.paymentTermsDays} dias (Safra)`}
               </div>
             </div>
-            <span className="text-[10px] text-slate-400 mt-2 block">
+            <span className="text-[10px] text-slate-500 mt-2 block font-sans">
               {isStandard ? 'Condição comercial ampla' : isReduced ? 'Prazo encurtado preventivo' : isCprMandatory ? 'Vencimento no ato da colheita' : 'Suspensão de concessão'}
             </span>
           </div>
 
-          <div className="bg-slate-950/70 p-3.5 rounded-xl border border-slate-800 flex flex-col justify-between">
+          <div className="bg-[#0e0e17] p-3.5 rounded-xl border border-[#231c3a] flex flex-col justify-between">
             <div>
-              <span className="text-slate-400 block mb-1 flex items-center gap-1.5 text-[11px]">
-                <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
+              <span className="text-slate-400 block mb-1 flex items-center gap-1.5 text-[11px] font-display">
+                <ShieldCheck className="h-3.5 w-3.5 text-[#8b4dff]" />
                 <span>Garantia Obrigatória</span>
               </span>
-              <div className="font-bold text-amber-300 text-xs leading-snug">
+              <div className="font-bold text-amber-300 text-xs leading-snug font-sans">
                 {recommendation.mandatoryCollateral}
               </div>
             </div>
-            <span className="text-[10px] text-slate-400 mt-2 block">
+            <span className="text-[10px] text-slate-500 mt-2 block font-sans">
               {isCprMandatory ? 'CPR Física com preferência legal de grãos' : 'Garantia usual de carteira'}
             </span>
           </div>
 
-          <div className="bg-slate-950/70 p-3.5 rounded-xl border border-slate-800 flex flex-col justify-between">
+          <div className="bg-[#0e0e17] p-3.5 rounded-xl border border-[#231c3a] flex flex-col justify-between">
             <div>
-              <span className="text-slate-400 block mb-1 flex items-center gap-1.5 text-[11px]">
+              <span className="text-slate-400 block mb-1 flex items-center gap-1.5 text-[11px] font-display">
                 <FileCheck2 className="h-3.5 w-3.5 text-sky-400" />
                 <span>Seguro Rural (PSR)</span>
               </span>
-              <div className="font-semibold text-slate-200 text-xs leading-snug">
+              <div className="font-semibold text-slate-200 text-xs leading-snug font-sans">
                 {recommendation.psrInsuranceRequirement}
               </div>
             </div>
-            <span className="text-[10px] text-slate-400 mt-2 block">
+            <span className="text-[10px] text-slate-500 mt-2 block font-sans">
               Penaliza o score, sem agir como veto bloqueante (2,3% PSR em 2025).
             </span>
           </div>
         </div>
 
         {/* Analyst Checklist */}
-        <div className="bg-slate-950/70 p-4 rounded-xl border border-slate-800 mt-4 text-xs">
-          <span className="text-slate-300 font-bold text-xs flex items-center gap-2 mb-2">
-            <ListChecks className="h-4 w-4 text-emerald-400" />
-            <span>Checklist de Providências para a Equipe Krill Tech:</span>
+        <div className="bg-[#0e0e17] p-4 rounded-xl border border-[#231c3a] mt-4 text-xs">
+          <span className="text-slate-300 font-bold text-xs flex items-center gap-2 mb-2 font-display">
+            <ListChecks className="h-4 w-4 text-[#8b4dff]" />
+            <span>Checklist de Providências para a Equipe de Crédito:</span>
           </span>
-          <div className="space-y-1.5 text-[11px] text-slate-300">
+          <div className="space-y-1.5 text-[11px] text-slate-300 font-sans">
             {checklistItems.map((item, idx) => (
               <div key={idx} className="flex items-start gap-2">
-                <span className="h-4 w-4 rounded bg-slate-900 border border-slate-700 flex items-center justify-center text-emerald-400 text-[9px] font-bold shrink-0 mt-0.5">
+                <span className="h-4 w-4 rounded bg-[#141422] border border-[#231c3a] flex items-center justify-center text-[#8b4dff] text-[9px] font-bold shrink-0 mt-0.5 font-display">
                   {idx + 1}
                 </span>
                 <span>{item}</span>

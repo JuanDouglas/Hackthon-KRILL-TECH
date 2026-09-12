@@ -157,33 +157,33 @@ export const ReportModal: React.FC<ReportModalProps> = ({
           </div>
 
           {/* Section 5: Fiduciary Alienation Stay Period Jurisprudence */}
-          <div className="bg-slate-950/70 p-4 rounded-xl border border-slate-800/80">
-            <h5 className="font-bold text-slate-300 text-xs uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+          <div className="bg-[#0e0e17] p-4 rounded-xl border border-[#231c3a]">
+            <h5 className="font-display font-bold text-slate-300 text-xs uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
               <Scale className="h-3.5 w-3.5 text-rose-400" />
               <span>5. Parecer Consultivo: Stay Period e Alienação Fiduciária (STJ)</span>
             </h5>
-            <p className="text-slate-300 leading-relaxed text-xs whitespace-pre-line">
+            <p className="text-slate-300 leading-relaxed text-xs whitespace-pre-line font-sans">
               {report.fiduciaryAlienationCaveatSection}
             </p>
           </div>
 
           {/* Full Markdown Preview Area */}
-          <div className="border-t border-slate-800 pt-4">
-            <span className="text-[11px] font-bold text-slate-400 block mb-2 font-mono">
+          <div className="border-t border-[#231c3a] pt-4">
+            <span className="text-[11px] font-display font-bold text-slate-400 block mb-2">
               Visualização de Código Markdown para Integração / API:
             </span>
-            <pre className="bg-slate-950 p-4 rounded-xl border border-slate-800 text-[10px] text-slate-400 font-mono overflow-x-auto max-h-48">
+            <pre className="bg-[#000000] p-4 rounded-xl border border-[#231c3a] text-[10px] text-slate-400 font-mono overflow-x-auto max-h-48">
               {report.fullMarkdownContent}
             </pre>
           </div>
         </div>
 
         {/* Modal Footer */}
-        <div className="px-6 py-3 border-t border-slate-800 bg-slate-950/90 flex items-center justify-between text-xs text-slate-400">
-          <span>Relatório gerado em conformidade com a Seção 6 do Edital Krill Tech</span>
+        <div className="px-6 py-3 border-t border-[#231c3a] bg-[#000000] flex items-center justify-between text-xs text-slate-400">
+          <span className="font-sans">Relatório executivo estruturado segundo padrão de comitê de crédito Krill Tech</span>
           <button
             onClick={onClose}
-            className="px-4 py-1.5 rounded-lg bg-slate-800 text-white hover:bg-slate-700 transition-all font-medium"
+            className="px-4 py-1.5 rounded-lg bg-[#6618F7] hover:bg-[#7b2cfa] text-white transition-all font-sans font-bold"
           >
             Fechar Visualização
           </button>

@@ -34,18 +34,18 @@ export const DueDiligenceView: React.FC<DueDiligenceViewProps> = ({
   return (
     <div className="space-y-6 animate-fade-in max-w-7xl mx-auto">
       {/* Top Banner */}
-      <div className="bg-gradient-to-r from-emerald-950/40 via-slate-900 to-slate-950 border border-emerald-500/30 rounded-2xl p-6 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-6 shadow-2xl flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1.5">
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-black bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 uppercase tracking-wider">
+            <span className="px-2.5 py-0.5 rounded text-xs font-display font-bold bg-[#6618F7]/20 text-[#a78bfa] border border-[#6618F7]/40 uppercase tracking-wider">
               Análise Pré-Crédito • Novos Clientes
             </span>
-            <span className="text-xs text-slate-400 font-mono">Fase 2 do Edital 01/2026</span>
+            <span className="text-xs text-slate-500 font-display">Módulo 2 • Due Diligence Pré-Crédito</span>
           </div>
-          <h2 className="text-2xl font-black text-white tracking-tight">
+          <h2 className="text-2xl font-display font-black text-white tracking-tight">
             Due Diligence Automatizada (Concessão da 1ª Linha)
           </h2>
-          <p className="text-xs text-slate-300 mt-1 max-w-3xl leading-relaxed">
+          <p className="text-xs text-slate-300 mt-1 max-w-3xl font-sans leading-relaxed">
             Investigação aprofundada antes de conceder a primeira linha de crédito comercial. Executa a esteira dos <strong>4 agentes autônomos</strong>, calcula o <strong>Scorecard WoE (0 a 1000)</strong> com ZARC/INMET e emite o <strong>Dossiê Padronizado watsonx.ai</strong> com diretrizes de garantias reais (CPR Física / Barter).
           </p>
         </div>
@@ -53,9 +53,9 @@ export const DueDiligenceView: React.FC<DueDiligenceViewProps> = ({
         {pipelineResult?.report && (
           <button
             onClick={onOpenReportModal}
-            className="px-4 py-2 rounded-xl text-xs font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/25 flex items-center gap-2 transition-all shrink-0 active:scale-95 shadow-lg"
+            className="px-4 py-2 rounded-lg text-xs font-sans font-bold bg-[#141422] text-[#a78bfa] border border-[#6618F7]/50 hover:bg-[#6618F7]/20 hover:border-[#6618F7] flex items-center gap-2 transition-all shrink-0 active:scale-95 shadow-lg"
           >
-            <Sparkles className="h-4 w-4" />
+            <Sparkles className="h-4 w-4 text-[#8b4dff]" />
             <span>Ver Dossiê watsonx.ai</span>
           </button>
         )}
@@ -99,6 +99,8 @@ export const DueDiligenceView: React.FC<DueDiligenceViewProps> = ({
                 ratingLabel={pipelineResult.scoreResult.recommendation.label}
                 derivedAgroScore={pipelineResult.agroAnalysis.derivedAgroScore}
                 evaluatedAt={pipelineResult.scoreResult.evaluatedAt}
+                temporalPd={pipelineResult.scoreResult.temporalPd}
+                orchestrateAction={pipelineResult.scoreResult.orchestrateAction}
               />
             </div>
             <div className="lg:col-span-7">

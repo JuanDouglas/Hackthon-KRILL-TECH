@@ -92,17 +92,17 @@ export const AgentPipelineVisualizer: React.FC<AgentPipelineVisualizerProps> = (
   ];
 
   return (
-    <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-xl">
+    <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-5 shadow-2xl">
       {/* Top action header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-[#231c3a]">
         <div>
           <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-            <h3 className="text-base font-bold text-white tracking-tight">
+            <span className="h-2 w-2 rounded-full bg-[#8b4dff] animate-pulse" />
+            <h3 className="text-base font-display font-black text-white tracking-tight">
               Esteira dos 4 Agentes Autônomos (Arquitetura Auditável)
             </h3>
           </div>
-          <p className="text-xs text-slate-400 mt-0.5">
+          <p className="text-xs text-slate-400 font-sans mt-0.5">
             Fluxo contínuo de dados das fontes públicas até o parecer executivo do comitê
           </p>
         </div>
@@ -110,10 +110,10 @@ export const AgentPipelineVisualizer: React.FC<AgentPipelineVisualizerProps> = (
         <div className="flex items-center gap-2.5">
           <button
             onClick={() => setShowConsole(!showConsole)}
-            className={`px-3 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 border transition-all ${
+            className={`px-3 py-2 rounded-lg text-xs font-sans font-semibold flex items-center gap-2 border transition-all ${
               showConsole
-                ? 'bg-slate-800 text-emerald-400 border-emerald-500/40'
-                : 'bg-slate-950 text-slate-400 border-slate-800 hover:text-white'
+                ? 'bg-[#141422] text-[#8b4dff] border-[#6618F7]/60'
+                : 'bg-[#0e0e17] text-slate-400 border-[#231c3a] hover:text-white'
             }`}
           >
             <Terminal className="h-4 w-4" />
@@ -124,10 +124,10 @@ export const AgentPipelineVisualizer: React.FC<AgentPipelineVisualizerProps> = (
           <button
             disabled={isRunning}
             onClick={onRunPipeline}
-            className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 shadow-lg transition-all ${
+            className={`px-4 py-2 rounded-lg text-xs font-sans font-bold flex items-center gap-2 shadow-lg transition-all ${
               isRunning
-                ? 'bg-slate-800 text-slate-400 cursor-not-allowed border border-slate-700'
-                : 'bg-gradient-to-r from-emerald-500 to-teal-400 text-slate-950 hover:brightness-110 shadow-emerald-500/20 active:scale-95'
+                ? 'bg-[#141422] text-slate-500 cursor-not-allowed border border-[#231c3a]'
+                : 'bg-[#6618F7] hover:bg-[#7b2cfa] text-white shadow-[#6618F7]/30 active:scale-95'
             }`}
           >
             {isRunning ? (
@@ -146,9 +146,9 @@ export const AgentPipelineVisualizer: React.FC<AgentPipelineVisualizerProps> = (
           {hasReport && (
             <button
               onClick={onOpenReportModal}
-              className="px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/20 transition-all flex items-center gap-1.5 shadow-sm active:scale-95"
+              className="px-3.5 py-2 rounded-lg text-xs font-sans font-bold bg-[#141422] text-[#a78bfa] border border-[#6618F7]/40 hover:bg-[#6618F7]/15 transition-all flex items-center gap-1.5 shadow-sm active:scale-95"
             >
-              <Sparkles className="h-3.5 w-3.5" />
+              <Sparkles className="h-3.5 w-3.5 text-[#8b4dff]" />
               <span>Dossiê watsonx</span>
             </button>
           )}
@@ -168,25 +168,25 @@ export const AgentPipelineVisualizer: React.FC<AgentPipelineVisualizerProps> = (
               key={agent.id}
               className={`relative rounded-2xl p-4 border transition-all flex flex-col justify-between ${
                 isCurrent
-                  ? 'bg-slate-900 border-emerald-500 ring-2 ring-emerald-500/20 shadow-xl shadow-emerald-500/10 scale-[1.02]'
+                  ? 'bg-[#0e0e17] border-[#6618F7] ring-2 ring-[#6618F7]/40 shadow-xl shadow-[#6618F7]/20 scale-[1.02]'
                   : isDone
-                  ? 'bg-slate-950/70 border-slate-800/90 hover:border-slate-700'
-                  : 'bg-slate-950/30 border-slate-900 opacity-60'
+                  ? 'bg-[#0e0e17] border-[#231c3a] hover:border-[#6618F7]/40'
+                  : 'bg-[#09090e] border-[#231c3a] opacity-50'
               }`}
             >
               <div>
                 {/* Step indicator header */}
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-[11px] font-mono font-bold text-slate-400 flex items-center gap-1">
+                  <span className="text-[11px] font-display font-bold text-slate-400 flex items-center gap-1">
                     <span>AGENTE {agent.stepNumber}</span>
                   </span>
                   <span
-                    className={`text-[10px] px-2 py-0.5 rounded-full font-bold uppercase ${
+                    className={`text-[10px] px-2 py-0.5 rounded font-display font-bold uppercase ${
                       isCurrent
-                        ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 animate-pulse'
+                        ? 'bg-[#6618F7]/30 text-white border border-[#6618F7] animate-pulse'
                         : isDone
-                        ? 'bg-teal-500/15 text-teal-300 border border-teal-500/30'
-                        : 'bg-slate-800 text-slate-500'
+                        ? 'bg-[#141422] text-[#a78bfa] border border-[#6618F7]/30'
+                        : 'bg-[#141422] text-slate-500'
                     }`}
                   >
                     {isCurrent ? 'Processando' : isDone ? 'Concluído' : 'Aguardando'}
@@ -198,23 +198,23 @@ export const AgentPipelineVisualizer: React.FC<AgentPipelineVisualizerProps> = (
                   <div
                     className={`h-9 w-9 rounded-xl flex items-center justify-center shrink-0 transition-transform ${
                       isCurrent
-                        ? 'bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/30 scale-110'
+                        ? 'bg-[#6618F7] text-white shadow-md shadow-[#6618F7]/40 scale-110'
                         : isDone
-                        ? 'bg-slate-800 text-emerald-400 border border-slate-700'
-                        : 'bg-slate-900 text-slate-600'
+                        ? 'bg-[#141422] text-[#8b4dff] border border-[#231c3a]'
+                        : 'bg-[#09090e] text-slate-600'
                     }`}
                   >
                     <Icon className="h-5 w-5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white leading-snug flex items-center gap-1.5">
+                    <h4 className="text-sm font-display font-bold text-white leading-snug flex items-center gap-1.5">
                       <span>{agent.title}</span>
                     </h4>
-                    <span className="text-[11px] text-slate-400 font-medium">{agent.subtitle}</span>
+                    <span className="text-[11px] text-slate-400 font-sans font-medium">{agent.subtitle}</span>
                   </div>
                 </div>
 
-                <p className="text-xs text-slate-400 mb-3 leading-relaxed">
+                <p className="text-xs text-slate-400 font-sans mb-3 leading-relaxed">
                   {agent.description}
                 </p>
               </div>
@@ -227,16 +227,16 @@ export const AgentPipelineVisualizer: React.FC<AgentPipelineVisualizerProps> = (
                     definition={agent.tooltip.definition}
                     sourceBadge={agent.tooltip.source}
                   >
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900 text-slate-300 border border-slate-800 inline-block hover:border-emerald-500/50 transition-colors">
+                    <span className="text-[10px] font-display px-2 py-0.5 rounded bg-[#141422] text-slate-300 border border-[#231c3a] inline-block hover:border-[#6618F7]/50 transition-colors">
                       ⚙️ {agent.technicalBadge}
                     </span>
                   </TooltipHelp>
                 </div>
 
                 {/* Data Handover preview */}
-                <div className="p-2 rounded-lg bg-slate-900/90 border border-slate-800/80 text-[10px] text-slate-400 flex items-center justify-between">
-                  <span className="text-slate-400">Entrega:</span>
-                  <span className="font-semibold text-slate-200">{agent.dataOutputPreview}</span>
+                <div className="p-2 rounded-lg bg-[#000000] border border-[#231c3a] text-[10px] text-slate-400 flex items-center justify-between">
+                  <span className="text-slate-500 font-sans">Entrega:</span>
+                  <span className="font-semibold text-slate-200 font-sans">{agent.dataOutputPreview}</span>
                 </div>
               </div>
 
@@ -244,7 +244,7 @@ export const AgentPipelineVisualizer: React.FC<AgentPipelineVisualizerProps> = (
               {idx < agentsConfig.length - 1 && (
                 <div className="hidden lg:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10">
                   <div className={`h-6 w-6 rounded-full flex items-center justify-center border ${
-                    isDone ? 'bg-slate-900 border-emerald-500/50 text-emerald-400' : 'bg-slate-950 border-slate-800 text-slate-600'
+                    isDone ? 'bg-[#141422] border-[#6618F7]/60 text-[#8b4dff]' : 'bg-[#09090e] border-[#231c3a] text-slate-600'
                   }`}>
                     <ArrowRight className="h-3.5 w-3.5" />
                   </div>
@@ -257,13 +257,13 @@ export const AgentPipelineVisualizer: React.FC<AgentPipelineVisualizerProps> = (
 
       {/* Real-time Console Log Accordion */}
       {showConsole && (
-        <div className="mt-5 p-4 rounded-2xl bg-slate-950 border border-slate-800 font-mono text-xs">
-          <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
-            <span className="text-emerald-400 font-semibold flex items-center gap-2">
+        <div className="mt-5 p-4 rounded-2xl bg-[#000000] border border-[#231c3a] font-mono text-xs">
+          <div className="flex items-center justify-between pb-3 mb-3 border-b border-[#231c3a]">
+            <span className="text-[#8b4dff] font-semibold flex items-center gap-2 font-display">
               <Terminal className="h-4 w-4" />
               <span>Console de Auditoria dos Agentes</span>
             </span>
-            <span className="text-slate-400 text-[11px]">
+            <span className="text-slate-500 text-[11px] font-display">
               {logs.length} eventos processados
             </span>
           </div>

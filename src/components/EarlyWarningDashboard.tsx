@@ -136,18 +136,18 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
         </div>
       </div>
 
-      {/* Interactive Simulation Cockpit for Pitch & Judges */}
-      <div className="bg-gradient-to-r from-slate-900 via-slate-900 to-slate-950 border-2 border-emerald-500/40 rounded-2xl p-6 shadow-2xl">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+      {/* Interactive Simulation Cockpit */}
+      <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-6 shadow-2xl">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#231c3a]">
           <div>
             <div className="flex items-center gap-2">
-              <Sparkles className="h-5 w-5 text-emerald-400" />
-              <h3 className="text-base font-bold text-white tracking-tight">
-                Simulador de Eventos de Estresse em Tempo Real (Pitch & Demonstração)
+              <Sparkles className="h-5 w-5 text-[#8b4dff]" />
+              <h3 className="text-base font-display font-bold text-white tracking-tight">
+                Simulador de Eventos de Estresse em Tempo Real
               </h3>
             </div>
-            <p className="text-xs text-slate-400 mt-0.5">
-              Injente eventos reais para ver o sistema detectar, reclassificar o score e disparar o alerta imediato
+            <p className="text-xs text-slate-400 font-sans mt-0.5">
+              Injete eventos reais para ver o sistema detectar, reclassificar o score e disparar o alerta imediato
             </p>
           </div>
 

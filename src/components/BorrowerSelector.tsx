@@ -31,42 +31,28 @@ export const BorrowerSelector: React.FC<BorrowerSelectorProps> = ({
   const pj = !isPF ? (selectedBorrower as AgroCompanyPJ) : null;
 
   return (
-    <div className={`rounded-2xl p-5 shadow-xl border transition-all ${
-      isPF 
-        ? 'bg-slate-900/80 border-emerald-500/30 ring-1 ring-emerald-500/10' 
-        : 'bg-slate-900/80 border-teal-500/30 ring-1 ring-teal-500/10'
-    }`}>
+    <div className="rounded-2xl p-5 shadow-2xl border transition-all bg-[#09090e] border-[#231c3a]">
       {/* Selector Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#231c3a]">
         <div>
           <div className="flex items-center gap-2">
-            <span className={`text-[10px] uppercase tracking-wider font-extrabold px-2 py-0.5 rounded-full ${
-              isPF 
-                ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30' 
-                : 'bg-teal-500/15 text-teal-400 border border-teal-500/30'
-            }`}>
+            <span className="text-[10px] font-display uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-[#6618F7]/20 text-[#a78bfa] border border-[#6618F7]/40">
               {isPF ? 'Pessoa Física • Produtor Rural' : 'Pessoa Jurídica • Revenda de Insumos'}
             </span>
-            <span className="text-slate-400 text-xs">• Caso Selecionado</span>
+            <span className="text-slate-500 font-sans text-xs">• Caso Selecionado</span>
           </div>
 
-          <h2 className="text-xl font-extrabold text-white flex items-center gap-2.5 mt-1">
-            {isPF ? (
-              <div className="h-7 w-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
-                <Sprout className="h-4 w-4" />
-              </div>
-            ) : (
-              <div className="h-7 w-7 rounded-lg bg-teal-500/20 text-teal-400 flex items-center justify-center">
-                <Store className="h-4 w-4" />
-              </div>
-            )}
+          <h2 className="text-xl font-display font-black text-white flex items-center gap-2.5 mt-1">
+            <div className="h-7 w-7 rounded-lg bg-[#6618F7]/20 text-[#8b4dff] flex items-center justify-center border border-[#6618F7]/30">
+              {isPF ? <Sprout className="h-4 w-4" /> : <Store className="h-4 w-4" />}
+            </div>
             <span>{selectedBorrower.name}</span>
           </h2>
         </div>
 
         {/* Quick Selection Presets */}
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-[11px] text-slate-400 mr-1 hidden sm:inline">Casos de Teste:</span>
+          <span className="text-[11px] font-display text-slate-400 mr-1 hidden sm:inline">Casos de Teste:</span>
           {MOCK_CASES.map((item) => {
             const isSelected = item.id === selectedBorrower.id;
             return (
@@ -74,17 +60,15 @@ export const BorrowerSelector: React.FC<BorrowerSelectorProps> = ({
                 key={item.id}
                 disabled={isRunningPipeline}
                 onClick={() => onSelectBorrower(item)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-all flex items-center gap-1.5 ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-sans font-medium transition-all flex items-center gap-1.5 ${
                   isSelected
-                    ? item.type === 'PF'
-                      ? 'bg-emerald-500 text-slate-950 font-bold shadow-lg shadow-emerald-500/20'
-                      : 'bg-teal-500 text-slate-950 font-bold shadow-lg shadow-teal-500/20'
-                    : 'bg-slate-950 text-slate-400 border border-slate-800 hover:border-slate-700 hover:text-white'
+                    ? 'bg-[#6618F7] text-white font-bold shadow-lg shadow-[#6618F7]/30'
+                    : 'bg-[#0e0e17] text-slate-400 border border-[#231c3a] hover:border-[#6618F7]/40 hover:text-white'
                 } ${isRunningPipeline ? 'opacity-50 cursor-not-allowed' : 'active:scale-95'}`}
               >
                 <span>{item.type === 'PF' ? '🌱' : '🏢'}</span>
                 <span>{item.name.split(' ')[0]}</span>
-                <span className="text-[10px] opacity-75 font-mono">({item.city})</span>
+                <span className="text-[10px] opacity-75 font-display">({item.city})</span>
               </button>
             );
           })}

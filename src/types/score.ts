@@ -39,6 +39,23 @@ export interface OperationalRecommendation {
   legalCaveatStayPeriod: string; // Ressalva de bens de capital essenciais no stay period (STJ)
 }
 
+export interface TemporalPdPrediction {
+  pd6MonthsPercent: number; // Probabilidade de Default em 6 meses (Seção 6 do Edital)
+  pd12MonthsPercent: number; // Probabilidade de Default em 12 meses
+  pd24MonthsPercent: number; // Probabilidade de Default em 24 meses
+  rjRiskHorizon: 'BAIXO' | 'MODERADO' | 'ELEVADO' | 'CRITICO';
+  confidenceIntervalPercent: number;
+}
+
+export interface OrchestrateAction {
+  actionTriggered: boolean;
+  targetSystem: 'SAP_S4HANA' | 'TOTVS_PROTHEUS' | 'INTERNAL_CREDIT_DESK';
+  actionType: 'ERP_CREDIT_LOCK' | 'REDUCE_TERMS' | 'EXPEDITE_GRAIN_ARREST' | 'STANDARD_APPROVAL';
+  status: 'EXECUTADO_T0H' | 'AGUARDANDO_COMITE' | 'CONCLUIDO';
+  timestamp: string;
+  auditHash: string;
+}
+
 export interface FullScoreResult {
   totalScore: number; // 0 a 1000
   rating: RatingBand;
@@ -47,6 +64,8 @@ export interface FullScoreResult {
   allRedFlags: RedFlag[];
   recommendation: OperationalRecommendation;
   evaluatedAt: string;
+  temporalPd: TemporalPdPrediction; // Horizontes de 6, 12 e 24 meses
+  orchestrateAction: OrchestrateAction; // Automação via watsonx Orchestrate
   derivedAgroClimaticScore: number; // 0 a 100
   zarcCompliance: {
     isInWindow: boolean;

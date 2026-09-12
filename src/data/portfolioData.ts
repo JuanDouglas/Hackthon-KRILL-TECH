@@ -184,6 +184,7 @@ export const INITIAL_ALERTS: EwsAlert[] = [
     newRating: 'D',
     timestamp: '2025-03-11 14:28',
     isRead: false,
+    isSimulated: false,
     actionRequired: 'Bloqueio imediato de novos limites; Notificação extrajudicial e retenção de recebíveis.',
   },
   {
@@ -201,6 +202,7 @@ export const INITIAL_ALERTS: EwsAlert[] = [
     newRating: 'D',
     timestamp: '2025-03-11 11:45',
     isRead: false,
+    isSimulated: false,
     actionRequired: 'Acionar comitê de crise jurídica; Mapear garantias fiduciárias e bens de capital essenciais.',
   },
   {
@@ -218,6 +220,7 @@ export const INITIAL_ALERTS: EwsAlert[] = [
     newRating: 'C',
     timestamp: '2025-03-10 18:10',
     isRead: false,
+    isSimulated: false,
     actionRequired: 'Exigir formalização imediata de CPR física com penhor de safra ou barter garantido.',
   },
   {
@@ -235,6 +238,7 @@ export const INITIAL_ALERTS: EwsAlert[] = [
     newRating: 'C',
     timestamp: '2025-03-09 11:15',
     isRead: true,
+    isSimulated: false,
     actionRequired: 'Solicitar comprovação de pagamento ou garantia do juízo para manter prazo de fornecimento.',
   },
 ];

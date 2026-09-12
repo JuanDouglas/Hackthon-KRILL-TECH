@@ -141,6 +141,8 @@ export function simulateMonitoringTrigger(
     timestamp,
     isRead: false,
     actionRequired,
+    isSimulated: true,
+    simulationScenario: 'Injeção de Teste / Bancada de Simulação',
   };
 
   const updatedEntity: Partial<PortfolioEntity> = {

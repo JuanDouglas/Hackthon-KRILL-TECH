@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Header, MainAppTab } from './components/Header';
+import { ExecutiveDashboardView } from './components/ExecutiveDashboardView';
 import { TriagemCadastralView } from './components/TriagemCadastralView';
 import { DueDiligenceView } from './components/DueDiligenceView';
 import { MonitoramentoCarteiraView } from './components/MonitoramentoCarteiraView';
@@ -7,6 +8,7 @@ import { AlertaPrecoceRJView } from './components/AlertaPrecoceRJView';
 import { PitchMethodologyView } from './components/PitchMethodologyView';
 import { ReportModal } from './components/ReportModal';
 import { MiniTutorialModal } from './components/MiniTutorialModal';
+import { TestBenchDrawer } from './components/TestBenchDrawer';
 
 import { MOCK_CASES, getCaseById } from './data/mockCases';
 import { INITIAL_PORTFOLIO, INITIAL_ALERTS } from './data/portfolioData';
@@ -16,7 +18,7 @@ import { EwsAlert, PortfolioEntity } from './types/monitoring';
 import { AgentStepLog } from './types/agents';
 
 export function App() {
-  const [activeTab, setActiveTab] = useState<MainAppTab>('triagem');
+  const [activeTab, setActiveTab] = useState<MainAppTab>('dashboard');
   const [selectedBorrower, setSelectedBorrower] = useState<Borrower>(MOCK_CASES[0]);
   const [isRunningPipeline, setIsRunningPipeline] = useState(false);
   const [activeAgentIndex, setActiveAgentIndex] = useState(0);
@@ -24,12 +26,13 @@ export function App() {
   const [pipelineResult, setPipelineResult] = useState<FullPipelineExecutionResult | null>(null);
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [isTutorialOpen, setIsTutorialOpen] = useState(false);
+  const [isTestBenchOpen, setIsTestBenchOpen] = useState(false);
 
   // Carteira e Alertas do EWS
   const [portfolio, setPortfolio] = useState<PortfolioEntity[]>(INITIAL_PORTFOLIO);
   const [alerts, setAlerts] = useState<EwsAlert[]>(INITIAL_ALERTS);
 
-  // Executa o pipeline imediatamente na inicialização ou troca de tomador
+  // Executa o pipeline na inicialização ou troca de tomador
   useEffect(() => {
     executePipelineForBorrower(selectedBorrower);
   }, [selectedBorrower.id]);
@@ -103,19 +106,31 @@ export function App() {
   const activeAlertCount = alerts.filter((a) => !a.isRead).length;
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-emerald-500 selection:text-slate-950">
-      {/* Header com as 4 visualizações oficiais segregadas */}
+    <div className="min-h-screen bg-[#000000] text-slate-100 flex flex-col font-sans selection:bg-[#6618F7] selection:text-white">
+      {/* Header com as visualizações e atalho para a bancada de testes */}
       <Header
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         activeAlertCount={activeAlertCount}
         totalExposureBrl={totalExposureBrl}
         onOpenTutorial={() => setIsTutorialOpen(true)}
+        onOpenTestBench={() => setIsTestBenchOpen(true)}
       />
 
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
-        {/* 1. Triagem Cadastral (Novos Clientes - Gate de Entrada) */}
+        {/* 0. Visão Geral / Dashboard Executivo da Carteira */}
+        {activeTab === 'dashboard' && (
+          <ExecutiveDashboardView
+            portfolio={portfolio}
+            alerts={alerts}
+            onNavigateTab={setActiveTab}
+            onOpenTestBench={() => setIsTestBenchOpen(true)}
+            onOpenTutorial={() => setIsTutorialOpen(true)}
+          />
+        )}
+
+        {/* 1. Triagem Cadastral (Novos Clientes - Gate de Entrada + Busca CNPJ) */}
         {activeTab === 'triagem' && (
           <TriagemCadastralView onProceedToDueDiligence={handleProceedFromTriagem} />
         )}
@@ -134,7 +149,7 @@ export function App() {
           />
         )}
 
-        {/* 3. Monitoramento Processual e Financeiro (Clientes Atuais - Carteira Ativa) */}
+        {/* 3. Monitoramento Processual e Financeiro (Clientes Atuais - Carteira Ativa + Simulação de Crise) */}
         {activeTab === 'monitoramento' && (
           <MonitoramentoCarteiraView
             portfolio={portfolio}
@@ -150,14 +165,24 @@ export function App() {
             onAddAlert={handleAddAlert}
             borrowersList={MOCK_CASES}
             onSelectClientForDeepDive={handleSelectClientForDeepDive}
+            onOpenTestBench={() => setIsTestBenchOpen(true)}
           />
         )}
 
-        {/* 5. Project Canvas & Pitch da Solução */}
+        {/* 5. Matriz Estratégica & Arquitetura da Plataforma */}
         {activeTab === 'canvas' && <PitchMethodologyView />}
       </main>
 
-      {/* Modal do Mini Tutorial Interativo (Guiado) */}
+      {/* Menu Lateral Desacoplado: Bancada de Testes & Simulação */}
+      <TestBenchDrawer
+        isOpen={isTestBenchOpen}
+        onClose={() => setIsTestBenchOpen(false)}
+        portfolio={portfolio}
+        borrowersList={MOCK_CASES}
+        onAddAlert={handleAddAlert}
+      />
+
+      {/* Modal do Manual Operacional */}
       <MiniTutorialModal
         isOpen={isTutorialOpen}
         onClose={() => setIsTutorialOpen(false)}
@@ -176,19 +201,44 @@ export function App() {
       />
 
       {/* Footer */}
-      <footer className="border-t border-slate-900 bg-slate-950 py-5 text-center text-xs text-slate-500">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <span>Krill Tech • Desafio PMI-DF & IBM • Edital 01/2026</span>
+      <footer className="border-t border-[#231c3a] bg-[#000000] py-6 text-center text-xs text-slate-500">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3">
+          <div className="flex flex-col sm:flex-row items-center gap-2">
+            <span className="font-display tracking-wider text-slate-300">
+              <strong className="text-white font-black">AGRO-STRESS DASHBOARD</strong> • Krill Tech Risk Engine
+            </span>
+            <span className="text-[#231c3a] hidden sm:inline">•</span>
+            <span className="text-slate-400 font-sans">
+              Desenvolvido pela equipe{' '}
+              <a
+                href="https://brocode.net.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#a78bfa] hover:text-white font-bold underline decoration-[#6618F7] transition-colors"
+                title="Acesse o site oficial da BroCode Softwares"
+              >
+                BroCode Softwares (brocode.net.br)
+              </a>
+            </span>
+          </div>
+
           <div className="flex items-center gap-3">
             <button
               onClick={() => setIsTutorialOpen(true)}
-              className="text-emerald-400 hover:underline font-medium text-[11px]"
+              className="text-[#8b4dff] hover:text-[#a78bfa] hover:underline font-medium text-[11px] cursor-pointer"
             >
-              Abrir Mini Tutorial
+              Manual Operacional
             </button>
-            <span className="text-slate-700">•</span>
-            <span className="font-mono text-[11px] text-slate-400">
-              Triagem • Due Diligence • Monitoramento • Alerta RJ
+            <span className="text-[#231c3a]">•</span>
+            <button
+              onClick={() => setIsTestBenchOpen(true)}
+              className="text-[#8b4dff] hover:text-[#a78bfa] hover:underline font-medium text-[11px] cursor-pointer"
+            >
+              Bancada de Testes
+            </button>
+            <span className="text-[#231c3a]">•</span>
+            <span className="font-display text-[11px] text-slate-500 tracking-wider hidden lg:inline">
+              Dashboard • Triagem • Due Diligence • Monitoramento • Alerta RJ
             </span>
           </div>
         </div>

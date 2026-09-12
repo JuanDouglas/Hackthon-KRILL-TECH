@@ -41,17 +41,17 @@ export const DimensionCards: React.FC<DimensionCardsProps> = ({ dimensions }) =>
   };
 
   return (
-    <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 shadow-xl">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-800">
+    <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-6 shadow-2xl">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-[#231c3a]">
         <div>
-          <span className="text-xs font-semibold text-emerald-400 uppercase tracking-wider">
+          <span className="text-xs font-display font-bold text-[#8b4dff] uppercase tracking-wider">
             Decomposição Analítica Ponderada
           </span>
-          <h3 className="text-base font-bold text-white mt-0.5">
+          <h3 className="text-base font-display font-black text-white mt-0.5">
             As 5 Dimensões Oficiais do Scorecard (Soma: 1000 pts)
           </h3>
         </div>
-        <div className="text-xs text-slate-400">
+        <div className="text-xs text-slate-400 font-sans">
           Pesos justificados por <span className="text-slate-200 font-semibold">relevância de sinal de risco</span>
         </div>
       </div>
@@ -65,31 +65,31 @@ export const DimensionCards: React.FC<DimensionCardsProps> = ({ dimensions }) =>
           return (
             <div
               key={dim.id}
-              className={`bg-slate-950/70 rounded-xl p-4 border transition-all flex flex-col justify-between ${
-                isExpanded ? 'border-emerald-500/50 ring-1 ring-emerald-500/20 shadow-lg' : 'border-slate-800/90 hover:border-slate-700'
+              className={`bg-[#0e0e17] rounded-xl p-4 border transition-all flex flex-col justify-between ${
+                isExpanded ? 'border-[#6618F7] ring-1 ring-[#6618F7]/40 shadow-lg' : 'border-[#231c3a] hover:border-[#6618F7]/40'
               }`}
             >
               <div>
                 {/* Header with weight and icon */}
                 <div className="flex items-center justify-between mb-2.5">
                   <div className="flex items-center gap-2">
-                    <div className="h-8 w-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-emerald-400">
+                    <div className="h-8 w-8 rounded-lg bg-[#141422] border border-[#231c3a] flex items-center justify-center text-[#8b4dff]">
                       <Icon className="h-4 w-4" />
                     </div>
-                    <span className="text-xs font-extrabold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    <span className="text-xs font-display font-black px-2 py-0.5 rounded bg-[#6618F7]/20 text-[#a78bfa] border border-[#6618F7]/30">
                       {dim.weightPercent}%
                     </span>
                   </div>
-                  <span className="font-mono text-xs font-bold text-white">
+                  <span className="font-display text-xs font-bold text-white">
                     {dim.earnedScore} <span className="text-[10px] text-slate-500 font-normal">/ {dim.maxScore} pts</span>
                   </span>
                 </div>
 
-                <h4 className="text-xs font-bold text-slate-100 leading-snug mb-1">
+                <h4 className="text-xs font-display font-bold text-slate-100 leading-snug mb-1">
                   {dim.title}
                 </h4>
 
-                <span className="text-[10px] text-slate-400 block mb-2 font-mono truncate" title={dim.officialSource}>
+                <span className="text-[10px] text-slate-500 block mb-2 font-display truncate" title={dim.officialSource}>
                   Fonte: {dim.officialSource.split('/')[0]}
                 </span>
 
