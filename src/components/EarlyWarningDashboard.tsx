@@ -83,81 +83,81 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
     <div className="space-y-6">
       {/* Top Banner with KPIs */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-lg">
-          <div className="flex items-center justify-between text-xs text-slate-400 mb-1">
+        <div className="bg-stone-900/80 border border-stone-800 rounded-2xl p-5 shadow-lg">
+          <div className="flex items-center justify-between text-xs text-stone-400 mb-1">
             <span>Exposição Monitorada</span>
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
           </div>
           <div className="text-2xl font-black font-mono text-white">
             R$ {(totalExposure / 1000000).toFixed(1)}M
           </div>
-          <p className="text-[11px] text-slate-400 mt-1">
+          <p className="text-[11px] text-stone-400 mt-1">
             {portfolio.length} clientes ativos na carteira Krill Tech
           </p>
         </div>
 
-        <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-lg">
-          <div className="flex items-center justify-between text-xs text-slate-400 mb-1">
+        <div className="bg-stone-900/80 border border-stone-800 rounded-2xl p-5 shadow-lg">
+          <div className="flex items-center justify-between text-xs text-stone-400 mb-1">
             <span>Exposição em Risco (C & D)</span>
             <TrendingDown className="h-4 w-4 text-rose-400" />
           </div>
           <div className="text-2xl font-black font-mono text-rose-400">
             R$ {(highRiskExposure / 1000000).toFixed(1)}M
           </div>
-          <p className="text-[11px] text-slate-400 mt-1">
+          <p className="text-[11px] text-stone-400 mt-1">
             {criticalCount + highRiskCount} clientes sob alerta de insolvência
           </p>
         </div>
 
-        <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-lg">
-          <div className="flex items-center justify-between text-xs text-slate-400 mb-1">
+        <div className="bg-stone-900/80 border border-stone-800 rounded-2xl p-5 shadow-lg">
+          <div className="flex items-center justify-between text-xs text-stone-400 mb-1">
             <span>Gatilhos Imediatos 24h</span>
             <Clock className="h-4 w-4 text-amber-400" />
           </div>
           <div className="text-2xl font-black font-mono text-amber-400">
             {alerts.filter((a) => a.frequency === 'IMMEDIATE_24H').length} alertas
           </div>
-          <p className="text-[11px] text-slate-400 mt-1">
+          <p className="text-[11px] text-stone-400 mt-1">
             Execuções e pedidos de RJ no DataJud
           </p>
         </div>
 
-        <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-lg">
-          <div className="flex items-center justify-between text-xs text-slate-400 mb-1">
+        <div className="bg-stone-900/80 border border-stone-800 rounded-2xl p-5 shadow-lg">
+          <div className="flex items-center justify-between text-xs text-stone-400 mb-1">
             <span>SLA de Alerta Precoce</span>
             <CheckCircle2 className="h-4 w-4 text-teal-400" />
           </div>
           <div className="text-2xl font-black font-mono text-teal-400">
             &lt; 24 horas
           </div>
-          <p className="text-[11px] text-slate-400 mt-1">
+          <p className="text-[11px] text-stone-400 mt-1">
             Tempo médio de detecção pós-distribuição
           </p>
         </div>
       </div>
 
       {/* Interactive Simulation Cockpit */}
-      <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-6 shadow-2xl">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#231c3a]">
+      <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-6 shadow-2xl">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-[#2E2A22]">
           <div>
             <div className="flex items-center gap-2">
-              <Sparkles className="h-5 w-5 text-[#8b4dff]" />
+              <Sparkles className="h-5 w-5 text-[#E0A94E]" />
               <h3 className="text-base font-display font-bold text-white tracking-tight">
                 Simulador de Eventos de Estresse em Tempo Real
               </h3>
             </div>
-            <p className="text-xs text-slate-400 font-sans mt-0.5">
+            <p className="text-xs text-stone-400 font-sans mt-0.5">
               Injete eventos reais para ver o sistema detectar, reclassificar o score e disparar o alerta imediato
             </p>
           </div>
 
           {/* Target Borrower Selector */}
           <div className="flex items-center gap-2 text-xs">
-            <span className="text-slate-400 font-medium">Alvo:</span>
+            <span className="text-stone-400 font-medium">Alvo:</span>
             <select
               value={targetBorrowerId}
               onChange={(e) => setTargetBorrowerId(e.target.value)}
-              className="bg-slate-950 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-slate-200 font-semibold focus:outline-none focus:border-emerald-500"
+              className="bg-stone-950 border border-stone-700 rounded-xl px-3 py-1.5 text-xs text-stone-200 font-semibold focus:outline-none focus:border-emerald-500"
             >
               {portfolio.map((p) => (
                 <option key={p.id} value={p.id}>
@@ -172,68 +172,68 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 pt-4">
           <button
             onClick={() => handleSimulate('DATAJUD_EXECUTION')}
-            className="p-3 rounded-xl bg-slate-950 hover:bg-slate-800 text-left border border-slate-800 hover:border-rose-500/50 transition-all group active:scale-95"
+            className="p-3 rounded-xl bg-stone-950 hover:bg-stone-800 text-left border border-stone-800 hover:border-rose-500/50 transition-all group active:scale-95"
           >
             <span className="text-[10px] font-mono text-rose-400 font-bold block mb-1">GATILHO 24H</span>
-            <span className="text-xs font-bold text-slate-200 group-hover:text-white block">
+            <span className="text-xs font-bold text-stone-200 group-hover:text-white block">
               + Execução Judicial
             </span>
-            <span className="text-[10px] text-slate-400 block mt-1">DataJud R$ 1.8M</span>
+            <span className="text-[10px] text-stone-400 block mt-1">DataJud R$ 1.8M</span>
           </button>
 
           <button
             onClick={() => handleSimulate('DATAJUD_RJ_FILING')}
-            className="p-3 rounded-xl bg-slate-950 hover:bg-slate-800 text-left border border-slate-800 hover:border-rose-500/50 transition-all group active:scale-95"
+            className="p-3 rounded-xl bg-stone-950 hover:bg-stone-800 text-left border border-stone-800 hover:border-rose-500/50 transition-all group active:scale-95"
           >
             <span className="text-[10px] font-mono text-rose-400 font-bold block mb-1">ALERTA MÁXIMO</span>
-            <span className="text-xs font-bold text-slate-200 group-hover:text-white block">
+            <span className="text-xs font-bold text-stone-200 group-hover:text-white block">
               Distribuição de RJ
             </span>
-            <span className="text-[10px] text-slate-400 block mt-1">Stay Period Iminente</span>
+            <span className="text-[10px] text-stone-400 block mt-1">Stay Period Iminente</span>
           </button>
 
           <button
             onClick={() => handleSimulate('PGFN_ACTIVE_DEBT')}
-            className="p-3 rounded-xl bg-slate-950 hover:bg-slate-800 text-left border border-slate-800 hover:border-amber-500/50 transition-all group active:scale-95"
+            className="p-3 rounded-xl bg-stone-950 hover:bg-stone-800 text-left border border-stone-800 hover:border-amber-500/50 transition-all group active:scale-95"
           >
             <span className="text-[10px] font-mono text-amber-400 font-bold block mb-1">MENSAL AUTO</span>
-            <span className="text-xs font-bold text-slate-200 group-hover:text-white block">
+            <span className="text-xs font-bold text-stone-200 group-hover:text-white block">
               Inscrição Dívida Ativa
             </span>
-            <span className="text-[10px] text-slate-400 block mt-1">PGFN R$ 840k</span>
+            <span className="text-[10px] text-stone-400 block mt-1">PGFN R$ 840k</span>
           </button>
 
           <button
             onClick={() => handleSimulate('INMET_DROUGHT_SPIKE')}
-            className="p-3 rounded-xl bg-slate-950 hover:bg-slate-800 text-left border border-slate-800 hover:border-sky-500/50 transition-all group active:scale-95"
+            className="p-3 rounded-xl bg-stone-950 hover:bg-stone-800 text-left border border-stone-800 hover:border-sky-500/50 transition-all group active:scale-95"
           >
             <span className="text-[10px] font-mono text-sky-400 font-bold block mb-1">CHECK SAFRA</span>
-            <span className="text-xs font-bold text-slate-200 group-hover:text-white block">
+            <span className="text-xs font-bold text-stone-200 group-hover:text-white block">
               Seca Severa (-45%)
             </span>
-            <span className="text-[10px] text-slate-400 block mt-1">INMET Fase R4</span>
+            <span className="text-[10px] text-stone-400 block mt-1">INMET Fase R4</span>
           </button>
 
           <button
             onClick={() => handleSimulate('ZARC_WINDOW_VIOLATION')}
-            className="p-3 rounded-xl bg-slate-950 hover:bg-slate-800 text-left border border-slate-800 hover:border-amber-500/50 transition-all group active:scale-95"
+            className="p-3 rounded-xl bg-stone-950 hover:bg-stone-800 text-left border border-stone-800 hover:border-amber-500/50 transition-all group active:scale-95"
           >
             <span className="text-[10px] font-mono text-amber-400 font-bold block mb-1">RED FLAG SAFRA</span>
-            <span className="text-xs font-bold text-slate-200 group-hover:text-white block">
+            <span className="text-xs font-bold text-stone-200 group-hover:text-white block">
               Desvio Janela ZARC
             </span>
-            <span className="text-[10px] text-slate-400 block mt-1">+22 dias após prazo</span>
+            <span className="text-[10px] text-stone-400 block mt-1">+22 dias após prazo</span>
           </button>
 
           <button
             onClick={() => handleSimulate('QSA_SUSPICIOUS_CHANGE')}
-            className="p-3 rounded-xl bg-slate-950 hover:bg-slate-800 text-left border border-slate-800 hover:border-teal-500/50 transition-all group active:scale-95"
+            className="p-3 rounded-xl bg-stone-950 hover:bg-stone-800 text-left border border-stone-800 hover:border-teal-500/50 transition-all group active:scale-95"
           >
             <span className="text-[10px] font-mono text-teal-400 font-bold block mb-1">MENSAL AUTO</span>
-            <span className="text-xs font-bold text-slate-200 group-hover:text-white block">
+            <span className="text-xs font-bold text-stone-200 group-hover:text-white block">
               Mudança no QSA
             </span>
-            <span className="text-[10px] text-slate-400 block mt-1">Receita Federal</span>
+            <span className="text-[10px] text-stone-400 block mt-1">Receita Federal</span>
           </button>
         </div>
 
@@ -251,9 +251,9 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
       {/* Two columns: Alert Feed & Searchable Portfolio Table */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left: Alerts Feed (5 cols) */}
-        <div className="lg:col-span-5 bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-xl flex flex-col justify-between">
+        <div className="lg:col-span-5 bg-stone-900/80 border border-stone-800 rounded-2xl p-5 shadow-xl flex flex-col justify-between">
           <div>
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800 mb-4">
+            <div className="flex items-center justify-between pb-3 border-b border-stone-800 mb-4">
               <div className="flex items-center gap-2">
                 <Bell className="h-4 w-4 text-amber-400" />
                 <h4 className="text-sm font-bold text-white">
@@ -265,25 +265,25 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
               <div className="flex items-center gap-1 text-[11px]">
                 <button
                   onClick={() => setSelectedFreqFilter('ALL')}
-                  className={`px-2 py-0.5 rounded font-medium ${selectedFreqFilter === 'ALL' ? 'bg-slate-800 text-white font-bold' : 'text-slate-400'}`}
+                  className={`px-2 py-0.5 rounded font-medium ${selectedFreqFilter === 'ALL' ? 'bg-stone-800 text-white font-bold' : 'text-stone-400'}`}
                 >
                   Todos
                 </button>
                 <button
                   onClick={() => setSelectedFreqFilter('IMMEDIATE_24H')}
-                  className={`px-2 py-0.5 rounded font-medium ${selectedFreqFilter === 'IMMEDIATE_24H' ? 'bg-rose-500/20 text-rose-300 font-bold' : 'text-slate-400'}`}
+                  className={`px-2 py-0.5 rounded font-medium ${selectedFreqFilter === 'IMMEDIATE_24H' ? 'bg-rose-500/20 text-rose-300 font-bold' : 'text-stone-400'}`}
                 >
                   24h
                 </button>
                 <button
                   onClick={() => setSelectedFreqFilter('MONTHLY_AUTOMATED')}
-                  className={`px-2 py-0.5 rounded font-medium ${selectedFreqFilter === 'MONTHLY_AUTOMATED' ? 'bg-amber-500/20 text-amber-300 font-bold' : 'text-slate-400'}`}
+                  className={`px-2 py-0.5 rounded font-medium ${selectedFreqFilter === 'MONTHLY_AUTOMATED' ? 'bg-amber-500/20 text-amber-300 font-bold' : 'text-stone-400'}`}
                 >
                   Mensal
                 </button>
                 <button
                   onClick={() => setSelectedFreqFilter('SEASONAL_HARVEST')}
-                  className={`px-2 py-0.5 rounded font-medium ${selectedFreqFilter === 'SEASONAL_HARVEST' ? 'bg-sky-500/20 text-sky-300 font-bold' : 'text-slate-400'}`}
+                  className={`px-2 py-0.5 rounded font-medium ${selectedFreqFilter === 'SEASONAL_HARVEST' ? 'bg-sky-500/20 text-sky-300 font-bold' : 'text-stone-400'}`}
                 >
                   Safra
                 </button>
@@ -293,7 +293,7 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
             {/* Alert List */}
             <div className="space-y-3 max-h-[580px] overflow-y-auto pr-1">
               {filteredAlerts.length === 0 ? (
-                <div className="text-slate-400 text-xs text-center py-8">
+                <div className="text-stone-400 text-xs text-center py-8">
                   Nenhum alerta para o filtro selecionado.
                 </div>
               ) : (
@@ -305,7 +305,7 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
                         ? 'bg-rose-950/20 border-rose-500/30'
                         : alert.severity === 'HIGH'
                         ? 'bg-amber-950/20 border-amber-500/30'
-                        : 'bg-slate-950/70 border-slate-800'
+                        : 'bg-stone-950/70 border-stone-800'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1.5">
@@ -325,29 +325,29 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
                           : '🌾 Check Safra'}
                       </span>
 
-                      <span className="text-[10px] font-mono text-slate-400">{alert.timestamp}</span>
+                      <span className="text-[10px] font-mono text-stone-400">{alert.timestamp}</span>
                     </div>
 
                     <h5 className="font-bold text-white text-xs mb-1 leading-snug">
                       {alert.title}
                     </h5>
 
-                    <p className="text-[11px] text-slate-300 mb-2 leading-relaxed">
+                    <p className="text-[11px] text-stone-300 mb-2 leading-relaxed">
                       {alert.detail}
                     </p>
 
-                    <div className="bg-slate-950/80 p-2 rounded-lg border border-slate-800 text-[10px] space-y-1">
+                    <div className="bg-stone-950/80 p-2 rounded-lg border border-stone-800 text-[10px] space-y-1">
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Cliente / Tomador:</span>
-                        <span className="font-semibold text-slate-200">{alert.borrowerName}</span>
+                        <span className="text-stone-400">Cliente / Tomador:</span>
+                        <span className="font-semibold text-stone-200">{alert.borrowerName}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400">Impacto no Score:</span>
+                        <span className="text-stone-400">Impacto no Score:</span>
                         <span className="font-mono font-bold text-rose-400">
                           {alert.scoreImpact} pts (Rating {alert.previousRating} → {alert.newRating})
                         </span>
                       </div>
-                      <div className="pt-1 border-t border-slate-800 text-slate-300">
+                      <div className="pt-1 border-t border-stone-800 text-stone-300">
                         <strong className="text-amber-400">Ação Krill Tech: </strong>
                         <span>{alert.actionRequired}</span>
                       </div>
@@ -360,13 +360,13 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
         </div>
 
         {/* Right: Searchable Portfolio Monitor Table (7 cols) */}
-        <div className="lg:col-span-7 bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-xl space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800">
+        <div className="lg:col-span-7 bg-stone-900/80 border border-stone-800 rounded-2xl p-5 shadow-xl space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-800">
             <div>
               <h4 className="text-sm font-bold text-white">
                 Carteira sob Monitoramento ({filteredPortfolio.length})
               </h4>
-              <p className="text-[11px] text-slate-400">
+              <p className="text-[11px] text-stone-400">
                 Acompanhamento contínuo de exposição e reavaliação periódica
               </p>
             </div>
@@ -377,8 +377,8 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
                 onClick={() => setSelectedTypeFilter('ALL')}
                 className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
                   selectedTypeFilter === 'ALL'
-                    ? 'bg-slate-800 text-white font-bold border border-slate-700'
-                    : 'text-slate-400 hover:text-white'
+                    ? 'bg-stone-800 text-white font-bold border border-stone-700'
+                    : 'text-stone-400 hover:text-white'
                 }`}
               >
                 Todos
@@ -388,7 +388,7 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
                 className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
                   selectedTypeFilter === 'PF'
                     ? 'bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30'
-                    : 'text-slate-400 hover:text-white'
+                    : 'text-stone-400 hover:text-white'
                 }`}
               >
                 Produtor (PF)
@@ -398,7 +398,7 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
                 className={`px-2.5 py-1 rounded-lg font-medium transition-all ${
                   selectedTypeFilter === 'PJ'
                     ? 'bg-teal-500/20 text-teal-300 font-bold border border-teal-500/30'
-                    : 'text-slate-400 hover:text-white'
+                    : 'text-stone-400 hover:text-white'
                 }`}
               >
                 Revenda (PJ)
@@ -409,18 +409,18 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
           {/* Search bar and rating filter */}
           <div className="flex flex-col sm:flex-row items-center gap-3">
             <div className="relative flex-1 w-full">
-              <Search className="h-3.5 w-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+              <Search className="h-3.5 w-3.5 absolute left-3 top-1/2 -transtone-y-1/2 text-stone-400" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Buscar por nome, documento ou município..."
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-8 pr-3 py-1.5 text-xs text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors"
+                className="w-full bg-stone-950 border border-stone-800 rounded-xl pl-8 pr-3 py-1.5 text-xs text-stone-200 placeholder-stone-500 focus:outline-none focus:border-emerald-500 transition-colors"
               />
             </div>
 
             <div className="flex items-center gap-1 text-[11px] self-end sm:self-center shrink-0">
-              <span className="text-slate-400 text-xs mr-1 flex items-center gap-1">
+              <span className="text-stone-400 text-xs mr-1 flex items-center gap-1">
                 <Filter className="h-3 w-3" />
               </span>
               {(['ALL', 'A', 'B', 'C', 'D'] as const).map((r) => (
@@ -429,8 +429,8 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
                   onClick={() => setSelectedRatingFilter(r)}
                   className={`px-2 py-0.5 rounded font-bold ${
                     selectedRatingFilter === r
-                      ? 'bg-slate-800 text-white border border-slate-700'
-                      : 'text-slate-400 hover:text-white'
+                      ? 'bg-stone-800 text-white border border-stone-700'
+                      : 'text-stone-400 hover:text-white'
                   }`}
                 >
                   {r === 'ALL' ? 'Todos' : r}
@@ -443,7 +443,7 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
               <thead>
-                <tr className="border-b border-slate-800 text-slate-400 text-[10px] uppercase font-bold">
+                <tr className="border-b border-stone-800 text-stone-400 text-[10px] uppercase font-bold">
                   <th className="pb-2.5">Tomador</th>
                   <th className="pb-2.5">Local / Atividade</th>
                   <th className="pb-2.5 text-right">Exposição</th>
@@ -452,17 +452,17 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
                   <th className="pb-2.5 text-center">Ações</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800/60">
+              <tbody className="divide-y divide-stone-800/60">
                 {filteredPortfolio.length === 0 ? (
                   <tr>
-                    <td colSpan={6} className="text-center py-6 text-slate-500">
+                    <td colSpan={6} className="text-center py-6 text-stone-500">
                       Nenhum cliente encontrado para os critérios de busca.
                     </td>
                   </tr>
                 ) : (
                   filteredPortfolio.map((entity) => {
                     return (
-                      <tr key={entity.id} className="hover:bg-slate-800/40 transition-colors">
+                      <tr key={entity.id} className="hover:bg-stone-800/40 transition-colors">
                         <td className="py-3">
                           <div className="flex items-center gap-2">
                             {entity.type === 'PF' ? (
@@ -474,21 +474,21 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
                               <span className="font-bold text-white block leading-tight">
                                 {entity.name}
                               </span>
-                              <span className="text-[10px] font-mono text-slate-400">
+                              <span className="text-[10px] font-mono text-stone-400">
                                 {entity.document}
                               </span>
                             </div>
                           </div>
                         </td>
 
-                        <td className="py-3 text-slate-300">
+                        <td className="py-3 text-stone-300">
                           <span>{entity.location}</span>
-                          <span className="text-[10px] text-slate-400 block">
+                          <span className="text-[10px] text-stone-400 block">
                             {entity.cropOrSector}
                           </span>
                         </td>
 
-                        <td className="py-3 text-right font-mono font-bold text-slate-200">
+                        <td className="py-3 text-right font-mono font-bold text-stone-200">
                           R$ {(entity.exposureBrl / 1000).toLocaleString('pt-BR')}k
                         </td>
 
@@ -527,7 +527,7 @@ export const EarlyWarningDashboard: React.FC<EarlyWarningDashboardProps> = ({
                         <td className="py-3 text-center">
                           <button
                             onClick={() => onSelectBorrowerForAnalysis(entity.id)}
-                            className="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-300 text-[10px] font-bold transition-all flex items-center gap-1 mx-auto active:scale-95 shadow-sm"
+                            className="px-2.5 py-1 rounded-lg bg-stone-800 hover:bg-emerald-500 hover:text-stone-950 text-stone-300 text-[10px] font-bold transition-all flex items-center gap-1 mx-auto active:scale-95 shadow-sm"
                           >
                             <span>Analisar</span>
                             <ArrowUpRight className="h-3 w-3" />

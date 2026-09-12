@@ -59,26 +59,26 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
       icon: Lightbulb,
       color: 'emerald',
       content: (
-        <div className="space-y-3.5 text-xs text-slate-300">
+        <div className="space-y-3.5 text-xs text-stone-300">
           <p className="leading-relaxed">
             O agro brasileiro deixou de ser um segmento de baixa inadimplência por três motivos reais:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-1">
-            <div className="bg-slate-950/80 p-3.5 rounded-xl border border-slate-800">
+            <div className="bg-stone-950/80 p-3.5 rounded-xl border border-stone-800">
               <span className="text-amber-400 font-bold block mb-1">1. Marco Legal (Lei 14.112)</span>
-              <p className="text-[11px] text-slate-300 leading-relaxed">
+              <p className="text-[11px] text-stone-300 leading-relaxed">
                 Permite Recuperação Judicial para produtor rural pessoa física com apenas <strong>2 anos de LCDPR</strong> ou inscrição estadual, derrubando a barreira judicial de entrada.
               </p>
             </div>
-            <div className="bg-slate-950/80 p-3.5 rounded-xl border border-slate-800">
+            <div className="bg-stone-950/80 p-3.5 rounded-xl border border-stone-800">
               <span className="text-rose-400 font-bold block mb-1">2. Colapso do PSR (2,3%)</span>
-              <p className="text-[11px] text-slate-300 leading-relaxed">
+              <p className="text-[11px] text-stone-300 leading-relaxed">
                 O Seguro Rural cobriu apenas <strong>2,3% a 3,3% da área em 2025</strong> (pior nível desde 2006). Sem o Estado absorvendo o risco climático, ele recai direto na Krill Tech.
               </p>
             </div>
-            <div className="bg-slate-950/80 p-3.5 rounded-xl border border-slate-800">
+            <div className="bg-stone-950/80 p-3.5 rounded-xl border border-stone-800">
               <span className="text-sky-400 font-bold block mb-1">3. Efeito Cascata Comprovado</span>
-              <p className="text-[11px] text-slate-300 leading-relaxed">
+              <p className="text-[11px] text-stone-300 leading-relaxed">
                 A <strong>TerraMagna</strong>, maior agfintech da América Latina com satélite e IA, ficou com <strong>R$ 28 milhões</strong> a receber na RJ da AgroGalaxy. A solução não elimina o risco: ela oferece <em>Alerta Precoce</em>.
               </p>
             </div>
@@ -94,7 +94,7 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
       icon: User,
       color: 'teal',
       content: (
-        <div className="space-y-3.5 text-xs text-slate-300">
+        <div className="space-y-3.5 text-xs text-stone-300">
           <p className="leading-relaxed">
             No Canvas e no Cockpit, tratamos PF e PJ separadamente porque a esteira de dados críticos muda:
           </p>
@@ -104,7 +104,7 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
                 <User className="h-4 w-4" />
                 <span>Produtor Rural Pessoa Física (PF)</span>
               </div>
-              <ul className="space-y-1.5 text-[11px] text-slate-300">
+              <ul className="space-y-1.5 text-[11px] text-stone-300">
                 <li className="flex items-start gap-1.5">
                   <span className="text-emerald-400">✓</span>
                   <span><strong>Elegibilidade de RJ:</strong> Art. 48 Lei 11.101 via Livro Caixa Digital (LCDPR) de 2 anos.</span>
@@ -121,7 +121,7 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
                 <Building2 className="h-4 w-4" />
                 <span>Agroindústria / Revenda Pessoa Jurídica (PJ)</span>
               </div>
-              <ul className="space-y-1.5 text-[11px] text-slate-300">
+              <ul className="space-y-1.5 text-[11px] text-stone-300">
                 <li className="flex items-start gap-1.5">
                   <span className="text-teal-400">✓</span>
                   <span><strong>Elegibilidade de RJ:</strong> Requisitos societários padrão (&gt; 2 anos, CNPJ regular).</span>
@@ -144,29 +144,29 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
       icon: Database,
       color: 'sky',
       content: (
-        <div className="space-y-3 text-xs text-slate-300">
+        <div className="space-y-3 text-xs text-stone-300">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
-            <div className="bg-slate-950 p-3 rounded-xl border border-slate-800">
+            <div className="bg-stone-950 p-3 rounded-xl border border-stone-800">
               <span className="text-emerald-400 font-bold block mb-1">01. Coletor & Parser</span>
-              <p className="text-[11px] text-slate-400">
+              <p className="text-[11px] text-stone-400">
                 8 fontes públicas gratuitas. Resolução técnica: DataJud indexado por tribunal + camada cross-court.
               </p>
             </div>
-            <div className="bg-slate-950 p-3 rounded-xl border border-slate-800">
+            <div className="bg-stone-950 p-3 rounded-xl border border-stone-800">
               <span className="text-sky-400 font-bold block mb-1">02. Risco Agroclimático</span>
-              <p className="text-[11px] text-slate-400">
+              <p className="text-[11px] text-stone-400">
                 ZARC é filtro categórico de janela MAPA, cruzado com INMET (30 anos), Conab e PSR.
               </p>
             </div>
-            <div className="bg-slate-950 p-3 rounded-xl border border-slate-800">
+            <div className="bg-stone-950 p-3 rounded-xl border border-stone-800">
               <span className="text-amber-400 font-bold block mb-1">03. Motor de Scoring</span>
-              <p className="text-[11px] text-slate-400">
+              <p className="text-[11px] text-stone-400">
                 Scorecard explicável Weight of Evidence (0-1000) e Matriz de 6 Red Flags operacionais.
               </p>
             </div>
-            <div className="bg-slate-950 p-3 rounded-xl border border-slate-800">
+            <div className="bg-stone-950 p-3 rounded-xl border border-stone-800">
               <span className="text-teal-400 font-bold block mb-1">04. Sintetizador watsonx</span>
-              <p className="text-[11px] text-slate-400">
+              <p className="text-[11px] text-stone-400">
                 Emite o Dossiê Padronizado com parecer sobre Stay Period e bens de capital essenciais no STJ.
               </p>
             </div>
@@ -182,39 +182,39 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
       icon: Cpu,
       color: 'amber',
       content: (
-        <div className="space-y-3.5 text-xs text-slate-300">
+        <div className="space-y-3.5 text-xs text-stone-300">
           <p className="leading-relaxed">
             Uma Probabilidade de Inadimplência (PD) estatística exige base histórica massiva de eventos de default que produtos novos não possuem. Como bureaus reais (<strong>Serasa e Boa Vista</strong>) fazem, adotamos um <strong>scorecard ponderado transparente</strong>:
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center text-[11px]">
-            <div className="bg-[#0e0e17] p-2.5 rounded-lg border border-[#231c3a]">
-              <span className="text-slate-400 block text-[10px] font-display">Processual</span>
-              <span className="text-[#8b4dff] font-bold text-sm font-display">30%</span>
-              <span className="text-[9px] text-slate-500 block">DataJud / DJEs</span>
+            <div className="bg-[#1C1915] p-2.5 rounded-lg border border-[#2E2A22]">
+              <span className="text-stone-400 block text-[10px] font-display">Processual</span>
+              <span className="text-[#E0A94E] font-bold text-sm font-display">30%</span>
+              <span className="text-[9px] text-stone-500 block">DataJud / DJEs</span>
             </div>
-            <div className="bg-[#0e0e17] p-2.5 rounded-lg border border-[#231c3a]">
-              <span className="text-slate-400 block text-[10px] font-display">Agroclimático</span>
+            <div className="bg-[#1C1915] p-2.5 rounded-lg border border-[#2E2A22]">
+              <span className="text-stone-400 block text-[10px] font-display">Agroclimático</span>
               <span className="text-sky-400 font-bold text-sm font-display">25%</span>
-              <span className="text-[9px] text-slate-500 block">ZARC / INMET</span>
+              <span className="text-[9px] text-stone-500 block">ZARC / INMET</span>
             </div>
-            <div className="bg-[#0e0e17] p-2.5 rounded-lg border border-[#231c3a]">
-              <span className="text-slate-400 block text-[10px] font-display">Fiscal / Trab.</span>
+            <div className="bg-[#1C1915] p-2.5 rounded-lg border border-[#2E2A22]">
+              <span className="text-stone-400 block text-[10px] font-display">Fiscal / Trab.</span>
               <span className="text-amber-400 font-bold text-sm font-display">20%</span>
-              <span className="text-[9px] text-slate-500 block">PGFN / TST / Caixa</span>
+              <span className="text-[9px] text-stone-500 block">PGFN / TST / Caixa</span>
             </div>
-            <div className="bg-[#0e0e17] p-2.5 rounded-lg border border-[#231c3a]">
-              <span className="text-slate-400 block text-[10px] font-display">Cadastral</span>
+            <div className="bg-[#1C1915] p-2.5 rounded-lg border border-[#2E2A22]">
+              <span className="text-stone-400 block text-[10px] font-display">Cadastral</span>
               <span className="text-teal-400 font-bold text-sm font-display">15%</span>
-              <span className="text-[9px] text-slate-500 block">Receita / QSA</span>
+              <span className="text-[9px] text-stone-500 block">Receita / QSA</span>
             </div>
-            <div className="bg-[#0e0e17] p-2.5 rounded-lg border border-[#231c3a] col-span-2 sm:col-span-1">
-              <span className="text-slate-400 block text-[10px] font-display">Ambiental</span>
+            <div className="bg-[#1C1915] p-2.5 rounded-lg border border-[#2E2A22] col-span-2 sm:col-span-1">
+              <span className="text-stone-400 block text-[10px] font-display">Ambiental</span>
               <span className="text-rose-400 font-bold text-sm font-display">10%</span>
-              <span className="text-[9px] text-slate-500 block">SICAR / IBAMA</span>
+              <span className="text-[9px] text-stone-500 block">SICAR / IBAMA</span>
             </div>
           </div>
-          <div className="bg-[#0e0e17] p-3 rounded-xl border border-[#231c3a] text-[11px] flex items-center justify-between">
-            <span className="text-slate-300">
+          <div className="bg-[#1C1915] p-3 rounded-xl border border-[#2E2A22] text-[11px] flex items-center justify-between">
+            <span className="text-stone-300">
               <strong>Decisão: </strong>
               Rating A (padrão) • B (120d) • C (CPR Física obrigatória) • D (Bloqueio / Alerta RJ).
             </span>
@@ -230,32 +230,32 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
       icon: ShieldAlert,
       color: 'rose',
       content: (
-        <div className="space-y-3.5 text-xs text-slate-300">
+        <div className="space-y-3.5 text-xs text-stone-300">
           <p className="leading-relaxed">
             O Sistema de Alerta Precoce opera em três cadências automatizadas:
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <div className="bg-rose-950/20 p-3 rounded-xl border border-rose-500/30">
               <span className="text-rose-300 font-bold block mb-1">⚡ Gatilho Imediato 24h</span>
-              <p className="text-[11px] text-slate-300">
+              <p className="text-[11px] text-stone-300">
                 Nova distribuição de ação de execução ou pedido de RJ no DataJud dispara reclassificação e notificação em até 24h.
               </p>
             </div>
             <div className="bg-amber-950/20 p-3 rounded-xl border border-amber-500/30">
               <span className="text-amber-300 font-bold block mb-1">📅 Verificação Mensal</span>
-              <p className="text-[11px] text-slate-300">
+              <p className="text-[11px] text-stone-300">
                 Varredura periódica de novas inscrições na PGFN, CNDT trabalhista e alterações no QSA de sócios.
               </p>
             </div>
             <div className="bg-sky-950/20 p-3 rounded-xl border border-sky-500/30">
               <span className="text-sky-300 font-bold block mb-1">🌾 Verificação de Safra</span>
-              <p className="text-[11px] text-slate-300">
+              <p className="text-[11px] text-stone-300">
                 Aderência à janela ZARC no plantio declarado + monitoramento da anomalia acumulada de chuva no INMET.
               </p>
             </div>
           </div>
 
-          <div className="p-3 bg-[#141422] border border-[#6618F7]/40 rounded-xl text-[11px] text-[#a78bfa] flex items-center justify-between">
+          <div className="p-3 bg-[#242019] border border-[#4A6FE0]/40 rounded-xl text-[11px] text-[#E0A94E] flex items-center justify-between">
             <span>
               💡 <strong>Dica Operacional:</strong> Na aba <em>"Alerta RJ"</em>, use os botões do simulador de cenários para testar o impacto de um novo evento de estresse sobre o rating do tomador.
             </span>
@@ -283,12 +283,12 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#000000]/90 backdrop-blur-md overflow-y-auto animate-fade-in">
-      <div className="bg-[#09090e] border border-[#231c3a] w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0D0C0A]/90 backdrop-blur-md overflow-y-auto animate-fade-in">
+      <div className="bg-[#151310] border border-[#2E2A22] w-full max-w-3xl rounded-2xl shadow-2xl overflow-hidden flex flex-col">
         {/* Header with Step Progress */}
-        <div className="px-6 py-4 border-b border-[#231c3a] flex items-center justify-between bg-[#000000]">
+        <div className="px-6 py-4 border-b border-[#2E2A22] flex items-center justify-between bg-[#0D0C0A]">
           <div className="flex items-center gap-2.5">
-            <div className="h-8 w-8 rounded-xl bg-[#141422] border border-[#231c3a] flex items-center justify-center text-[#8b4dff]">
+            <div className="h-8 w-8 rounded-xl bg-[#242019] border border-[#2E2A22] flex items-center justify-center text-[#E0A94E]">
               <Sparkles className="h-4 w-4" />
             </div>
             <div>
@@ -296,11 +296,11 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
                 <h3 className="text-sm font-display font-bold text-white">
                   Manual Operacional do Sistema
                 </h3>
-                <span className="text-[10px] font-display px-2 py-0.5 rounded bg-[#141422] text-[#8b4dff] border border-[#231c3a]">
+                <span className="text-[10px] font-display px-2 py-0.5 rounded bg-[#242019] text-[#E0A94E] border border-[#2E2A22]">
                   Etapa {currentStep + 1} de {steps.length}
                 </span>
               </div>
-              <p className="text-[11px] text-slate-400 font-sans">
+              <p className="text-[11px] text-stone-400 font-sans">
                 Guia prático de conceitos de risco agro e esteira de decisão • BRO-CODE SOFTWARES
               </p>
             </div>
@@ -308,7 +308,7 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
 
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-[#141422] transition-colors"
+            className="p-1.5 rounded-lg text-stone-400 hover:text-white hover:bg-[#242019] transition-colors"
             title="Fechar Manual (Esc)"
           >
             <X className="h-5 w-5" />
@@ -316,9 +316,9 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
         </div>
 
         {/* Progress Bar */}
-        <div className="w-full bg-[#141422] h-1">
+        <div className="w-full bg-[#242019] h-1">
           <div
-            className="bg-[#6618F7] h-1 transition-all duration-500 ease-out"
+            className="bg-[#4A6FE0] h-1 transition-all duration-500 ease-out"
             style={{ width: `${((currentStep + 1) / steps.length) * 100}%` }}
           />
         </div>
@@ -326,17 +326,17 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
         {/* Body Content */}
         <div className="p-6 space-y-4">
           <div className="flex items-start gap-3">
-            <div className="h-10 w-10 rounded-xl bg-[#141422] border border-[#231c3a] flex items-center justify-center text-[#8b4dff] shrink-0 mt-0.5">
+            <div className="h-10 w-10 rounded-xl bg-[#242019] border border-[#2E2A22] flex items-center justify-center text-[#E0A94E] shrink-0 mt-0.5">
               <Icon className="h-5 w-5" />
             </div>
             <div>
-              <span className="text-[10px] font-display font-bold text-[#8b4dff] uppercase tracking-wider block mb-0.5">
+              <span className="text-[10px] font-display font-bold text-[#E0A94E] uppercase tracking-wider block mb-0.5">
                 {current.badge}
               </span>
               <h4 className="text-base font-display font-black text-white leading-snug">
                 {current.title}
               </h4>
-              <p className="text-xs text-slate-400 font-sans mt-0.5">
+              <p className="text-xs text-stone-400 font-sans mt-0.5">
                 {current.subtitle}
               </p>
             </div>
@@ -348,7 +348,7 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
         </div>
 
         {/* Footer Navigation */}
-        <div className="px-6 py-4 border-t border-[#231c3a] bg-[#000000] flex items-center justify-between">
+        <div className="px-6 py-4 border-t border-[#2E2A22] bg-[#0D0C0A] flex items-center justify-between">
           <div className="flex items-center gap-1.5">
             {steps.map((_, idx) => (
               <button
@@ -356,8 +356,8 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
                 onClick={() => setCurrentStep(idx)}
                 className={`h-2 rounded-full transition-all ${
                   idx === currentStep
-                    ? 'w-6 bg-[#6618F7]'
-                    : 'w-2 bg-[#231c3a] hover:bg-[#6618F7]/50'
+                    ? 'w-6 bg-[#4A6FE0]'
+                    : 'w-2 bg-[#2E2A22] hover:bg-[#4A6FE0]/50'
                 }`}
                 title={`Ir para etapa ${idx + 1}`}
               />
@@ -368,7 +368,7 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
             {currentStep > 0 && (
               <button
                 onClick={handlePrev}
-                className="px-3.5 py-1.5 rounded-lg text-xs font-sans font-medium bg-[#141422] hover:bg-[#1c182c] text-slate-300 border border-[#231c3a] flex items-center gap-1.5 transition-all"
+                className="px-3.5 py-1.5 rounded-lg text-xs font-sans font-medium bg-[#242019] hover:bg-[#211D17] text-stone-300 border border-[#2E2A22] flex items-center gap-1.5 transition-all"
               >
                 <ArrowLeft className="h-3.5 w-3.5" />
                 <span>Anterior</span>
@@ -377,7 +377,7 @@ export const MiniTutorialModal: React.FC<MiniTutorialModalProps> = ({
 
             <button
               onClick={handleNext}
-              className="px-4 py-1.5 rounded-lg text-xs font-sans font-bold bg-[#6618F7] hover:bg-[#7b2cfa] text-white shadow-md shadow-[#6618F7]/30 flex items-center gap-1.5 transition-all"
+              className="px-4 py-1.5 rounded-lg text-xs font-sans font-bold bg-[#4A6FE0] hover:bg-[#6584E8] text-white shadow-md shadow-[#4A6FE0]/30 flex items-center gap-1.5 transition-all"
             >
               <span>{currentStep === steps.length - 1 ? 'Concluir' : 'Próximo'}</span>
               <ArrowRight className="h-3.5 w-3.5" />

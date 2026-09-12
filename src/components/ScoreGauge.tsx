@@ -80,13 +80,13 @@ export const ScoreGauge: React.FC<ScoreGaugeProps> = ({
   const strokeDashoffset = circumference - (progressPercent / 100) * circumference;
 
   return (
-    <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-5 shadow-2xl flex flex-col justify-between h-full space-y-4">
+    <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-5 shadow-2xl flex flex-col justify-between h-full space-y-4">
       <div>
         {/* Header */}
-        <div className="flex items-center justify-between pb-3 border-b border-[#231c3a]">
+        <div className="flex items-center justify-between pb-3 border-b border-[#2E2A22]">
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="text-[10px] font-display font-bold text-slate-400 uppercase tracking-wider">
+              <span className="text-[10px] font-display font-bold text-stone-400 uppercase tracking-wider">
                 Motor de Decisão & Scoring (Seção 6)
               </span>
               <TooltipHelp
@@ -115,7 +115,7 @@ export const ScoreGauge: React.FC<ScoreGaugeProps> = ({
                 cx="72"
                 cy="72"
                 r={radius}
-                stroke="#141422"
+                stroke="#242019"
                 strokeWidth="10"
                 fill="transparent"
               />
@@ -138,7 +138,7 @@ export const ScoreGauge: React.FC<ScoreGaugeProps> = ({
               <span className="text-2xl font-black font-display tracking-tight text-white">
                 {score}
               </span>
-              <span className="text-[9px] font-display font-bold text-slate-400 uppercase tracking-wider">
+              <span className="text-[9px] font-display font-bold text-stone-400 uppercase tracking-wider">
                 de 1000 pts
               </span>
               <span className={`text-[10px] font-display font-black mt-0.5 px-1.5 py-0.2 rounded ${currentConfig.bgColor} ${currentConfig.color}`}>
@@ -149,28 +149,28 @@ export const ScoreGauge: React.FC<ScoreGaugeProps> = ({
 
           {/* Enquadramento e contexto */}
           <div className="flex-1 space-y-2 text-xs w-full">
-            <div className="bg-[#0e0e17] p-3 rounded-xl border border-[#231c3a]">
+            <div className="bg-[#1C1915] p-3 rounded-xl border border-[#2E2A22]">
               <div className="flex items-center justify-between mb-1">
-                <span className="text-slate-400 text-[11px] font-medium">Faixa de Enquadramento:</span>
+                <span className="text-stone-400 text-[11px] font-medium">Faixa de Enquadramento:</span>
                 <span className={`font-bold font-display text-xs ${currentConfig.color}`}>{currentConfig.label}</span>
               </div>
-              <p className="text-slate-300 text-[11px] font-sans leading-relaxed">
+              <p className="text-stone-300 text-[11px] font-sans leading-relaxed">
                 {currentConfig.riskDesc}
               </p>
             </div>
 
             <div className="grid grid-cols-2 gap-2 text-[11px]">
-              <div className="bg-[#0e0e17] p-2 rounded-xl border border-[#231c3a]">
-                <span className="text-slate-400 block text-[9px] font-display">Índice Agroclimático:</span>
+              <div className="bg-[#1C1915] p-2 rounded-xl border border-[#2E2A22]">
+                <span className="text-stone-400 block text-[9px] font-display">Índice Agroclimático:</span>
                 <span className="font-display font-bold text-sky-400 text-xs">{derivedAgroScore}/100</span>
-                <span className="text-[8px] text-slate-500 block font-sans">ZARC + INMET</span>
+                <span className="text-[8px] text-stone-500 block font-sans">ZARC + INMET</span>
               </div>
-              <div className="bg-[#0e0e17] p-2 rounded-xl border border-[#231c3a]">
-                <span className="text-slate-400 block text-[9px] font-display">Escala Oficial:</span>
-                <span className="font-display font-bold text-slate-200 text-xs">
+              <div className="bg-[#1C1915] p-2 rounded-xl border border-[#2E2A22]">
+                <span className="text-stone-400 block text-[9px] font-display">Escala Oficial:</span>
+                <span className="font-display font-bold text-stone-200 text-xs">
                   {rating === 'A' ? '800–1000' : rating === 'B' ? '600–799' : rating === 'C' ? '400–599' : '< 400'}
                 </span>
-                <span className="text-[8px] text-slate-500 block font-sans">Faixa Regulatória</span>
+                <span className="text-[8px] text-stone-500 block font-sans">Faixa Regulatória</span>
               </div>
             </div>
           </div>
@@ -178,9 +178,9 @@ export const ScoreGauge: React.FC<ScoreGaugeProps> = ({
 
         {/* Horizonte Preditivo Temporal de Default (6, 12 e 24 Meses - Exigência do Edital) */}
         {temporalPd && (
-          <div className="bg-[#0e0e17] p-3.5 rounded-xl border border-purple-500/30 space-y-2">
+          <div className="bg-[#1C1915] p-3.5 rounded-xl border border-purple-500/30 space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-display font-bold text-[#a78bfa] uppercase tracking-wider flex items-center gap-1">
+              <span className="text-[10px] font-display font-bold text-[#E0A94E] uppercase tracking-wider flex items-center gap-1">
                 <Clock className="h-3 w-3" />
                 <span>Horizontes Preditivos de Default (PD)</span>
               </span>
@@ -190,15 +190,15 @@ export const ScoreGauge: React.FC<ScoreGaugeProps> = ({
             </div>
 
             <div className="grid grid-cols-3 gap-2 text-center">
-              <div className="p-2 rounded-lg bg-[#141422] border border-[#231c3a]">
-                <span className="text-[9px] text-slate-400 block font-display">Horizonte 6m</span>
+              <div className="p-2 rounded-lg bg-[#242019] border border-[#2E2A22]">
+                <span className="text-[9px] text-stone-400 block font-display">Horizonte 6m</span>
                 <span className="text-sm font-display font-black text-white">
                   {temporalPd.pd6MonthsPercent}%
                 </span>
               </div>
 
-              <div className="p-2 rounded-lg bg-[#141422] border border-[#231c3a]">
-                <span className="text-[9px] text-slate-400 block font-display">Horizonte 12m</span>
+              <div className="p-2 rounded-lg bg-[#242019] border border-[#2E2A22]">
+                <span className="text-[9px] text-stone-400 block font-display">Horizonte 12m</span>
                 <span className={`text-sm font-display font-black ${
                   temporalPd.pd12MonthsPercent > 30 ? 'text-rose-400' : temporalPd.pd12MonthsPercent > 15 ? 'text-amber-400' : 'text-emerald-400'
                 }`}>
@@ -206,8 +206,8 @@ export const ScoreGauge: React.FC<ScoreGaugeProps> = ({
                 </span>
               </div>
 
-              <div className="p-2 rounded-lg bg-[#141422] border border-[#231c3a]">
-                <span className="text-[9px] text-slate-400 block font-display">Horizonte 24m</span>
+              <div className="p-2 rounded-lg bg-[#242019] border border-[#2E2A22]">
+                <span className="text-[9px] text-stone-400 block font-display">Horizonte 24m</span>
                 <span className={`text-sm font-display font-black ${
                   temporalPd.pd24MonthsPercent > 50 ? 'text-rose-400' : temporalPd.pd24MonthsPercent > 20 ? 'text-amber-400' : 'text-emerald-400'
                 }`}>
@@ -220,10 +220,10 @@ export const ScoreGauge: React.FC<ScoreGaugeProps> = ({
 
         {/* watsonx Orchestrate Automation Trigger Indicator */}
         {orchestrateAction && orchestrateAction.actionTriggered && (
-          <div className="p-2.5 rounded-xl bg-purple-950/20 border border-[#6618F7]/50 flex items-center justify-between text-[11px] font-sans">
+          <div className="p-2.5 rounded-xl bg-purple-950/20 border border-[#4A6FE0]/50 flex items-center justify-between text-[11px] font-sans">
             <div className="flex items-center gap-2">
-              <Zap className="h-3.5 w-3.5 text-[#8b4dff]" />
-              <span className="text-slate-300">
+              <Zap className="h-3.5 w-3.5 text-[#E0A94E]" />
+              <span className="text-stone-300">
                 <strong>watsonx Orchestrate:</strong> {orchestrateAction.actionType === 'ERP_CREDIT_LOCK' ? 'Trava de Faturamento no SAP S/4HANA (T+0h)' : 'Notificação de Redução de Prazos no ERP'}
               </span>
             </div>
@@ -235,7 +235,7 @@ export const ScoreGauge: React.FC<ScoreGaugeProps> = ({
       </div>
 
       {/* Methodology Footer */}
-      <div className="pt-2 border-t border-[#231c3a] flex items-center justify-between text-[10px] text-slate-500">
+      <div className="pt-2 border-t border-[#2E2A22] flex items-center justify-between text-[10px] text-stone-500">
         <span className="font-sans">Scorecard WoE + Preditivo 6/12/24m calibrado.</span>
         <span className="font-display">{evaluatedAt}</span>
       </div>
