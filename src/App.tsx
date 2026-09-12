@@ -106,7 +106,7 @@ export function App() {
   const activeAlertCount = alerts.filter((a) => !a.isRead).length;
 
   return (
-    <div className="min-h-screen bg-[#000000] text-slate-100 flex flex-col font-sans selection:bg-[#6618F7] selection:text-white">
+    <div className="min-h-screen bg-[#0D0C0A] text-stone-100 flex flex-col font-sans selection:bg-[#4A6FE0] selection:text-white">
       {/* Header com as visualizações e atalho para a bancada de testes */}
       <Header
         activeTab={activeTab}
@@ -201,20 +201,20 @@ export function App() {
       />
 
       {/* Footer */}
-      <footer className="border-t border-[#231c3a] bg-[#000000] py-6 text-center text-xs text-slate-500">
+      <footer className="border-t border-[#2E2A22] bg-[#0D0C0A] py-6 text-center text-xs text-stone-500">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3">
           <div className="flex flex-col sm:flex-row items-center gap-2">
-            <span className="font-display tracking-wider text-slate-300">
+            <span className="font-display tracking-wider text-stone-300">
               <strong className="text-white font-black">AGRO-STRESS DASHBOARD</strong> • Krill Tech Risk Engine
             </span>
-            <span className="text-[#231c3a] hidden sm:inline">•</span>
-            <span className="text-slate-400 font-sans">
+            <span className="text-[#2E2A22] hidden sm:inline">•</span>
+            <span className="text-stone-400 font-sans">
               Desenvolvido pela equipe{' '}
               <a
                 href="https://brocode.net.br"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#a78bfa] hover:text-white font-bold underline decoration-[#6618F7] transition-colors"
+                className="text-[#E0A94E] hover:text-white font-bold underline decoration-[#4A6FE0] transition-colors"
                 title="Acesse o site oficial da BroCode Softwares"
               >
                 BroCode Softwares (brocode.net.br)
@@ -225,19 +225,19 @@ export function App() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setIsTutorialOpen(true)}
-              className="text-[#8b4dff] hover:text-[#a78bfa] hover:underline font-medium text-[11px] cursor-pointer"
+              className="text-[#E0A94E] hover:text-[#E0A94E] hover:underline font-medium text-[11px] cursor-pointer"
             >
               Manual Operacional
             </button>
-            <span className="text-[#231c3a]">•</span>
+            <span className="text-[#2E2A22]">•</span>
             <button
               onClick={() => setIsTestBenchOpen(true)}
-              className="text-[#8b4dff] hover:text-[#a78bfa] hover:underline font-medium text-[11px] cursor-pointer"
+              className="text-[#E0A94E] hover:text-[#E0A94E] hover:underline font-medium text-[11px] cursor-pointer"
             >
               Bancada de Testes
             </button>
-            <span className="text-[#231c3a]">•</span>
-            <span className="font-display text-[11px] text-slate-500 tracking-wider hidden lg:inline">
+            <span className="text-[#2E2A22]">•</span>
+            <span className="font-display text-[11px] text-stone-500 tracking-wider hidden lg:inline">
               Dashboard • Triagem • Due Diligence • Monitoramento • Alerta RJ
             </span>
           </div>

@@ -199,44 +199,44 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
   return (
     <div className="space-y-6 animate-fade-in max-w-7xl mx-auto pb-10">
       {/* Top Banner */}
-      <div className="bg-[#09090e] border border-[#231c3a] rounded-3xl p-6 sm:p-7 shadow-2xl flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="bg-[#151310] border border-[#2E2A22] rounded-3xl p-6 sm:p-7 shadow-2xl flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
           <div className="flex items-center gap-2 mb-1.5">
-            <span className="px-3 py-1 rounded-full text-xs font-display font-bold bg-[#6618F7]/20 text-[#a78bfa] border border-[#6618F7]/40 uppercase tracking-wider">
+            <span className="px-3 py-1 rounded-full text-xs font-display font-bold bg-[#4A6FE0]/20 text-[#E0A94E] border border-[#4A6FE0]/40 uppercase tracking-wider">
               Novos Clientes
             </span>
-            <span className="text-xs text-slate-500 font-display">Gate de Entrada • Triagem Cadastral Automatizada</span>
+            <span className="text-xs text-stone-500 font-display">Gate de Entrada • Triagem Cadastral Automatizada</span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-display font-black text-white tracking-tight">
             Triagem Cadastral & Admissibilidade
           </h2>
 
-          <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-3xl font-sans leading-relaxed">
+          <p className="text-xs sm:text-sm text-stone-300 mt-1 max-w-3xl font-sans leading-relaxed">
             Filtro de admissão pré-crédito com conferência de elegibilidade segundo o art. 48 da <strong>Lei 14.112/2020</strong> (comprovação temporal de 2 anos via LCDPR ou Junta Comercial) e regularidade fundiária no SICAR.
           </p>
         </div>
 
-        <div className="bg-[#0e0e17] p-4 rounded-2xl border border-[#231c3a] text-right shrink-0">
-          <div className="flex items-center justify-end gap-1.5 text-[10px] font-display uppercase tracking-wider text-slate-400 mb-0.5">
-            <Server className="h-3 w-3 text-[#8b4dff]" />
+        <div className="bg-[#1C1915] p-4 rounded-2xl border border-[#2E2A22] text-right shrink-0">
+          <div className="flex items-center justify-end gap-1.5 text-[10px] font-display uppercase tracking-wider text-stone-400 mb-0.5">
+            <Server className="h-3 w-3 text-[#E0A94E]" />
             <span>Gateway B2B Homologado</span>
           </div>
-          <span className="text-2xl font-black font-display text-[#8b4dff]">{prospects.length}</span>
-          <span className="text-[10px] text-slate-500 block font-sans">Cadastros indexados • SLA 99.9%</span>
+          <span className="text-2xl font-black font-display text-[#E0A94E]">{prospects.length}</span>
+          <span className="text-[10px] text-stone-500 block font-sans">Cadastros indexados • SLA 99.9%</span>
         </div>
       </div>
 
       {/* Real CNPJ / CPF Search Box */}
-      <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-6 shadow-2xl space-y-4">
+      <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-6 shadow-2xl space-y-4">
         <div className="flex items-center justify-between flex-wrap gap-2">
           <div className="flex items-center gap-2">
-            <Search className="h-4 w-4 text-[#8b4dff]" />
+            <Search className="h-4 w-4 text-[#E0A94E]" />
             <h3 className="text-sm font-display font-bold text-white uppercase tracking-wider">
               Consulta de Tomador por CNPJ ou CPF
             </h3>
           </div>
-          <span className="text-xs text-slate-400 font-sans flex items-center gap-1.5">
+          <span className="text-xs text-stone-400 font-sans flex items-center gap-1.5">
             <span className="h-2 w-2 rounded-full bg-emerald-400"></span>
             <span>Gateway de Dados B2B (BigDataCorp / Judit / Serasa Agro)</span>
           </span>
@@ -250,7 +250,7 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
               value={searchDocInput}
               onChange={(e) => setSearchDocInput(e.target.value)}
               placeholder="Digite o CNPJ ou CPF do novo tomador (ex: 29.384.112/0001-89)..."
-              className="w-full bg-[#0e0e17] border border-[#231c3a] focus:border-[#6618F7] focus:ring-1 focus:ring-[#6618F7] text-white text-xs sm:text-sm rounded-xl px-4 py-3 outline-none font-sans transition-all placeholder:text-slate-600"
+              className="w-full bg-[#1C1915] border border-[#2E2A22] focus:border-[#4A6FE0] focus:ring-1 focus:ring-[#4A6FE0] text-white text-xs sm:text-sm rounded-xl px-4 py-3 outline-none font-sans transition-all placeholder:text-stone-600"
               onKeyDown={(e) => {
                 if (e.key === 'Enter' && searchDocInput.trim()) {
                   handleExecuteSearch(searchDocInput);
@@ -262,7 +262,7 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
           <button
             onClick={() => handleExecuteSearch(searchDocInput || selectedProspect.document)}
             disabled={isSearching}
-            className="px-6 py-3 rounded-xl bg-[#6618F7] hover:bg-[#7b2cff] disabled:bg-[#6618F7]/50 text-white text-xs font-display font-bold shadow-lg shadow-[#6618F7]/30 flex items-center justify-center gap-2 transition-all cursor-pointer shrink-0 active:scale-95"
+            className="px-6 py-3 rounded-xl bg-[#4A6FE0] hover:bg-[#6584E8] disabled:bg-[#4A6FE0]/50 text-white text-xs font-display font-bold shadow-lg shadow-[#4A6FE0]/30 flex items-center justify-center gap-2 transition-all cursor-pointer shrink-0 active:scale-95"
           >
             {isSearching ? (
               <>
@@ -280,15 +280,15 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
 
         {/* Live Search Loading Animation */}
         {isSearching && (
-          <div className="p-3.5 rounded-xl bg-[#141422] border border-[#6618F7]/40 text-xs text-[#a78bfa] flex items-center gap-3 animate-pulse font-sans">
-            <RefreshCw className="h-4 w-4 animate-spin text-[#8b4dff]" />
+          <div className="p-3.5 rounded-xl bg-[#242019] border border-[#4A6FE0]/40 text-xs text-[#E0A94E] flex items-center gap-3 animate-pulse font-sans">
+            <RefreshCw className="h-4 w-4 animate-spin text-[#E0A94E]" />
             <span className="font-semibold">{searchProgressStep}</span>
           </div>
         )}
 
         {/* Quick Presets for Credit Operator / Demonstrations */}
-        <div className="pt-2 border-t border-[#231c3a] space-y-2">
-          <span className="text-[11px] font-display font-medium text-slate-400 block">
+        <div className="pt-2 border-t border-[#2E2A22] space-y-2">
+          <span className="text-[11px] font-display font-medium text-stone-400 block">
             Ou selecione um caso de teste para simulação imediata do operador:
           </span>
           <div className="flex flex-wrap gap-2">
@@ -307,14 +307,14 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
                   }}
                   className={`px-3 py-1.5 rounded-xl text-xs font-sans transition-all flex items-center gap-1.5 cursor-pointer ${
                     isSelected
-                      ? 'bg-[#6618F7] text-white font-bold shadow-lg shadow-[#6618F7]/30'
-                      : 'bg-[#0e0e17] text-slate-300 border border-[#231c3a] hover:border-[#6618F7]/40 hover:text-white'
+                      ? 'bg-[#4A6FE0] text-white font-bold shadow-lg shadow-[#4A6FE0]/30'
+                      : 'bg-[#1C1915] text-stone-300 border border-[#2E2A22] hover:border-[#4A6FE0]/40 hover:text-white'
                   }`}
                 >
                   <span>{p.type === 'PF' ? '🌱' : '🏢'}</span>
                   <span>{p.name.split(' ')[0]}</span>
                   <span className={`text-[10px] font-display px-1.5 py-0.2 rounded ${
-                    isReproved ? 'bg-rose-500/20 text-rose-300' : 'bg-[#141422] text-slate-400'
+                    isReproved ? 'bg-rose-500/20 text-rose-300' : 'bg-[#242019] text-stone-400'
                   }`}>
                     {isReproved ? 'Reprovado Gate' : p.type}
                   </span>
@@ -328,10 +328,10 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
       {/* Evaluation Checklist Cards: 3 Crucial Checks */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {/* Check 1: Receita Federal & Redesim */}
-        <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-5 shadow-xl flex flex-col justify-between">
+        <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-5 shadow-xl flex flex-col justify-between">
           <div>
-            <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#231c3a]">
-              <span className="text-[10px] font-display font-bold text-[#8b4dff] uppercase tracking-wider">
+            <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#2E2A22]">
+              <span className="text-[10px] font-display font-bold text-[#E0A94E] uppercase tracking-wider">
                 1. Receita Federal & Redesim
               </span>
               <CheckCircle2 className="h-4 w-4 text-emerald-400" />
@@ -341,21 +341,21 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
               {selectedProspect.name}
             </h4>
 
-            <p className="text-xs text-slate-400 font-display mb-3">
+            <p className="text-xs text-stone-400 font-display mb-3">
               {selectedProspect.type === 'PF' ? 'CPF' : 'CNPJ'}: {selectedProspect.document}
             </p>
 
-            <div className="space-y-2 text-xs text-slate-300 font-sans">
+            <div className="space-y-2 text-xs text-stone-300 font-sans">
               <div className="flex justify-between">
-                <span className="text-slate-500">Situação Cadastral:</span>
+                <span className="text-stone-500">Situação Cadastral:</span>
                 <span className="font-bold text-emerald-400">ATIVA</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Localização:</span>
+                <span className="text-stone-500">Localização:</span>
                 <span className="text-white font-medium">{selectedProspect.city}/{selectedProspect.state}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Segmento:</span>
+                <span className="text-stone-500">Segmento:</span>
                 <span className="text-white font-medium truncate max-w-[160px]">
                   {isPF ? pf?.crop : pj?.cnaeDescription}
                 </span>
@@ -363,17 +363,17 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
             </div>
           </div>
 
-          <div className="mt-4 pt-3 border-t border-[#231c3a] text-[11px] text-slate-400 font-sans flex items-center gap-1.5">
+          <div className="mt-4 pt-3 border-t border-[#2E2A22] text-[11px] text-stone-400 font-sans flex items-center gap-1.5">
             <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 shrink-0" />
             <span>Documento regular e ativo na base federal</span>
           </div>
         </div>
 
         {/* Check 2: Carência Legal de 2 Anos (Lei 14.112/2020) */}
-        <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-5 shadow-xl flex flex-col justify-between">
+        <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-5 shadow-xl flex flex-col justify-between">
           <div>
-            <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#231c3a]">
-              <span className="text-[10px] font-display font-bold text-[#8b4dff] uppercase tracking-wider">
+            <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#2E2A22]">
+              <span className="text-[10px] font-display font-bold text-[#E0A94E] uppercase tracking-wider">
                 2. Elegibilidade Legal (2 Anos)
               </span>
               {satisfiesLegalYears ? (
@@ -387,23 +387,23 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
               {isPF ? 'Livro Caixa Digital (LCDPR)' : 'Registro na Junta Comercial'}
             </h4>
 
-            <p className="text-xs text-slate-400 font-sans mb-3">
+            <p className="text-xs text-stone-400 font-sans mb-3">
               Art. 48, § 2º da Lei 11.101/2005 (Lei 14.112/2020)
             </p>
 
-            <div className="space-y-2 text-xs text-slate-300 font-sans">
+            <div className="space-y-2 text-xs text-stone-300 font-sans">
               <div className="flex justify-between">
-                <span className="text-slate-500">Tempo Comprovado:</span>
+                <span className="text-stone-500">Tempo Comprovado:</span>
                 <span className={`font-display font-bold ${satisfiesLegalYears ? 'text-emerald-400' : 'text-rose-400'}`}>
                   {yearsActive} {yearsActive === 1 ? 'ano' : 'anos'}
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Piso Legal Exigido:</span>
+                <span className="text-stone-500">Piso Legal Exigido:</span>
                 <span className="font-display text-white font-semibold">Mínimo 2 anos</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Enquadramento RJ:</span>
+                <span className="text-stone-500">Enquadramento RJ:</span>
                 <span className={`font-semibold ${satisfiesLegalYears ? 'text-emerald-400' : 'text-rose-400'}`}>
                   {satisfiesLegalYears ? 'Habilitado' : 'Vedado (< 2 anos)'}
                 </span>
@@ -411,7 +411,7 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
             </div>
           </div>
 
-          <div className="mt-4 pt-3 border-t border-[#231c3a] text-[11px] font-sans flex items-center gap-1.5">
+          <div className="mt-4 pt-3 border-t border-[#2E2A22] text-[11px] font-sans flex items-center gap-1.5">
             {satisfiesLegalYears ? (
               <span className="text-emerald-400 flex items-center gap-1">
                 <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
@@ -427,10 +427,10 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
         </div>
 
         {/* Check 3: SICAR / Regularidade Fundiária e Ambiental */}
-        <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-5 shadow-xl flex flex-col justify-between">
+        <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-5 shadow-xl flex flex-col justify-between">
           <div>
-            <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#231c3a]">
-              <span className="text-[10px] font-display font-bold text-[#8b4dff] uppercase tracking-wider">
+            <div className="flex items-center justify-between mb-3 pb-2 border-b border-[#2E2A22]">
+              <span className="text-[10px] font-display font-bold text-[#E0A94E] uppercase tracking-wider">
                 3. Regularidade SICAR / CAR
               </span>
               {!isPF || (!isCarReproved && !isCarPendente) ? (
@@ -446,13 +446,13 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
               {isPF ? 'Cadastro Ambiental Rural' : 'Licenciamento Ambiental & Filiais'}
             </h4>
 
-            <p className="text-xs text-slate-400 font-sans mb-3">
+            <p className="text-xs text-stone-400 font-sans mb-3">
               Base Nacional do SICAR & IBAMA
             </p>
 
-            <div className="space-y-2 text-xs text-slate-300 font-sans">
+            <div className="space-y-2 text-xs text-stone-300 font-sans">
               <div className="flex justify-between">
-                <span className="text-slate-500">Status no SICAR:</span>
+                <span className="text-stone-500">Status no SICAR:</span>
                 <span className={`font-display font-bold ${
                   !isPF || (!isCarReproved && !isCarPendente) ? 'text-emerald-400' : isCarPendente ? 'text-amber-400' : 'text-rose-400'
                 }`}>
@@ -460,13 +460,13 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Área Plantada:</span>
+                <span className="text-stone-500">Área Plantada:</span>
                 <span className="text-white font-medium">
                   {isPF ? `${pf?.plantedAreaHa} ha plantados` : 'N/A (Pessoa Jurídica)'}
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Conformidade ZARC:</span>
+                <span className="text-stone-500">Conformidade ZARC:</span>
                 <span className="font-semibold text-emerald-400">
                   {isPF ? (pf?.carStatus === 'SUSPENSO' ? 'Pendente' : 'Conforme Portaria') : 'Conforme CNAE'}
                 </span>
@@ -474,7 +474,7 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
             </div>
           </div>
 
-          <div className="mt-4 pt-3 border-t border-[#231c3a] text-[11px] font-sans flex items-center gap-1.5">
+          <div className="mt-4 pt-3 border-t border-[#2E2A22] text-[11px] font-sans flex items-center gap-1.5">
             {!isPF || (!isCarReproved && !isCarPendente) ? (
               <span className="text-emerald-400 flex items-center gap-1">
                 <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
@@ -497,10 +497,10 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
 
       {/* Compliance & Sigilo Fiscal: SPED LCDPR Cryptographic Hash Card */}
       {isPF && (
-        <div className="bg-[#0e0e17] border border-[#231c3a] rounded-2xl p-5 shadow-xl space-y-3">
+        <div className="bg-[#1C1915] border border-[#2E2A22] rounded-2xl p-5 shadow-xl space-y-3">
           <div className="flex items-center justify-between flex-wrap gap-2">
             <div className="flex items-center gap-2">
-              <KeyRound className="h-4 w-4 text-[#8b4dff]" />
+              <KeyRound className="h-4 w-4 text-[#E0A94E]" />
               <h4 className="text-xs font-display font-bold text-white uppercase tracking-wider">
                 Validação Criptográfica de Recibo SPED LCDPR (Sigilo Fiscal & LGPD)
               </h4>
@@ -510,27 +510,27 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
             </span>
           </div>
 
-          <p className="text-xs text-slate-300 font-sans leading-relaxed">
+          <p className="text-xs text-stone-300 font-sans leading-relaxed">
             Em conformidade com o <strong>Art. 198 do CTN (Sigilo Fiscal)</strong> e a <strong>LGPD (Lei 13.709/2018)</strong>, a Krill Tech não acessa bases fiscais restritas diretamente. A conferência do Livro Caixa Digital do Produtor Rural opera mediante validação matemática do hash do recibo oficial emitido pelo SPED/Receita Federal anexado pelo produtor com consentimento expresso ou via procuração digital e-CAC.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-            <div className="bg-[#09090e] p-3 rounded-xl border border-[#231c3a]">
-              <span className="text-[10px] font-display text-slate-500 block">Protocolo de Entrega SPED</span>
+            <div className="bg-[#151310] p-3 rounded-xl border border-[#2E2A22]">
+              <span className="text-[10px] font-display text-stone-500 block">Protocolo de Entrega SPED</span>
               <span className="text-xs font-mono font-bold text-white">
                 SPED-LCDPR-2024-{selectedProspect.state}-{selectedProspect.document.replace(/\D/g, '').substring(0, 6)}
               </span>
             </div>
 
-            <div className="bg-[#09090e] p-3 rounded-xl border border-[#231c3a]">
-              <span className="text-[10px] font-display text-slate-500 block">Hash SHA-256 da Assinatura</span>
-              <span className="text-xs font-mono font-bold text-[#8b4dff] truncate block">
+            <div className="bg-[#151310] p-3 rounded-xl border border-[#2E2A22]">
+              <span className="text-[10px] font-display text-stone-500 block">Hash SHA-256 da Assinatura</span>
+              <span className="text-xs font-mono font-bold text-[#E0A94E] truncate block">
                 0x{selectedProspect.document.replace(/\D/g, '').padEnd(16, 'a')}f9e8d7c6b5a41112
               </span>
             </div>
 
-            <div className="bg-[#09090e] p-3 rounded-xl border border-[#231c3a]">
-              <span className="text-[10px] font-display text-slate-500 block">Status Legal para RJ (Lei 14.112)</span>
+            <div className="bg-[#151310] p-3 rounded-xl border border-[#2E2A22]">
+              <span className="text-[10px] font-display text-stone-500 block">Status Legal para RJ (Lei 14.112)</span>
               <span className="text-xs font-sans font-bold text-emerald-400">
                 {satisfiesLegalYears ? 'Habilitado (Comprovado >= 2 anos)' : 'Inabilitado (< 2 anos)'}
               </span>
@@ -561,7 +561,7 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
               </span>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-200 font-sans leading-relaxed max-w-3xl">
+            <p className="text-xs sm:text-sm text-stone-200 font-sans leading-relaxed max-w-3xl">
               {gateReason}
             </p>
           </div>
@@ -570,7 +570,7 @@ export const TriagemCadastralView: React.FC<TriagemCadastralViewProps> = ({
             {gateStatus !== 'REPROVADO' ? (
               <button
                 onClick={() => onProceedToDueDiligence(selectedProspect)}
-                className="w-full md:w-auto px-6 py-3.5 rounded-xl bg-[#6618F7] hover:bg-[#7b2cff] text-white font-display font-bold text-xs shadow-xl shadow-[#6618F7]/30 flex items-center justify-center gap-2 transition-all cursor-pointer active:scale-95"
+                className="w-full md:w-auto px-6 py-3.5 rounded-xl bg-[#4A6FE0] hover:bg-[#6584E8] text-white font-display font-bold text-xs shadow-xl shadow-[#4A6FE0]/30 flex items-center justify-center gap-2 transition-all cursor-pointer active:scale-95"
               >
                 <span>Avançar para Due Diligence Automatizada</span>
                 <ArrowRight className="h-4 w-4" />

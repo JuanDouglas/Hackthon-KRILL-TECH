@@ -48,30 +48,30 @@ export const PitchMethodologyView: React.FC = () => {
   return (
     <div className="space-y-8 max-w-7xl mx-auto pb-12 animate-fade-in font-sans">
       {/* Strategic Header BroCode Style */}
-      <div className="bg-[#09090e] border border-[#231c3a] rounded-3xl p-6 sm:p-8 shadow-2xl space-y-5">
+      <div className="bg-[#151310] border border-[#2E2A22] rounded-3xl p-6 sm:p-8 shadow-2xl space-y-5">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="px-3 py-1 rounded-full text-xs font-display font-bold bg-[#6618F7]/20 text-[#a78bfa] border border-[#6618F7]/40 uppercase tracking-wider">
+              <span className="px-3 py-1 rounded-full text-xs font-display font-bold bg-[#4A6FE0]/20 text-[#E0A94E] border border-[#4A6FE0]/40 uppercase tracking-wider">
                 Defesa Técnica • Banca Avaliadora
               </span>
-              <span className="text-xs text-slate-500 font-display">Edital 01/2026 • Seção 7.1</span>
+              <span className="text-xs text-stone-500 font-display">Edital 01/2026 • Seção 7.1</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-display font-black text-white tracking-tight">
               Agro-Stress Dashboard: Defesa & Project Canvas
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-3xl font-sans leading-relaxed">
-              Apresentação formal da solução desenvolvida pela equipe <strong>BroCode Softwares</strong> (<a href="https://brocode.net.br" target="_blank" rel="noopener noreferrer" className="text-[#a78bfa] underline decoration-[#6618F7] hover:text-white">brocode.net.br</a>) para a Krill Tech. Alinhamento com jurisprudência do STJ, colapso histórico do PSR e arquitetura de custos de nível empresarial.
+            <p className="text-xs sm:text-sm text-stone-300 mt-1 max-w-3xl font-sans leading-relaxed">
+              Apresentação formal da solução desenvolvida pela equipe <strong>BroCode Softwares</strong> (<a href="https://brocode.net.br" target="_blank" rel="noopener noreferrer" className="text-[#E0A94E] underline decoration-[#4A6FE0] hover:text-white">brocode.net.br</a>) para a Krill Tech. Alinhamento com jurisprudência do STJ, colapso histórico do PSR e arquitetura de custos de nível empresarial.
             </p>
           </div>
 
-          <div className="flex items-center gap-2 shrink-0 bg-[#06060c] p-1.5 rounded-2xl border border-[#231c3a]">
+          <div className="flex items-center gap-2 shrink-0 bg-[#100E0B] p-1.5 rounded-2xl border border-[#2E2A22]">
             <button
               onClick={() => setActiveTab('canvas')}
               className={`px-4 py-2 rounded-xl text-xs font-display font-bold transition-all cursor-pointer ${
                 activeTab === 'canvas'
-                  ? 'bg-[#6618F7] text-white shadow-lg shadow-[#6618F7]/30'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-[#4A6FE0] text-white shadow-lg shadow-[#4A6FE0]/30'
+                  : 'text-stone-400 hover:text-white'
               }`}
             >
               Project Canvas (10 Blocos)
@@ -80,8 +80,8 @@ export const PitchMethodologyView: React.FC = () => {
               onClick={() => setActiveTab('finances')}
               className={`px-4 py-2 rounded-xl text-xs font-display font-bold transition-all cursor-pointer ${
                 activeTab === 'finances'
-                  ? 'bg-[#6618F7] text-white shadow-lg shadow-[#6618F7]/30'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-[#4A6FE0] text-white shadow-lg shadow-[#4A6FE0]/30'
+                  : 'text-stone-400 hover:text-white'
               }`}
             >
               TCO & ROI Interativo
@@ -90,8 +90,8 @@ export const PitchMethodologyView: React.FC = () => {
               onClick={() => setActiveTab('qa')}
               className={`px-4 py-2 rounded-xl text-xs font-display font-bold transition-all cursor-pointer ${
                 activeTab === 'qa'
-                  ? 'bg-[#6618F7] text-white shadow-lg shadow-[#6618F7]/30'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-[#4A6FE0] text-white shadow-lg shadow-[#4A6FE0]/30'
+                  : 'text-stone-400 hover:text-white'
               }`}
             >
               Arguições da Banca
@@ -100,35 +100,35 @@ export const PitchMethodologyView: React.FC = () => {
         </div>
 
         {/* 5 Weighted Evaluation Criteria Panel */}
-        <div className="pt-4 border-t border-[#231c3a] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-          <div className="p-3.5 rounded-2xl bg-[#0e0e17] border border-[#6618F7]/40 text-center">
-            <span className="text-xl font-display font-black text-[#8b4dff] block">25%</span>
+        <div className="pt-4 border-t border-[#2E2A22] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+          <div className="p-3.5 rounded-2xl bg-[#1C1915] border border-[#4A6FE0]/40 text-center">
+            <span className="text-xl font-display font-black text-[#E0A94E] block">25%</span>
             <span className="text-[11px] font-display font-bold text-white uppercase block mt-0.5">Diagnóstico & Impacto</span>
-            <span className="text-[9px] text-slate-400 font-sans block mt-1">Lei 14.112, PSR 2,3% e contágio de revendas</span>
+            <span className="text-[9px] text-stone-400 font-sans block mt-1">Lei 14.112, PSR 2,3% e contágio de revendas</span>
           </div>
 
-          <div className="p-3.5 rounded-2xl bg-[#0e0e17] border border-[#6618F7]/40 text-center">
-            <span className="text-xl font-display font-black text-[#8b4dff] block">25%</span>
+          <div className="p-3.5 rounded-2xl bg-[#1C1915] border border-[#4A6FE0]/40 text-center">
+            <span className="text-xl font-display font-black text-[#E0A94E] block">25%</span>
             <span className="text-[11px] font-display font-bold text-white uppercase block mt-0.5">Viabilidade & Execução</span>
-            <span className="text-[9px] text-slate-400 font-sans block mt-1">4 Agentes, watsonx Orchestrate e WoE</span>
+            <span className="text-[9px] text-stone-400 font-sans block mt-1">4 Agentes, watsonx Orchestrate e WoE</span>
           </div>
 
-          <div className="p-3.5 rounded-2xl bg-[#0e0e17] border border-[#6618F7]/40 text-center">
-            <span className="text-xl font-display font-black text-[#8b4dff] block">20%</span>
+          <div className="p-3.5 rounded-2xl bg-[#1C1915] border border-[#4A6FE0]/40 text-center">
+            <span className="text-xl font-display font-black text-[#E0A94E] block">20%</span>
             <span className="text-[11px] font-display font-bold text-white uppercase block mt-0.5">Negócios & Custos</span>
-            <span className="text-[9px] text-slate-400 font-sans block mt-1">Gateway B2B homologado e ROI de 815%</span>
+            <span className="text-[9px] text-stone-400 font-sans block mt-1">Gateway B2B homologado e ROI de 815%</span>
           </div>
 
-          <div className="p-3.5 rounded-2xl bg-[#0e0e17] border border-[#6618F7]/40 text-center">
-            <span className="text-xl font-display font-black text-[#8b4dff] block">15%</span>
+          <div className="p-3.5 rounded-2xl bg-[#1C1915] border border-[#4A6FE0]/40 text-center">
+            <span className="text-xl font-display font-black text-[#E0A94E] block">15%</span>
             <span className="text-[11px] font-display font-bold text-white uppercase block mt-0.5">Gestão de Mudanças</span>
-            <span className="text-[9px] text-slate-400 font-sans block mt-1">Trava ERP SAP/TOTVS T+0h sem atrito</span>
+            <span className="text-[9px] text-stone-400 font-sans block mt-1">Trava ERP SAP/TOTVS T+0h sem atrito</span>
           </div>
 
-          <div className="p-3.5 rounded-2xl bg-[#0e0e17] border border-[#6618F7]/40 text-center col-span-2 sm:col-span-1">
-            <span className="text-xl font-display font-black text-[#8b4dff] block">15%</span>
+          <div className="p-3.5 rounded-2xl bg-[#1C1915] border border-[#4A6FE0]/40 text-center col-span-2 sm:col-span-1">
+            <span className="text-xl font-display font-black text-[#E0A94E] block">15%</span>
             <span className="text-[11px] font-display font-bold text-white uppercase block mt-0.5">Pitch & Defesa</span>
-            <span className="text-[9px] text-slate-400 font-sans block mt-1">Jurisprudência STJ e proteção de colaterais</span>
+            <span className="text-[9px] text-stone-400 font-sans block mt-1">Jurisprudência STJ e proteção de colaterais</span>
           </div>
         </div>
       </div>
@@ -138,27 +138,27 @@ export const PitchMethodologyView: React.FC = () => {
         <div className="space-y-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="h-7 w-7 rounded-xl bg-[#141422] border border-[#231c3a] text-[#8b4dff] flex items-center justify-center font-display font-bold text-xs">
+              <span className="h-7 w-7 rounded-xl bg-[#242019] border border-[#2E2A22] text-[#E0A94E] flex items-center justify-center font-display font-bold text-xs">
                 10
               </span>
               <h3 className="text-lg font-display font-bold text-white">
                 Project Canvas Oficial Krill Tech (Edital 01/2026, Seção 7.1)
               </h3>
             </div>
-            <span className="text-xs text-slate-500 font-display">Apresentação executiva em grade unificada</span>
+            <span className="text-xs text-stone-500 font-display">Apresentação executiva em grade unificada</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3.5">
             {/* Bloco 1: Descrição do Problema */}
-            <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#6618F7]/40 transition-all">
+            <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#4A6FE0]/40 transition-all">
               <div>
                 <div className="flex items-center gap-2 text-amber-400 font-display font-bold text-xs mb-2">
                   <AlertOctagon className="h-4 w-4 shrink-0" />
                   <span>1. Descrição do Problema</span>
                 </div>
-                <div className="space-y-1.5 text-slate-300 text-[11px] font-sans">
+                <div className="space-y-1.5 text-stone-300 text-[11px] font-sans">
                   <p className="font-semibold text-white">Insolvência & RJs no Agro</p>
-                  <ul className="space-y-1 text-slate-400">
+                  <ul className="space-y-1 text-stone-400">
                     <li className="flex items-start gap-1.5">
                       <span className="text-amber-400">•</span>
                       <span>Alta de RJs pós-Lei 14.112 (carência 2 anos LCDPR).</span>
@@ -174,21 +174,21 @@ export const PitchMethodologyView: React.FC = () => {
                   </ul>
                 </div>
               </div>
-              <div className="pt-2 border-t border-[#231c3a] text-[10px] text-amber-400/90 font-display">
+              <div className="pt-2 border-t border-[#2E2A22] text-[10px] text-amber-400/90 font-display">
                 Impacto: Quebras súbitas e LGD elevado.
               </div>
             </div>
 
             {/* Bloco 2: Usuários e Beneficiários */}
-            <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#6618F7]/40 transition-all">
+            <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#4A6FE0]/40 transition-all">
               <div>
                 <div className="flex items-center gap-2 text-sky-400 font-display font-bold text-xs mb-2">
                   <Users className="h-4 w-4 shrink-0" />
                   <span>2. Usuários & Beneficiários</span>
                 </div>
-                <div className="space-y-1.5 text-slate-300 text-[11px] font-sans">
+                <div className="space-y-1.5 text-stone-300 text-[11px] font-sans">
                   <p className="font-semibold text-white">Mesa de Crédito & Ecossistema</p>
-                  <ul className="space-y-1 text-slate-400">
+                  <ul className="space-y-1 text-stone-400">
                     <li className="flex items-start gap-1.5">
                       <span className="text-sky-400">•</span>
                       <span><strong>Primários:</strong> Analistas, comitê de crédito e CFO.</span>
@@ -204,51 +204,51 @@ export const PitchMethodologyView: React.FC = () => {
                   </ul>
                 </div>
               </div>
-              <div className="pt-2 border-t border-[#231c3a] text-[10px] text-sky-400/90 font-display">
+              <div className="pt-2 border-t border-[#2E2A22] text-[10px] text-sky-400/90 font-display">
                 Foco: Decisão ágil na esteira diária.
               </div>
             </div>
 
             {/* Bloco 3: Proposta de Valor */}
-            <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#6618F7]/40 transition-all">
+            <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#4A6FE0]/40 transition-all">
               <div>
-                <div className="flex items-center gap-2 text-[#8b4dff] font-display font-bold text-xs mb-2">
+                <div className="flex items-center gap-2 text-[#E0A94E] font-display font-bold text-xs mb-2">
                   <Target className="h-4 w-4 shrink-0" />
                   <span>3. Proposta de Valor</span>
                 </div>
-                <div className="space-y-1.5 text-slate-300 text-[11px] font-sans">
+                <div className="space-y-1.5 text-stone-300 text-[11px] font-sans">
                   <p className="font-semibold text-white">Alerta Precoce Pré-Concursal</p>
-                  <ul className="space-y-1 text-slate-400">
+                  <ul className="space-y-1 text-stone-400">
                     <li className="flex items-start gap-1.5">
-                      <span className="text-[#8b4dff]">•</span>
+                      <span className="text-[#E0A94E]">•</span>
                       <span>Horizontes preditivos de 6, 12 e 24 meses.</span>
                     </li>
                     <li className="flex items-start gap-1.5">
-                      <span className="text-[#8b4dff]">•</span>
+                      <span className="text-[#E0A94E]">•</span>
                       <span>Detecção antes da petição inicial na comarca.</span>
                     </li>
                     <li className="flex items-start gap-1.5">
-                      <span className="text-[#8b4dff]">•</span>
+                      <span className="text-[#E0A94E]">•</span>
                       <span>Execução de garantias antes do Stay Period (STJ).</span>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div className="pt-2 border-t border-[#231c3a] text-[10px] text-[#8b4dff] font-display">
+              <div className="pt-2 border-t border-[#2E2A22] text-[10px] text-[#E0A94E] font-display">
                 Entrega: Redução do LGD em até 68%.
               </div>
             </div>
 
             {/* Bloco 4: Solução Técnica */}
-            <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#6618F7]/40 transition-all">
+            <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#4A6FE0]/40 transition-all">
               <div>
                 <div className="flex items-center gap-2 text-emerald-400 font-display font-bold text-xs mb-2">
                   <Cpu className="h-4 w-4 shrink-0" />
                   <span>4. Solução Técnica</span>
                 </div>
-                <div className="space-y-1.5 text-slate-300 text-[11px] font-sans">
+                <div className="space-y-1.5 text-stone-300 text-[11px] font-sans">
                   <p className="font-semibold text-white">4 Agentes Especializados</p>
-                  <ul className="space-y-1 text-slate-400">
+                  <ul className="space-y-1 text-stone-400">
                     <li className="flex items-start gap-1.5">
                       <span className="text-emerald-400">•</span>
                       <span>Coletor, Risco Agro, Motor WoE e Síntese Executiva.</span>
@@ -264,21 +264,21 @@ export const PitchMethodologyView: React.FC = () => {
                   </ul>
                 </div>
               </div>
-              <div className="pt-2 border-t border-[#231c3a] text-[10px] text-emerald-400/90 font-display">
+              <div className="pt-2 border-t border-[#2E2A22] text-[10px] text-emerald-400/90 font-display">
                 Stack: React 19 + TypeScript + watsonx.
               </div>
             </div>
 
             {/* Bloco 5: Mecanismo de Prevenção */}
-            <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#6618F7]/40 transition-all">
+            <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#4A6FE0]/40 transition-all">
               <div>
                 <div className="flex items-center gap-2 text-rose-400 font-display font-bold text-xs mb-2">
                   <ShieldAlert className="h-4 w-4 shrink-0" />
                   <span>5. Mecanismo de Prevenção</span>
                 </div>
-                <div className="space-y-1.5 text-slate-300 text-[11px] font-sans">
+                <div className="space-y-1.5 text-stone-300 text-[11px] font-sans">
                   <p className="font-semibold text-white">Trava ERP T+0h & Garantias</p>
-                  <ul className="space-y-1 text-slate-400">
+                  <ul className="space-y-1 text-stone-400">
                     <li className="flex items-start gap-1.5">
                       <span className="text-rose-400">•</span>
                       <span>Disparo via watsonx Orchestrate (SAP / TOTVS).</span>
@@ -294,51 +294,51 @@ export const PitchMethodologyView: React.FC = () => {
                   </ul>
                 </div>
               </div>
-              <div className="pt-2 border-t border-[#231c3a] text-[10px] text-rose-400/90 font-display">
+              <div className="pt-2 border-t border-[#2E2A22] text-[10px] text-rose-400/90 font-display">
                 Bloqueio: Ação imediata sem dependência manual.
               </div>
             </div>
 
             {/* Bloco 6: Ferramentas e Recursos */}
-            <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#6618F7]/40 transition-all">
+            <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#4A6FE0]/40 transition-all">
               <div>
-                <div className="flex items-center gap-2 text-[#a78bfa] font-display font-bold text-xs mb-2">
+                <div className="flex items-center gap-2 text-[#E0A94E] font-display font-bold text-xs mb-2">
                   <Database className="h-4 w-4 shrink-0" />
                   <span>6. Ferramentas & Recursos</span>
                 </div>
-                <div className="space-y-1.5 text-slate-300 text-[11px] font-sans">
+                <div className="space-y-1.5 text-stone-300 text-[11px] font-sans">
                   <p className="font-semibold text-white">Ecossistema IBM & Dados B2B</p>
-                  <ul className="space-y-1 text-slate-400">
+                  <ul className="space-y-1 text-stone-400">
                     <li className="flex items-start gap-1.5">
-                      <span className="text-[#a78bfa]">•</span>
+                      <span className="text-[#E0A94E]">•</span>
                       <span>watsonx.ai, watsonx Orchestrate e Granite.</span>
                     </li>
                     <li className="flex items-start gap-1.5">
-                      <span className="text-[#a78bfa]">•</span>
+                      <span className="text-[#E0A94E]">•</span>
                       <span>Gateway B2B (BigDataCorp / Judit) em 90 tribunais.</span>
                     </li>
                     <li className="flex items-start gap-1.5">
-                      <span className="text-[#a78bfa]">•</span>
+                      <span className="text-[#E0A94E]">•</span>
                       <span>Bases oficiais: RFB, SICAR, IBAMA, ZARC e INMET.</span>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div className="pt-2 border-t border-[#231c3a] text-[10px] text-[#a78bfa] font-display">
+              <div className="pt-2 border-t border-[#2E2A22] text-[10px] text-[#E0A94E] font-display">
                 Infraestrutura: SLA 99.9% e latência &lt; 400ms.
               </div>
             </div>
 
             {/* Bloco 7: Viabilidade Técnica */}
-            <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#6618F7]/40 transition-all">
+            <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#4A6FE0]/40 transition-all">
               <div>
                 <div className="flex items-center gap-2 text-teal-400 font-display font-bold text-xs mb-2">
                   <Activity className="h-4 w-4 shrink-0" />
                   <span>7. Viabilidade Técnica</span>
                 </div>
-                <div className="space-y-1.5 text-slate-300 text-[11px] font-sans">
+                <div className="space-y-1.5 text-stone-300 text-[11px] font-sans">
                   <p className="font-semibold text-white">Triagem em 3 Minutos</p>
-                  <ul className="space-y-1 text-slate-400">
+                  <ul className="space-y-1 text-stone-400">
                     <li className="flex items-start gap-1.5">
                       <span className="text-teal-400">•</span>
                       <span>Redução do tempo operacional de 4 dias para 3 min.</span>
@@ -354,21 +354,21 @@ export const PitchMethodologyView: React.FC = () => {
                   </ul>
                 </div>
               </div>
-              <div className="pt-2 border-t border-[#231c3a] text-[10px] text-teal-400/90 font-display">
+              <div className="pt-2 border-t border-[#2E2A22] text-[10px] text-teal-400/90 font-display">
                 Agilidade: +98% de ganho de produtividade.
               </div>
             </div>
 
             {/* Bloco 8: Governança e LGPD */}
-            <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#6618F7]/40 transition-all">
+            <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#4A6FE0]/40 transition-all">
               <div>
                 <div className="flex items-center gap-2 text-indigo-400 font-display font-bold text-xs mb-2">
                   <ShieldCheck className="h-4 w-4 shrink-0" />
                   <span>8. Governança & LGPD</span>
                 </div>
-                <div className="space-y-1.5 text-slate-300 text-[11px] font-sans">
+                <div className="space-y-1.5 text-stone-300 text-[11px] font-sans">
                   <p className="font-semibold text-white">Sigilo Fiscal (Art. 198 CTN)</p>
-                  <ul className="space-y-1 text-slate-400">
+                  <ul className="space-y-1 text-stone-400">
                     <li className="flex items-start gap-1.5">
                       <span className="text-indigo-400">•</span>
                       <span>Validação do LCDPR via hash SHA-256 do SPED.</span>
@@ -384,51 +384,51 @@ export const PitchMethodologyView: React.FC = () => {
                   </ul>
                 </div>
               </div>
-              <div className="pt-2 border-t border-[#231c3a] text-[10px] text-indigo-400/90 font-display">
+              <div className="pt-2 border-t border-[#2E2A22] text-[10px] text-indigo-400/90 font-display">
                 Segurança: Compliance e-CAC / ICP-Brasil.
               </div>
             </div>
 
             {/* Bloco 9: Equipe */}
-            <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#6618F7]/40 transition-all">
+            <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#4A6FE0]/40 transition-all">
               <div>
-                <div className="flex items-center gap-2 text-[#8b4dff] font-display font-bold text-xs mb-2">
+                <div className="flex items-center gap-2 text-[#E0A94E] font-display font-bold text-xs mb-2">
                   <Award className="h-4 w-4 shrink-0" />
                   <span>9. Equipe: BroCode Softwares</span>
                 </div>
-                <div className="space-y-1.5 text-slate-300 text-[11px] font-sans">
+                <div className="space-y-1.5 text-stone-300 text-[11px] font-sans">
                   <p className="font-semibold text-white">Engenharia, IA & Risco Agro</p>
-                  <ul className="space-y-1 text-slate-400">
+                  <ul className="space-y-1 text-stone-400">
                     <li className="flex items-start gap-1.5">
-                      <span className="text-[#8b4dff]">•</span>
+                      <span className="text-[#E0A94E]">•</span>
                       <span>Especialistas em crédito rural, engenharia e dados.</span>
                     </li>
                     <li className="flex items-start gap-1.5">
-                      <span className="text-[#8b4dff]">•</span>
+                      <span className="text-[#E0A94E]">•</span>
                       <span>Domínio técnico de watsonx e regulação brasileira.</span>
                     </li>
                     <li className="flex items-start gap-1.5">
-                      <span className="text-[#8b4dff]">•</span>
-                      <span>Portal oficial: <a href="https://brocode.net.br" target="_blank" rel="noopener noreferrer" className="text-[#a78bfa] underline hover:text-white">brocode.net.br</a>.</span>
+                      <span className="text-[#E0A94E]">•</span>
+                      <span>Portal oficial: <a href="https://brocode.net.br" target="_blank" rel="noopener noreferrer" className="text-[#E0A94E] underline hover:text-white">brocode.net.br</a>.</span>
                     </li>
                   </ul>
                 </div>
               </div>
-              <div className="pt-2 border-t border-[#231c3a] text-[10px] text-[#a78bfa] font-display">
+              <div className="pt-2 border-t border-[#2E2A22] text-[10px] text-[#E0A94E] font-display">
                 Origem: BroCode Softwares (Brasil).
               </div>
             </div>
 
             {/* Bloco 10: Métricas de Sucesso */}
-            <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#6618F7]/40 transition-all">
+            <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-4 flex flex-col justify-between space-y-3 hover:border-[#4A6FE0]/40 transition-all">
               <div>
                 <div className="flex items-center gap-2 text-emerald-400 font-display font-bold text-xs mb-2">
                   <TrendingDown className="h-4 w-4 shrink-0" />
                   <span>10. Métricas de Sucesso</span>
                 </div>
-                <div className="space-y-1.5 text-slate-300 text-[11px] font-sans">
+                <div className="space-y-1.5 text-stone-300 text-[11px] font-sans">
                   <p className="font-semibold text-white">Resultados Quantificáveis</p>
-                  <ul className="space-y-1 text-slate-400">
+                  <ul className="space-y-1 text-stone-400">
                     <li className="flex items-start gap-1.5">
                       <span className="text-emerald-400">•</span>
                       <span>Zero pedidos de RJ surpresa na carteira ativa.</span>
@@ -444,7 +444,7 @@ export const PitchMethodologyView: React.FC = () => {
                   </ul>
                 </div>
               </div>
-              <div className="pt-2 border-t border-[#231c3a] text-[10px] text-emerald-400/90 font-display">
+              <div className="pt-2 border-t border-[#2E2A22] text-[10px] text-emerald-400/90 font-display">
                 Retorno: Preservação de caixa e EBITDA.
               </div>
             </div>
@@ -457,41 +457,41 @@ export const PitchMethodologyView: React.FC = () => {
         <div className="space-y-6">
           <div className="flex items-center justify-between flex-wrap gap-2">
             <div className="flex items-center gap-2">
-              <Calculator className="h-5 w-5 text-[#8b4dff]" />
+              <Calculator className="h-5 w-5 text-[#E0A94E]" />
               <h3 className="text-lg font-display font-bold text-white">
                 Demonstrativo de Custos Empresariais (TCO) & Simulação de Retorno (ROI)
               </h3>
             </div>
-            <span className="text-xs text-slate-400 font-sans">
+            <span className="text-xs text-stone-400 font-sans">
               Substituição da premissa ingênua de "Custo R$ 0" por orçamento executivo homologado
             </span>
           </div>
 
           {/* Interactive Calculator Slider Card */}
-          <div className="bg-[#09090e] border border-[#6618F7]/50 rounded-3xl p-6 shadow-2xl space-y-5">
+          <div className="bg-[#151310] border border-[#4A6FE0]/50 rounded-3xl p-6 shadow-2xl space-y-5">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <span className="text-xs font-display font-bold text-[#8b4dff] uppercase tracking-wider block">
+                <span className="text-xs font-display font-bold text-[#E0A94E] uppercase tracking-wider block">
                   Simulação de Impacto Financeiro da Solução
                 </span>
                 <h4 className="text-xl font-display font-black text-white mt-0.5">
                   Prevenção de Inadimplência na Carteira (R$ 48.500.000 Expostos)
                 </h4>
-                <p className="text-xs text-slate-400 font-sans mt-1">
+                <p className="text-xs text-stone-400 font-sans mt-1">
                   Ajuste o número de calotes ou RJs evitados no ano para calcular a economia líquida e o ROI gerado:
                 </p>
               </div>
 
-              <div className="bg-[#0e0e17] p-4 rounded-2xl border border-[#231c3a] text-center shrink-0">
-                <span className="text-[10px] font-display uppercase text-slate-400 block">Eventos Mitigados no Ano</span>
-                <span className="text-3xl font-black font-display text-[#8b4dff]">{avoidedDefaultsCount}</span>
-                <span className="text-[10px] text-slate-500 font-sans block">Tomador(es) Crítico(s)</span>
+              <div className="bg-[#1C1915] p-4 rounded-2xl border border-[#2E2A22] text-center shrink-0">
+                <span className="text-[10px] font-display uppercase text-stone-400 block">Eventos Mitigados no Ano</span>
+                <span className="text-3xl font-black font-display text-[#E0A94E]">{avoidedDefaultsCount}</span>
+                <span className="text-[10px] text-stone-500 font-sans block">Tomador(es) Crítico(s)</span>
               </div>
             </div>
 
             {/* Slider Control */}
             <div className="space-y-2 pt-2">
-              <div className="flex justify-between text-xs font-display font-semibold text-slate-300">
+              <div className="flex justify-between text-xs font-display font-semibold text-stone-300">
                 <span>1 Quebra Mitigada (R$ 2.000.000)</span>
                 <span>2 Quebras (R$ 4.000.000)</span>
                 <span>3 Quebras (R$ 6.000.000)</span>
@@ -504,39 +504,39 @@ export const PitchMethodologyView: React.FC = () => {
                 step="1"
                 value={avoidedDefaultsCount}
                 onChange={(e) => setAvoidedDefaultsCount(Number(e.target.value))}
-                className="w-full accent-[#6618F7] cursor-pointer h-2 bg-[#141422] rounded-lg"
+                className="w-full accent-[#4A6FE0] cursor-pointer h-2 bg-[#242019] rounded-lg"
               />
             </div>
 
             {/* Result Metrics */}
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 pt-2">
-              <div className="p-4 rounded-2xl bg-[#0e0e17] border border-[#231c3a]">
-                <span className="text-[10px] font-display text-slate-400 block">Capital Preservado</span>
+              <div className="p-4 rounded-2xl bg-[#1C1915] border border-[#2E2A22]">
+                <span className="text-[10px] font-display text-stone-400 block">Capital Preservado</span>
                 <span className="text-2xl font-black font-display text-emerald-400 mt-1 block">
                   R$ {(totalSavedBrl / 1000000).toFixed(1)}M
                 </span>
-                <span className="text-[10px] text-slate-500 font-sans">Valor nominal protegido</span>
+                <span className="text-[10px] text-stone-500 font-sans">Valor nominal protegido</span>
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#0e0e17] border border-[#231c3a]">
-                <span className="text-[10px] font-display text-slate-400 block">Custo Total Ano 1 (CAPEX + OPEX)</span>
+              <div className="p-4 rounded-2xl bg-[#1C1915] border border-[#2E2A22]">
+                <span className="text-[10px] font-display text-stone-400 block">Custo Total Ano 1 (CAPEX + OPEX)</span>
                 <span className="text-2xl font-black font-display text-white mt-1 block">
                   R$ 384,4k
                 </span>
-                <span className="text-[10px] text-slate-500 font-sans">R$ 166k capex + R$ 218,4k opex</span>
+                <span className="text-[10px] text-stone-500 font-sans">R$ 166k capex + R$ 218,4k opex</span>
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#0e0e17] border border-[#231c3a]">
-                <span className="text-[10px] font-display text-slate-400 block">Economia Líquida Ano 1</span>
+              <div className="p-4 rounded-2xl bg-[#1C1915] border border-[#2E2A22]">
+                <span className="text-[10px] font-display text-stone-400 block">Economia Líquida Ano 1</span>
                 <span className="text-2xl font-black font-display text-emerald-400 mt-1 block">
                   R$ {(netBenefitYear1 / 1000000).toFixed(2)}M
                 </span>
-                <span className="text-[10px] text-slate-500 font-sans">Retorno após todos os custos</span>
+                <span className="text-[10px] text-stone-500 font-sans">Retorno após todos os custos</span>
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#141422] border border-[#6618F7]/50 shadow-lg shadow-[#6618F7]/20">
-                <span className="text-[10px] font-display text-[#a78bfa] block">ROI Líquido no Ano 1</span>
-                <span className="text-3xl font-black font-display text-[#8b4dff] mt-1 block">
+              <div className="p-4 rounded-2xl bg-[#242019] border border-[#4A6FE0]/50 shadow-lg shadow-[#4A6FE0]/20">
+                <span className="text-[10px] font-display text-[#E0A94E] block">ROI Líquido no Ano 1</span>
+                <span className="text-3xl font-black font-display text-[#E0A94E] mt-1 block">
                   +{roiYear1}%
                 </span>
                 <span className="text-[10px] text-emerald-400 font-sans font-bold">
@@ -549,10 +549,10 @@ export const PitchMethodologyView: React.FC = () => {
           {/* CAPEX & OPEX Breakdown Table */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* CAPEX Table */}
-            <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-5 shadow-xl space-y-4">
-              <div className="flex items-center justify-between pb-3 border-b border-[#231c3a]">
+            <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-5 shadow-xl space-y-4">
+              <div className="flex items-center justify-between pb-3 border-b border-[#2E2A22]">
                 <div className="flex items-center gap-2">
-                  <Layers className="h-4 w-4 text-[#8b4dff]" />
+                  <Layers className="h-4 w-4 text-[#E0A94E]" />
                   <h4 className="text-sm font-display font-bold text-white uppercase tracking-wider">
                     Detalhamento de CAPEX (Implantação & Modelagem)
                   </h4>
@@ -561,51 +561,51 @@ export const PitchMethodologyView: React.FC = () => {
               </div>
 
               <div className="space-y-2 text-xs font-sans">
-                <div className="p-2.5 rounded-xl bg-[#0e0e17] flex justify-between items-center">
+                <div className="p-2.5 rounded-xl bg-[#1C1915] flex justify-between items-center">
                   <div>
                     <span className="text-white font-medium block">Pipeline de Dados & Ingestão Cross-Court</span>
-                    <span className="text-[10px] text-slate-500">Conectores com DataJud, SICAR, INMET e ZARC</span>
+                    <span className="text-[10px] text-stone-500">Conectores com DataJud, SICAR, INMET e ZARC</span>
                   </div>
-                  <span className="font-display font-bold text-slate-300">R$ 45.000</span>
+                  <span className="font-display font-bold text-stone-300">R$ 45.000</span>
                 </div>
 
-                <div className="p-2.5 rounded-xl bg-[#0e0e17] flex justify-between items-center">
+                <div className="p-2.5 rounded-xl bg-[#1C1915] flex justify-between items-center">
                   <div>
                     <span className="text-white font-medium block">Motor WoE & Modelagem de Horizontes (6, 12, 24m)</span>
-                    <span className="text-[10px] text-slate-500">Scorecard ponderado explicável e calibração estatística</span>
+                    <span className="text-[10px] text-stone-500">Scorecard ponderado explicável e calibração estatística</span>
                   </div>
-                  <span className="font-display font-bold text-slate-300">R$ 38.000</span>
+                  <span className="font-display font-bold text-stone-300">R$ 38.000</span>
                 </div>
 
-                <div className="p-2.5 rounded-xl bg-[#0e0e17] flex justify-between items-center">
+                <div className="p-2.5 rounded-xl bg-[#1C1915] flex justify-between items-center">
                   <div>
                     <span className="text-white font-medium block">Automação watsonx Orchestrate com ERPs</span>
-                    <span className="text-[10px] text-slate-500">Webhooks bidirecionais SAP S/4HANA & TOTVS Protheus</span>
+                    <span className="text-[10px] text-stone-500">Webhooks bidirecionais SAP S/4HANA & TOTVS Protheus</span>
                   </div>
-                  <span className="font-display font-bold text-slate-300">R$ 32.000</span>
+                  <span className="font-display font-bold text-stone-300">R$ 32.000</span>
                 </div>
 
-                <div className="p-2.5 rounded-xl bg-[#0e0e17] flex justify-between items-center">
+                <div className="p-2.5 rounded-xl bg-[#1C1915] flex justify-between items-center">
                   <div>
                     <span className="text-white font-medium block">Homologação de Gateways B2B & Segredo Fiscal</span>
-                    <span className="text-[10px] text-slate-500">Integração Judit/BigDataCorp e hash de recibo SPED</span>
+                    <span className="text-[10px] text-stone-500">Integração Judit/BigDataCorp e hash de recibo SPED</span>
                   </div>
-                  <span className="font-display font-bold text-slate-300">R$ 25.000</span>
+                  <span className="font-display font-bold text-stone-300">R$ 25.000</span>
                 </div>
 
-                <div className="p-2.5 rounded-xl bg-[#0e0e17] flex justify-between items-center">
+                <div className="p-2.5 rounded-xl bg-[#1C1915] flex justify-between items-center">
                   <div>
                     <span className="text-white font-medium block">Treinamento, Gestão de Mudança & Testes QA</span>
-                    <span className="text-[10px] text-slate-500">Capacitação do time de crédito Krill Tech e bancadas</span>
+                    <span className="text-[10px] text-stone-500">Capacitação do time de crédito Krill Tech e bancadas</span>
                   </div>
-                  <span className="font-display font-bold text-slate-300">R$ 26.000</span>
+                  <span className="font-display font-bold text-stone-300">R$ 26.000</span>
                 </div>
               </div>
             </div>
 
             {/* OPEX Table */}
-            <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-5 shadow-xl space-y-4">
-              <div className="flex items-center justify-between pb-3 border-b border-[#231c3a]">
+            <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-5 shadow-xl space-y-4">
+              <div className="flex items-center justify-between pb-3 border-b border-[#2E2A22]">
                 <div className="flex items-center gap-2">
                   <Server className="h-4 w-4 text-emerald-400" />
                   <h4 className="text-sm font-display font-bold text-white uppercase tracking-wider">
@@ -616,40 +616,40 @@ export const PitchMethodologyView: React.FC = () => {
               </div>
 
               <div className="space-y-2 text-xs font-sans">
-                <div className="p-2.5 rounded-xl bg-[#0e0e17] flex justify-between items-center">
+                <div className="p-2.5 rounded-xl bg-[#1C1915] flex justify-between items-center">
                   <div>
                     <span className="text-white font-medium block">Data Gateway B2B (BigDataCorp / Judit)</span>
-                    <span className="text-[10px] text-slate-500">Consultas automatizadas em 90 tribunais e cartórios com SLA</span>
+                    <span className="text-[10px] text-stone-500">Consultas automatizadas em 90 tribunais e cartórios com SLA</span>
                   </div>
-                  <span className="font-display font-bold text-slate-300">R$ 8.500 / mês</span>
+                  <span className="font-display font-bold text-stone-300">R$ 8.500 / mês</span>
                 </div>
 
-                <div className="p-2.5 rounded-xl bg-[#0e0e17] flex justify-between items-center">
+                <div className="p-2.5 rounded-xl bg-[#1C1915] flex justify-between items-center">
                   <div>
                     <span className="text-white font-medium block">IBM watsonx.ai & watsonx Orchestrate</span>
-                    <span className="text-[10px] text-slate-500">Tokens de inferência de relatórios e execuções de automação</span>
+                    <span className="text-[10px] text-stone-500">Tokens de inferência de relatórios e execuções de automação</span>
                   </div>
-                  <span className="font-display font-bold text-slate-300">R$ 5.200 / mês</span>
+                  <span className="font-display font-bold text-stone-300">R$ 5.200 / mês</span>
                 </div>
 
-                <div className="p-2.5 rounded-xl bg-[#0e0e17] flex justify-between items-center">
+                <div className="p-2.5 rounded-xl bg-[#1C1915] flex justify-between items-center">
                   <div>
                     <span className="text-white font-medium block">Infraestrutura Cloud Serverless & Banco Seguro</span>
-                    <span className="text-[10px] text-slate-500">Hospedagem de alta disponibilidade, Redis e backup com criptografia</span>
+                    <span className="text-[10px] text-stone-500">Hospedagem de alta disponibilidade, Redis e backup com criptografia</span>
                   </div>
-                  <span className="font-display font-bold text-slate-300">R$ 2.500 / mês</span>
+                  <span className="font-display font-bold text-stone-300">R$ 2.500 / mês</span>
                 </div>
 
-                <div className="p-2.5 rounded-xl bg-[#0e0e17] flex justify-between items-center">
+                <div className="p-2.5 rounded-xl bg-[#1C1915] flex justify-between items-center">
                   <div>
                     <span className="text-white font-medium block">Suporte Nível 3 & Manutenção Preditiva de Modelos</span>
-                    <span className="text-[10px] text-slate-500">Acompanhamento contínuo da BroCode Softwares</span>
+                    <span className="text-[10px] text-stone-500">Acompanhamento contínuo da BroCode Softwares</span>
                   </div>
-                  <span className="font-display font-bold text-slate-300">R$ 2.000 / mês</span>
+                  <span className="font-display font-bold text-stone-300">R$ 2.000 / mês</span>
                 </div>
 
-                <div className="p-3 rounded-xl bg-[#141422] border border-[#231c3a] flex justify-between items-center mt-3">
-                  <span className="font-display font-bold text-slate-200">Custo Anual Recorrente (12 meses):</span>
+                <div className="p-3 rounded-xl bg-[#242019] border border-[#2E2A22] flex justify-between items-center mt-3">
+                  <span className="font-display font-bold text-stone-200">Custo Anual Recorrente (12 meses):</span>
                   <span className="font-display font-black text-white text-sm">R$ 218.400 / ano</span>
                 </div>
               </div>
@@ -663,21 +663,21 @@ export const PitchMethodologyView: React.FC = () => {
         <div className="space-y-4">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2">
             <div className="flex items-center gap-2">
-              <Scale className="h-5 w-5 text-[#8b4dff]" />
+              <Scale className="h-5 w-5 text-[#E0A94E]" />
               <h3 className="text-lg font-display font-bold text-white">
                 Arguições Críticas da Banca Avaliadora & Defesas Técnicas
               </h3>
             </div>
-            <span className="text-xs text-slate-500 font-display">Selecione uma arguição para ver o embasamento</span>
+            <span className="text-xs text-stone-500 font-display">Selecione uma arguição para ver o embasamento</span>
           </div>
 
           <div className="space-y-3">
             {/* Obj 1: Alienação Fiduciária */}
-            <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl overflow-hidden transition-all shadow-xl">
+            <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl overflow-hidden transition-all shadow-xl">
               <button
                 type="button"
                 onClick={() => setExpandedFaq(expandedFaq === 0 ? null : 0)}
-                className="w-full p-4 sm:p-5 flex items-center justify-between text-left hover:bg-[#141422]/50 transition-all cursor-pointer"
+                className="w-full p-4 sm:p-5 flex items-center justify-between text-left hover:bg-[#242019]/50 transition-all cursor-pointer"
               >
                 <div className="flex items-center gap-3">
                   <div className="h-8 w-8 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 shrink-0">
@@ -692,21 +692,21 @@ export const PitchMethodologyView: React.FC = () => {
                     </span>
                   </div>
                 </div>
-                <div className="text-slate-400 shrink-0 ml-2">
+                <div className="text-stone-400 shrink-0 ml-2">
                   {expandedFaq === 0 ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                 </div>
               </button>
 
               {expandedFaq === 0 && (
-                <div className="px-5 pb-5 pt-1 space-y-3 border-t border-[#231c3a] text-xs font-sans">
-                  <div className="bg-[#06060c] p-3 rounded-xl border border-[#231c3a] text-slate-400 italic">
+                <div className="px-5 pb-5 pt-1 space-y-3 border-t border-[#2E2A22] text-xs font-sans">
+                  <div className="bg-[#100E0B] p-3 rounded-xl border border-[#2E2A22] text-stone-400 italic">
                     "Se a Krill Tech opera com CPR e alienação fiduciária de grãos e maquinário (art. 49, §3º da Lei 11.101), por que precisamos de um sistema de alerta precoce?"
                   </div>
-                  <div className="p-4 rounded-xl bg-[#0e0e17] border border-[#231c3a] space-y-2">
+                  <div className="p-4 rounded-xl bg-[#1C1915] border border-[#2E2A22] space-y-2">
                     <span className="font-display font-bold text-emerald-400 block text-xs">
                       Fundamentação Técnica & Jurisprudencial:
                     </span>
-                    <ul className="space-y-1.5 text-slate-300 text-[11px] leading-relaxed">
+                    <ul className="space-y-1.5 text-stone-300 text-[11px] leading-relaxed">
                       <li className="flex items-start gap-2">
                         <span className="text-emerald-400 font-bold">•</span>
                         <span><strong>Jurisprudência do STJ & TJs:</strong> Durante o <em>stay period</em> (180 a 360 dias), é vedada a busca e apreensão de bens essenciais à atividade do produtor rural (Tema STJ).</span>
@@ -726,11 +726,11 @@ export const PitchMethodologyView: React.FC = () => {
             </div>
 
             {/* Obj 2: Scorecard WoE vs Deep Learning */}
-            <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl overflow-hidden transition-all shadow-xl">
+            <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl overflow-hidden transition-all shadow-xl">
               <button
                 type="button"
                 onClick={() => setExpandedFaq(expandedFaq === 1 ? null : 1)}
-                className="w-full p-4 sm:p-5 flex items-center justify-between text-left hover:bg-[#141422]/50 transition-all cursor-pointer"
+                className="w-full p-4 sm:p-5 flex items-center justify-between text-left hover:bg-[#242019]/50 transition-all cursor-pointer"
               >
                 <div className="flex items-center gap-3">
                   <div className="h-8 w-8 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0">
@@ -745,21 +745,21 @@ export const PitchMethodologyView: React.FC = () => {
                     </span>
                   </div>
                 </div>
-                <div className="text-slate-400 shrink-0 ml-2">
+                <div className="text-stone-400 shrink-0 ml-2">
                   {expandedFaq === 1 ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                 </div>
               </button>
 
               {expandedFaq === 1 && (
-                <div className="px-5 pb-5 pt-1 space-y-3 border-t border-[#231c3a] text-xs font-sans">
-                  <div className="bg-[#06060c] p-3 rounded-xl border border-[#231c3a] text-slate-400 italic">
+                <div className="px-5 pb-5 pt-1 space-y-3 border-t border-[#2E2A22] text-xs font-sans">
+                  <div className="bg-[#100E0B] p-3 rounded-xl border border-[#2E2A22] text-stone-400 italic">
                     "Por que a solução usa Scorecard Ponderado (Weight of Evidence) em vez de redes neurais profundas para calcular a probabilidade de default?"
                   </div>
-                  <div className="p-4 rounded-xl bg-[#0e0e17] border border-[#231c3a] space-y-2">
+                  <div className="p-4 rounded-xl bg-[#1C1915] border border-[#2E2A22] space-y-2">
                     <span className="font-display font-bold text-emerald-400 block text-xs">
                       Fundamentação Técnica & Regulatória:
                     </span>
-                    <ul className="space-y-1.5 text-slate-300 text-[11px] leading-relaxed">
+                    <ul className="space-y-1.5 text-stone-300 text-[11px] leading-relaxed">
                       <li className="flex items-start gap-2">
                         <span className="text-emerald-400 font-bold">•</span>
                         <span><strong>Exigência Regulatória BACEN / FIDC:</strong> Comitês de risco exigem explicabilidade estrita (Explainable AI) para justificar recusa de crédito perante LGPD e Código Civil.</span>
@@ -779,18 +779,18 @@ export const PitchMethodologyView: React.FC = () => {
             </div>
 
             {/* Obj 3: APIs Gratuitas vs Produção */}
-            <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl overflow-hidden transition-all shadow-xl">
+            <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl overflow-hidden transition-all shadow-xl">
               <button
                 type="button"
                 onClick={() => setExpandedFaq(expandedFaq === 2 ? null : 2)}
-                className="w-full p-4 sm:p-5 flex items-center justify-between text-left hover:bg-[#141422]/50 transition-all cursor-pointer"
+                className="w-full p-4 sm:p-5 flex items-center justify-between text-left hover:bg-[#242019]/50 transition-all cursor-pointer"
               >
                 <div className="flex items-center gap-3">
-                  <div className="h-8 w-8 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-[#8b4dff] shrink-0">
+                  <div className="h-8 w-8 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-[#E0A94E] shrink-0">
                     <Database className="h-4 w-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-display font-bold px-2 py-0.5 rounded bg-purple-500/20 text-[#a78bfa] border border-purple-500/30 uppercase mr-2">
+                    <span className="text-[10px] font-display font-bold px-2 py-0.5 rounded bg-purple-500/20 text-[#E0A94E] border border-purple-500/30 uppercase mr-2">
                       Gateway B2B
                     </span>
                     <span className="text-xs sm:text-sm font-display font-bold text-white">
@@ -798,21 +798,21 @@ export const PitchMethodologyView: React.FC = () => {
                     </span>
                   </div>
                 </div>
-                <div className="text-slate-400 shrink-0 ml-2">
+                <div className="text-stone-400 shrink-0 ml-2">
                   {expandedFaq === 2 ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                 </div>
               </button>
 
               {expandedFaq === 2 && (
-                <div className="px-5 pb-5 pt-1 space-y-3 border-t border-[#231c3a] text-xs font-sans">
-                  <div className="bg-[#06060c] p-3 rounded-xl border border-[#231c3a] text-slate-400 italic">
+                <div className="px-5 pb-5 pt-1 space-y-3 border-t border-[#2E2A22] text-xs font-sans">
+                  <div className="bg-[#100E0B] p-3 rounded-xl border border-[#2E2A22] text-stone-400 italic">
                     "A API pública do DataJud é indexada por processo/tribunal e não fornece busca federada direta por CNPJ para 90 tribunais em tempo real. Como vocês sustentam a solução?"
                   </div>
-                  <div className="p-4 rounded-xl bg-[#0e0e17] border border-[#231c3a] space-y-2">
+                  <div className="p-4 rounded-xl bg-[#1C1915] border border-[#2E2A22] space-y-2">
                     <span className="font-display font-bold text-emerald-400 block text-xs">
                       Fundamentação de Arquitetura de Dados:
                     </span>
-                    <ul className="space-y-1.5 text-slate-300 text-[11px] leading-relaxed">
+                    <ul className="space-y-1.5 text-stone-300 text-[11px] leading-relaxed">
                       <li className="flex items-start gap-2">
                         <span className="text-emerald-400 font-bold">•</span>
                         <span><strong>Arquitetura Híbrida em Produção:</strong> A API CNJ atende checagens pontuais, enquanto um Gateway B2B homologado (BigDataCorp / Judit) centraliza 90 tribunais e diários oficiais.</span>
@@ -832,11 +832,11 @@ export const PitchMethodologyView: React.FC = () => {
             </div>
 
             {/* Obj 4: LCDPR e Sigilo Fiscal */}
-            <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl overflow-hidden transition-all shadow-xl">
+            <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl overflow-hidden transition-all shadow-xl">
               <button
                 type="button"
                 onClick={() => setExpandedFaq(expandedFaq === 3 ? null : 3)}
-                className="w-full p-4 sm:p-5 flex items-center justify-between text-left hover:bg-[#141422]/50 transition-all cursor-pointer"
+                className="w-full p-4 sm:p-5 flex items-center justify-between text-left hover:bg-[#242019]/50 transition-all cursor-pointer"
               >
                 <div className="flex items-center gap-3">
                   <div className="h-8 w-8 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 shrink-0">
@@ -851,21 +851,21 @@ export const PitchMethodologyView: React.FC = () => {
                     </span>
                   </div>
                 </div>
-                <div className="text-slate-400 shrink-0 ml-2">
+                <div className="text-stone-400 shrink-0 ml-2">
                   {expandedFaq === 3 ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                 </div>
               </button>
 
               {expandedFaq === 3 && (
-                <div className="px-5 pb-5 pt-1 space-y-3 border-t border-[#231c3a] text-xs font-sans">
-                  <div className="bg-[#06060c] p-3 rounded-xl border border-[#231c3a] text-slate-400 italic">
+                <div className="px-5 pb-5 pt-1 space-y-3 border-t border-[#2E2A22] text-xs font-sans">
+                  <div className="bg-[#100E0B] p-3 rounded-xl border border-[#2E2A22] text-stone-400 italic">
                     "A Receita Federal não disponibiliza API aberta do Livro Caixa Digital do Produtor Rural por força do sigilo fiscal. A promessa de checar LCDPR não é fictícia?"
                   </div>
-                  <div className="p-4 rounded-xl bg-[#0e0e17] border border-[#231c3a] space-y-2">
+                  <div className="p-4 rounded-xl bg-[#1C1915] border border-[#2E2A22] space-y-2">
                     <span className="font-display font-bold text-emerald-400 block text-xs">
                       Fundamentação Legal & Criptográfica:
                     </span>
-                    <ul className="space-y-1.5 text-slate-300 text-[11px] leading-relaxed">
+                    <ul className="space-y-1.5 text-stone-300 text-[11px] leading-relaxed">
                       <li className="flex items-start gap-2">
                         <span className="text-emerald-400 font-bold">•</span>
                         <span><strong>Fluxo Real de Mercado:</strong> O produtor faz upload do recibo do SPED ou assina procuração eletrônica via e-CAC para a esteira Krill Tech.</span>

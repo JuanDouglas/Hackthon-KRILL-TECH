@@ -149,32 +149,32 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
   return (
     <div className="space-y-6 animate-fade-in max-w-7xl mx-auto pb-10">
       {/* Top Banner */}
-      <div className="bg-[#09090e] border border-[#231c3a] rounded-3xl p-6 sm:p-7 shadow-2xl flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div className="bg-[#151310] border border-[#2E2A22] rounded-3xl p-6 sm:p-7 shadow-2xl flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
           <div className="flex items-center gap-2 mb-1.5">
-            <span className="px-3 py-1 rounded-full text-xs font-display font-bold bg-[#6618F7]/20 text-[#a78bfa] border border-[#6618F7]/40 uppercase tracking-wider">
+            <span className="px-3 py-1 rounded-full text-xs font-display font-bold bg-[#4A6FE0]/20 text-[#E0A94E] border border-[#4A6FE0]/40 uppercase tracking-wider">
               Carteira Ativa
             </span>
-            <span className="text-xs text-slate-500 font-display">Monitoramento Contínuo</span>
+            <span className="text-xs text-stone-500 font-display">Monitoramento Contínuo</span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl font-display font-black text-white tracking-tight">
             Monitoramento Processual & Financeiro
           </h2>
 
-          <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-3xl font-sans leading-relaxed">
+          <p className="text-xs sm:text-sm text-stone-300 mt-1 max-w-3xl font-sans leading-relaxed">
             Acompanhamento contínuo dos tomadores com saldo aberto na Krill Tech. Varreduras fiscais/trabalhistas mensais (PGFN, CNDT, QSA) e checagem climática por safra (ZARC e estações INMET).
           </p>
         </div>
 
-        <div className="bg-[#0e0e17] p-4 rounded-2xl border border-[#231c3a] text-right shrink-0">
-          <span className="text-[10px] font-display uppercase tracking-wider text-slate-400 block mb-0.5">
+        <div className="bg-[#1C1915] p-4 rounded-2xl border border-[#2E2A22] text-right shrink-0">
+          <span className="text-[10px] font-display uppercase tracking-wider text-stone-400 block mb-0.5">
             Exposição Total da Carteira
           </span>
-          <span className="text-2xl font-black font-display text-[#8b4dff]">
+          <span className="text-2xl font-black font-display text-[#E0A94E]">
             R$ {(totalExposure / 1000000).toFixed(1)}M
           </span>
-          <span className="text-[10px] text-slate-500 block font-sans">
+          <span className="text-[10px] text-stone-500 block font-sans">
             {portfolio.length} tomadores cadastrados
           </span>
         </div>
@@ -182,25 +182,25 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
 
       {/* Routine Cards: Mensal vs Safra */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="bg-[#09090e] border border-[#231c3a] rounded-xl p-4 flex items-center gap-3.5">
-          <div className="h-10 w-10 rounded-xl bg-[#141422] border border-[#231c3a] flex items-center justify-center text-[#8b4dff] shrink-0">
+        <div className="bg-[#151310] border border-[#2E2A22] rounded-xl p-4 flex items-center gap-3.5">
+          <div className="h-10 w-10 rounded-xl bg-[#242019] border border-[#2E2A22] flex items-center justify-center text-[#E0A94E] shrink-0">
             <Calendar className="h-5 w-5" />
           </div>
           <div className="space-y-0.5">
-            <span className="text-[10px] font-display font-bold text-[#8b4dff] uppercase tracking-wider block">
+            <span className="text-[10px] font-display font-bold text-[#E0A94E] uppercase tracking-wider block">
               Rotina Mensal Automatizada (Todo dia 01)
             </span>
             <h4 className="text-xs font-display font-bold text-white">
               Varredura Fiscal, Trabalhista e Societária
             </h4>
-            <p className="text-[11px] text-slate-400 font-sans">
+            <p className="text-[11px] text-stone-400 font-sans">
               PGFN Dívida Ativa, CNDT Trabalhista (TST), CRF-FGTS e alterações no quadro societário (QSA).
             </p>
           </div>
         </div>
 
-        <div className="bg-[#09090e] border border-[#231c3a] rounded-xl p-4 flex items-center gap-3.5">
-          <div className="h-10 w-10 rounded-xl bg-[#141422] border border-[#231c3a] flex items-center justify-center text-amber-400 shrink-0">
+        <div className="bg-[#151310] border border-[#2E2A22] rounded-xl p-4 flex items-center gap-3.5">
+          <div className="h-10 w-10 rounded-xl bg-[#242019] border border-[#2E2A22] flex items-center justify-center text-amber-400 shrink-0">
             <Clock className="h-5 w-5" />
           </div>
           <div className="space-y-0.5">
@@ -210,7 +210,7 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
             <h4 className="text-xs font-display font-bold text-white">
               Conformidade ZARC & Balanço Hídrico
             </h4>
-            <p className="text-[11px] text-slate-400 font-sans">
+            <p className="text-[11px] text-stone-400 font-sans">
               Janela oficial de plantio (Portaria MAPA) e precipitação nas estações INMET no enchimento de grãos.
             </p>
           </div>
@@ -220,40 +220,40 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
       {/* SECTOR CRISIS SIMULATION PANEL (Safra 2025/2026 Stress Test) */}
       <div className={`p-6 rounded-2xl border transition-all ${
         isCrisisSimulationActive
-          ? 'bg-purple-950/20 border-[#6618F7]/60 shadow-2xl shadow-purple-950/30'
-          : 'bg-[#09090e] border-[#231c3a]'
+          ? 'bg-purple-950/20 border-[#4A6FE0]/60 shadow-2xl shadow-purple-950/30'
+          : 'bg-[#151310] border-[#2E2A22]'
       }`}>
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
           <div className="space-y-1.5">
             <div className="flex items-center gap-2">
               <span className={`px-2.5 py-0.5 rounded text-xs font-display font-bold uppercase tracking-wider ${
                 isCrisisSimulationActive
-                  ? 'bg-[#6618F7] text-white shadow-md shadow-[#6618F7]/40'
-                  : 'bg-[#141422] text-slate-400 border border-[#231c3a]'
+                  ? 'bg-[#4A6FE0] text-white shadow-md shadow-[#4A6FE0]/40'
+                  : 'bg-[#242019] text-stone-400 border border-[#2E2A22]'
               }`}>
                 {isCrisisSimulationActive ? '⚡ Simulação de Estresse Ativa' : 'Simulador de Cenários de Crise'}
               </span>
-              <span className="text-xs text-slate-400 font-display">Safra 2025/2026</span>
+              <span className="text-xs text-stone-400 font-display">Safra 2025/2026</span>
             </div>
 
             <h3 className="text-base sm:text-lg font-display font-black text-white">
               Cenário Setorial: Queda de Commodities + Seca La Niña + Colapso do PSR
             </h3>
 
-            <p className="text-xs text-slate-300 max-w-3xl font-sans leading-relaxed">
+            <p className="text-xs text-stone-300 max-w-3xl font-sans leading-relaxed">
               Permite projetar a sensibilidade da carteira caso os 4 fatores da crise setorial se intensifiquem (soja a US$ 9.80/bu, déficit hídrico regional, ausência de seguro rural e contágio por quebra de revendas).
             </p>
           </div>
 
           {/* Crisis Toggle Switch */}
           <div className="shrink-0 flex items-center gap-3">
-            <div className="flex items-center bg-[#0e0e17] p-1.5 rounded-xl border border-[#231c3a]">
+            <div className="flex items-center bg-[#1C1915] p-1.5 rounded-xl border border-[#2E2A22]">
               <button
                 onClick={() => setIsCrisisSimulationActive(false)}
                 className={`px-3.5 py-2 rounded-lg text-xs font-display font-bold transition-all cursor-pointer ${
                   !isCrisisSimulationActive
-                    ? 'bg-[#141422] text-white border border-[#231c3a]'
-                    : 'text-slate-400 hover:text-white'
+                    ? 'bg-[#242019] text-white border border-[#2E2A22]'
+                    : 'text-stone-400 hover:text-white'
                 }`}
               >
                 Base Atual
@@ -262,8 +262,8 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
                 onClick={() => setIsCrisisSimulationActive(true)}
                 className={`px-3.5 py-2 rounded-lg text-xs font-display font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
                   isCrisisSimulationActive
-                    ? 'bg-[#6618F7] text-white shadow-lg shadow-[#6618F7]/40'
-                    : 'text-slate-400 hover:text-white'
+                    ? 'bg-[#4A6FE0] text-white shadow-lg shadow-[#4A6FE0]/40'
+                    : 'text-stone-400 hover:text-white'
                 }`}
               >
                 <Zap className="h-3.5 w-3.5" />
@@ -277,7 +277,7 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
                 className={`px-3 py-2 rounded-xl text-xs font-display font-bold transition-all shrink-0 cursor-pointer ${
                   filterOnlyCrisisAffected
                     ? 'bg-purple-600 text-white shadow-md'
-                    : 'bg-[#141422] text-[#a78bfa] border border-[#231c3a] hover:text-white'
+                    : 'bg-[#242019] text-[#E0A94E] border border-[#2E2A22] hover:text-white'
                 }`}
               >
                 {filterOnlyCrisisAffected ? 'Mostrando Apenas Afetados' : 'Filtrar Degradados'}
@@ -288,13 +288,13 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
 
         {/* Dynamic Comparison Bar when Crisis is active */}
         {isCrisisSimulationActive && (
-          <div className="mt-5 pt-5 border-t border-[#231c3a] grid grid-cols-1 sm:grid-cols-3 gap-4 animate-fade-in">
-            <div className="p-3.5 rounded-xl bg-[#0e0e17] border border-[#231c3a]">
-              <span className="text-[10px] font-display uppercase tracking-wider text-slate-400 block mb-1">
+          <div className="mt-5 pt-5 border-t border-[#2E2A22] grid grid-cols-1 sm:grid-cols-3 gap-4 animate-fade-in">
+            <div className="p-3.5 rounded-xl bg-[#1C1915] border border-[#2E2A22]">
+              <span className="text-[10px] font-display uppercase tracking-wider text-stone-400 block mb-1">
                 Exposição em Risco Severo (C & D)
               </span>
               <div className="flex items-baseline gap-2">
-                <span className="text-sm font-display text-slate-400 line-through">
+                <span className="text-sm font-display text-stone-400 line-through">
                   R$ {(realRiskExposure / 1000000).toFixed(1)}M
                 </span>
                 <span className="text-lg font-display font-black text-rose-400">
@@ -306,8 +306,8 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
               </span>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-[#0e0e17] border border-[#231c3a]">
-              <span className="text-[10px] font-display uppercase tracking-wider text-slate-400 block mb-1">
+            <div className="p-3.5 rounded-xl bg-[#1C1915] border border-[#2E2A22]">
+              <span className="text-[10px] font-display uppercase tracking-wider text-stone-400 block mb-1">
                 Provável Inadimplência Técnica (Projetada)
               </span>
               <div className="flex items-baseline gap-2">
@@ -315,16 +315,16 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
                   6 de 8 tomadores (75%)
                 </span>
               </div>
-              <span className="text-[10px] text-slate-400 block mt-0.5 font-sans">
+              <span className="text-[10px] text-stone-400 block mt-0.5 font-sans">
                 Probabilidade de descumprimento de covenants na safra sob estresse
               </span>
             </div>
 
-            <div className="p-3.5 rounded-xl bg-[#0e0e17] border border-purple-500/30">
-              <span className="text-[10px] font-display uppercase tracking-wider text-[#a78bfa] block mb-1">
+            <div className="p-3.5 rounded-xl bg-[#1C1915] border border-purple-500/30">
+              <span className="text-[10px] font-display uppercase tracking-wider text-[#E0A94E] block mb-1">
                 Diretriz Operacional do Comitê
               </span>
-              <span className="text-xs text-slate-200 font-sans font-semibold block leading-tight">
+              <span className="text-xs text-stone-200 font-sans font-semibold block leading-tight">
                 Executar retenção de recebíveis e exigir aditivo de CPR Física para tomadores C/D.
               </span>
             </div>
@@ -333,17 +333,17 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-5 shadow-2xl space-y-4">
+      <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-5 shadow-2xl space-y-4">
         <div className="flex flex-col md:flex-row gap-3">
           {/* Search Box */}
           <div className="relative flex-1">
-            <Search className="absolute left-3.5 top-3 h-4 w-4 text-slate-500" />
+            <Search className="absolute left-3.5 top-3 h-4 w-4 text-stone-500" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Buscar por nome do tomador, CNPJ, CPF ou polo agrícola..."
-              className="w-full bg-[#0e0e17] border border-[#231c3a] focus:border-[#6618F7] text-white text-xs sm:text-sm rounded-xl pl-10 pr-4 py-2.5 outline-none font-sans"
+              className="w-full bg-[#1C1915] border border-[#2E2A22] focus:border-[#4A6FE0] text-white text-xs sm:text-sm rounded-xl pl-10 pr-4 py-2.5 outline-none font-sans"
             />
           </div>
 
@@ -353,8 +353,8 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
               onClick={() => setSelectedTypeFilter('ALL')}
               className={`px-3 py-2 rounded-xl text-xs font-display font-bold transition-all cursor-pointer ${
                 selectedTypeFilter === 'ALL'
-                  ? 'bg-[#6618F7] text-white shadow-md shadow-[#6618F7]/30'
-                  : 'bg-[#0e0e17] text-slate-400 border border-[#231c3a] hover:text-white'
+                  ? 'bg-[#4A6FE0] text-white shadow-md shadow-[#4A6FE0]/30'
+                  : 'bg-[#1C1915] text-stone-400 border border-[#2E2A22] hover:text-white'
               }`}
             >
               Todos ({portfolio.length})
@@ -363,8 +363,8 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
               onClick={() => setSelectedTypeFilter('PF')}
               className={`px-3 py-2 rounded-xl text-xs font-display font-bold transition-all cursor-pointer ${
                 selectedTypeFilter === 'PF'
-                  ? 'bg-[#6618F7] text-white shadow-md shadow-[#6618F7]/30'
-                  : 'bg-[#0e0e17] text-slate-400 border border-[#231c3a] hover:text-white'
+                  ? 'bg-[#4A6FE0] text-white shadow-md shadow-[#4A6FE0]/30'
+                  : 'bg-[#1C1915] text-stone-400 border border-[#2E2A22] hover:text-white'
               }`}
             >
               Produtor PF
@@ -373,8 +373,8 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
               onClick={() => setSelectedTypeFilter('PJ')}
               className={`px-3 py-2 rounded-xl text-xs font-display font-bold transition-all cursor-pointer ${
                 selectedTypeFilter === 'PJ'
-                  ? 'bg-[#6618F7] text-white shadow-md shadow-[#6618F7]/30'
-                  : 'bg-[#0e0e17] text-slate-400 border border-[#231c3a] hover:text-white'
+                  ? 'bg-[#4A6FE0] text-white shadow-md shadow-[#4A6FE0]/30'
+                  : 'bg-[#1C1915] text-stone-400 border border-[#2E2A22] hover:text-white'
               }`}
             >
               Revenda / PJ
@@ -383,9 +383,9 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
         </div>
 
         {/* Portfolio Data Table */}
-        <div className="overflow-x-auto rounded-xl border border-[#231c3a]">
-          <table className="w-full text-left text-xs text-slate-300 font-sans">
-            <thead className="bg-[#0e0e17] text-[10px] font-display font-bold uppercase text-slate-400 border-b border-[#231c3a]">
+        <div className="overflow-x-auto rounded-xl border border-[#2E2A22]">
+          <table className="w-full text-left text-xs text-stone-300 font-sans">
+            <thead className="bg-[#1C1915] text-[10px] font-display font-bold uppercase text-stone-400 border-b border-[#2E2A22]">
               <tr>
                 <th className="py-3 px-4">Tomador / Documento</th>
                 <th className="py-3 px-4">Polo Agrícola</th>
@@ -400,7 +400,7 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
                 <th className="py-3 px-4 text-right">Ação</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[#231c3a]">
+            <tbody className="divide-y divide-[#2E2A22]">
               {filteredPortfolio.map((client) => {
                 const sim = CRISIS_IMPACT_MAP[client.id];
                 const hasDegraded = isCrisisSimulationActive && sim && sim.projectedRating !== client.currentRating;
@@ -408,14 +408,14 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
                 return (
                   <tr
                     key={client.id}
-                    className={`hover:bg-[#141422]/50 transition-colors ${
+                    className={`hover:bg-[#242019]/50 transition-colors ${
                       hasDegraded ? 'bg-purple-950/10' : ''
                     }`}
                   >
                     {/* Name & Document */}
                     <td className="py-3.5 px-4">
                       <div className="flex items-center gap-2.5">
-                        <div className="h-8 w-8 rounded-lg bg-[#141422] border border-[#231c3a] flex items-center justify-center text-[#8b4dff] shrink-0">
+                        <div className="h-8 w-8 rounded-lg bg-[#242019] border border-[#2E2A22] flex items-center justify-center text-[#E0A94E] shrink-0">
                           {client.type === 'PF' ? (
                             <User className="h-4 w-4" />
                           ) : (
@@ -426,7 +426,7 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
                           <span className="font-display font-bold text-white block">
                             {client.name}
                           </span>
-                          <span className="text-[10px] text-slate-500 font-display">
+                          <span className="text-[10px] text-stone-500 font-display">
                             {client.document} • {client.type}
                           </span>
                         </div>
@@ -435,8 +435,8 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
 
                     {/* Location */}
                     <td className="py-3.5 px-4">
-                      <span className="text-slate-200 block font-medium">{client.location}</span>
-                      <span className="text-[10px] text-slate-500">{client.cropOrSector}</span>
+                      <span className="text-stone-200 block font-medium">{client.location}</span>
+                      <span className="text-[10px] text-stone-500">{client.cropOrSector}</span>
                     </td>
 
                     {/* Exposure */}
@@ -444,7 +444,7 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
                       <span className="font-display font-bold text-white block">
                         R$ {(client.exposureBrl / 1000000).toFixed(2)}M
                       </span>
-                      <span className="text-[10px] text-slate-500">
+                      <span className="text-[10px] text-stone-500">
                         Score: {client.currentScore} pts
                       </span>
                     </td>
@@ -455,7 +455,7 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
                         client.currentRating === 'A'
                           ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40'
                           : client.currentRating === 'B'
-                          ? 'bg-[#6618F7]/20 text-[#a78bfa] border border-[#6618F7]/40'
+                          ? 'bg-[#4A6FE0]/20 text-[#E0A94E] border border-[#4A6FE0]/40'
                           : client.currentRating === 'C'
                           ? 'bg-amber-500/20 text-amber-400 border border-amber-500/40'
                           : 'bg-rose-500/20 text-rose-400 border border-rose-500/40'
@@ -473,7 +473,7 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
                               sim.projectedRating === 'A'
                                 ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/50'
                                 : sim.projectedRating === 'B'
-                                ? 'bg-[#6618F7]/20 text-[#d8b4fe] border-[#6618F7]/60'
+                                ? 'bg-[#4A6FE0]/20 text-[#F0D9A8] border-[#4A6FE0]/60'
                                 : sim.projectedRating === 'C'
                                 ? 'bg-amber-500/20 text-amber-300 border-amber-500/50'
                                 : 'bg-rose-500/20 text-rose-300 border-rose-500/50'
@@ -487,22 +487,22 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
                               </span>
                             )}
 
-                            <span className="text-[10px] text-slate-400 font-sans block leading-tight max-w-xs">
+                            <span className="text-[10px] text-stone-400 font-sans block leading-tight max-w-xs">
                               {sim.crisisTrigger}
                             </span>
                           </div>
                         ) : (
-                          <span className="text-slate-500 text-[10px]">Sem impacto projetado</span>
+                          <span className="text-stone-500 text-[10px]">Sem impacto projetado</span>
                         )}
                       </td>
                     )}
 
                     {/* Next Check */}
                     <td className="py-3.5 px-4">
-                      <span className="text-slate-300 block font-sans text-[11px]">
+                      <span className="text-stone-300 block font-sans text-[11px]">
                         {client.nextScheduledCheck}
                       </span>
-                      <span className="text-[10px] text-slate-500">
+                      <span className="text-[10px] text-stone-500">
                         Última varredura: {client.lastMonitoredAt}
                       </span>
                     </td>
@@ -511,7 +511,7 @@ export const MonitoramentoCarteiraView: React.FC<MonitoramentoCarteiraViewProps>
                     <td className="py-3.5 px-4 text-right">
                       <button
                         onClick={() => onSelectClientForDeepDive(client.id)}
-                        className="px-3 py-1.5 rounded-lg bg-[#141422] hover:bg-[#6618F7] text-[#a78bfa] hover:text-white border border-[#231c3a] text-xs font-display font-bold transition-all inline-flex items-center gap-1 cursor-pointer"
+                        className="px-3 py-1.5 rounded-lg bg-[#242019] hover:bg-[#4A6FE0] text-[#E0A94E] hover:text-white border border-[#2E2A22] text-xs font-display font-bold transition-all inline-flex items-center gap-1 cursor-pointer"
                         title="Ver Due Diligence e Dossiê Completo"
                       >
                         <span>Dossiê</span>

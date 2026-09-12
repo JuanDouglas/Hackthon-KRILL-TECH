@@ -28,29 +28,29 @@ export const TooltipHelp: React.FC<TooltipHelpProps> = ({
       aria-label={`${term}: ${definition}`}
     >
       {children ? (
-        <span className="border-b border-dotted border-emerald-400/60 hover:border-emerald-400 text-slate-200">
+        <span className="border-b border-dotted border-emerald-400/60 hover:border-emerald-400 text-stone-200">
           {children}
         </span>
       ) : (
-        <span className="inline-flex items-center gap-1 text-slate-400 hover:text-emerald-400 transition-colors">
+        <span className="inline-flex items-center gap-1 text-stone-400 hover:text-emerald-400 transition-colors">
           <span>{term}</span>
           <HelpCircle className="h-3 w-3 inline text-emerald-400/70" />
         </span>
       )}
 
       {isVisible && (
-        <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-2.5 bg-slate-900/95 border border-slate-700 text-slate-200 text-[11px] rounded-xl shadow-2xl backdrop-blur-md z-50 pointer-events-none transition-opacity duration-200 animate-fade-in block">
-          <span className="flex items-center justify-between pb-1 mb-1 border-b border-slate-800">
+        <span className="absolute bottom-full left-1/2 -transtone-x-1/2 mb-2 w-64 p-2.5 bg-stone-900/95 border border-stone-700 text-stone-200 text-[11px] rounded-xl shadow-2xl backdrop-blur-md z-50 pointer-events-none transition-opacity duration-200 animate-fade-in block">
+          <span className="flex items-center justify-between pb-1 mb-1 border-b border-stone-800">
             <strong className="text-emerald-400 font-bold text-xs">{term}</strong>
             {sourceBadge && (
-              <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">
+              <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-stone-800 text-stone-400">
                 {sourceBadge}
               </span>
             )}
           </span>
-          <span className="block text-slate-300 leading-relaxed">{definition}</span>
+          <span className="block text-stone-300 leading-relaxed">{definition}</span>
           {/* Subtle pointer arrow */}
-          <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800" />
+          <span className="absolute top-full left-1/2 -transtone-x-1/2 border-4 border-transparent border-t-stone-800" />
         </span>
       )}
     </span>

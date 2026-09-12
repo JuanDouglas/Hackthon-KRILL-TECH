@@ -68,12 +68,12 @@ export const OperationalActionCard: React.FC<OperationalActionCardProps> = ({
       ];
 
   return (
-    <div className="bg-[#09090e] border border-[#231c3a] rounded-2xl p-6 shadow-2xl space-y-5 h-full flex flex-col justify-between">
+    <div className="bg-[#151310] border border-[#2E2A22] rounded-2xl p-6 shadow-2xl space-y-5 h-full flex flex-col justify-between">
       <div>
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#231c3a]">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#2E2A22]">
           <div>
-            <span className="text-xs font-display font-bold text-[#8b4dff] uppercase tracking-wider">
+            <span className="text-xs font-display font-bold text-[#E0A94E] uppercase tracking-wider">
               Diretriz Operacional Concreta
             </span>
             <h3 className="text-base font-display font-black text-white mt-0.5">
@@ -84,7 +84,7 @@ export const OperationalActionCard: React.FC<OperationalActionCardProps> = ({
           <div className="flex items-center gap-2">
             <button
               onClick={handleCopySummary}
-              className="px-3 py-1.5 rounded-lg text-xs font-sans font-semibold bg-[#141422] hover:bg-[#1c182c] text-slate-200 border border-[#231c3a] hover:border-[#6618F7]/40 flex items-center gap-1.5 transition-all active:scale-95"
+              className="px-3 py-1.5 rounded-lg text-xs font-sans font-semibold bg-[#242019] hover:bg-[#211D17] text-stone-200 border border-[#2E2A22] hover:border-[#4A6FE0]/40 flex items-center gap-1.5 transition-all active:scale-95"
               title="Copiar parecer formatado para colar em e-mail ou WhatsApp"
             >
               {copied ? <Check className="h-3.5 w-3.5 text-emerald-400" /> : <Copy className="h-3.5 w-3.5" />}
@@ -110,10 +110,10 @@ export const OperationalActionCard: React.FC<OperationalActionCardProps> = ({
 
         {/* 3 Core Operational Pillars */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs pt-4">
-          <div className="bg-[#0e0e17] p-3.5 rounded-xl border border-[#231c3a] flex flex-col justify-between">
+          <div className="bg-[#1C1915] p-3.5 rounded-xl border border-[#2E2A22] flex flex-col justify-between">
             <div>
-              <span className="text-slate-400 block mb-1 flex items-center gap-1.5 text-[11px] font-display">
-                <Clock className="h-3.5 w-3.5 text-slate-400" />
+              <span className="text-stone-400 block mb-1 flex items-center gap-1.5 text-[11px] font-display">
+                <Clock className="h-3.5 w-3.5 text-stone-400" />
                 <span>Prazo de Pagamento</span>
               </span>
               <div className="text-base font-black font-display text-white">
@@ -122,52 +122,52 @@ export const OperationalActionCard: React.FC<OperationalActionCardProps> = ({
                   : `${recommendation.paymentTermsDays} dias (Safra)`}
               </div>
             </div>
-            <span className="text-[10px] text-slate-500 mt-2 block font-sans">
+            <span className="text-[10px] text-stone-500 mt-2 block font-sans">
               {isStandard ? 'Condição comercial ampla' : isReduced ? 'Prazo encurtado preventivo' : isCprMandatory ? 'Vencimento no ato da colheita' : 'Suspensão de concessão'}
             </span>
           </div>
 
-          <div className="bg-[#0e0e17] p-3.5 rounded-xl border border-[#231c3a] flex flex-col justify-between">
+          <div className="bg-[#1C1915] p-3.5 rounded-xl border border-[#2E2A22] flex flex-col justify-between">
             <div>
-              <span className="text-slate-400 block mb-1 flex items-center gap-1.5 text-[11px] font-display">
-                <ShieldCheck className="h-3.5 w-3.5 text-[#8b4dff]" />
+              <span className="text-stone-400 block mb-1 flex items-center gap-1.5 text-[11px] font-display">
+                <ShieldCheck className="h-3.5 w-3.5 text-[#E0A94E]" />
                 <span>Garantia Obrigatória</span>
               </span>
               <div className="font-bold text-amber-300 text-xs leading-snug font-sans">
                 {recommendation.mandatoryCollateral}
               </div>
             </div>
-            <span className="text-[10px] text-slate-500 mt-2 block font-sans">
+            <span className="text-[10px] text-stone-500 mt-2 block font-sans">
               {isCprMandatory ? 'CPR Física com preferência legal de grãos' : 'Garantia usual de carteira'}
             </span>
           </div>
 
-          <div className="bg-[#0e0e17] p-3.5 rounded-xl border border-[#231c3a] flex flex-col justify-between">
+          <div className="bg-[#1C1915] p-3.5 rounded-xl border border-[#2E2A22] flex flex-col justify-between">
             <div>
-              <span className="text-slate-400 block mb-1 flex items-center gap-1.5 text-[11px] font-display">
+              <span className="text-stone-400 block mb-1 flex items-center gap-1.5 text-[11px] font-display">
                 <FileCheck2 className="h-3.5 w-3.5 text-sky-400" />
                 <span>Seguro Rural (PSR)</span>
               </span>
-              <div className="font-semibold text-slate-200 text-xs leading-snug font-sans">
+              <div className="font-semibold text-stone-200 text-xs leading-snug font-sans">
                 {recommendation.psrInsuranceRequirement}
               </div>
             </div>
-            <span className="text-[10px] text-slate-500 mt-2 block font-sans">
+            <span className="text-[10px] text-stone-500 mt-2 block font-sans">
               Penaliza o score sem agir como veto (2,3% PSR em 2025).
             </span>
           </div>
         </div>
 
         {/* Analyst Checklist */}
-        <div className="bg-[#0e0e17] p-4 rounded-xl border border-[#231c3a] mt-4 text-xs">
-          <span className="text-slate-300 font-bold text-xs flex items-center gap-2 mb-2 font-display">
-            <ListChecks className="h-4 w-4 text-[#8b4dff]" />
+        <div className="bg-[#1C1915] p-4 rounded-xl border border-[#2E2A22] mt-4 text-xs">
+          <span className="text-stone-300 font-bold text-xs flex items-center gap-2 mb-2 font-display">
+            <ListChecks className="h-4 w-4 text-[#E0A94E]" />
             <span>Checklist Operacional para a Equipe de Crédito:</span>
           </span>
-          <div className="space-y-1.5 text-[11px] text-slate-300 font-sans">
+          <div className="space-y-1.5 text-[11px] text-stone-300 font-sans">
             {checklistItems.map((item, idx) => (
               <div key={idx} className="flex items-center gap-2">
-                <span className="h-4 w-4 rounded bg-[#141422] border border-[#231c3a] flex items-center justify-center text-[#8b4dff] text-[9px] font-bold shrink-0 font-display">
+                <span className="h-4 w-4 rounded bg-[#242019] border border-[#2E2A22] flex items-center justify-center text-[#E0A94E] text-[9px] font-bold shrink-0 font-display">
                   {idx + 1}
                 </span>
                 <span className="truncate">{item}</span>
@@ -199,7 +199,7 @@ export const OperationalActionCard: React.FC<OperationalActionCardProps> = ({
         </div>
 
         {showLegalDetails && (
-          <div className="mt-2.5 pt-2.5 border-t border-amber-500/20 text-slate-300 text-[11px] leading-relaxed font-sans">
+          <div className="mt-2.5 pt-2.5 border-t border-amber-500/20 text-stone-300 text-[11px] leading-relaxed font-sans">
             {recommendation.legalCaveatStayPeriod}
           </div>
         )}
